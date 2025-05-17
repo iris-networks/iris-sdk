@@ -667,12 +667,7 @@ const irisSDK = new IrisSDK();
 async function run() {
   const result = await irisSDK.videos.generate({
     id: "<id>",
-    generateVideoDto: {
-      fps: 0.2,
-      captionsEnabled: true,
-      format: "mp4",
-      quality: "medium",
-    },
+    generateVideoDto: {},
   });
 
   // Handle the result
@@ -697,12 +692,7 @@ const irisSDK = new IrisSDKCore();
 async function run() {
   const res = await videosGenerate(irisSDK, {
     id: "<id>",
-    generateVideoDto: {
-      fps: 0.2,
-      captionsEnabled: true,
-      format: "mp4",
-      quality: "medium",
-    },
+    generateVideoDto: {},
   });
 
   if (!res.ok) {

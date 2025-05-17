@@ -7,7 +7,7 @@ import { DeleteFrameRequest } from "iris-sdk/models/operations";
 
 let value: DeleteFrameRequest = {
   id: "<id>",
-  frameIndex: 246.79,
+  frameIndex: 2273.75,
 };
 ```
 

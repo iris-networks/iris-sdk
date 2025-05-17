@@ -7,7 +7,6 @@ import { StartRpaExecutionDto } from "iris-sdk/models/components";
 
 let value: StartRpaExecutionDto = {
   recordingId: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
-  actionDelay: 1500,
   parameterOverrides: {},
 };
 ```

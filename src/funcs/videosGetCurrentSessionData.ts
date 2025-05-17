@@ -4,6 +4,7 @@
 
 import { IrisSDKCore } from "../core.js";
 import * as M from "../lib/matchers.js";
+import { compactMap } from "../lib/primitives.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { pathToFunc } from "../lib/url.js";
 import * as components from "../models/components/index.js";
@@ -16,6 +17,7 @@ import {
   UnexpectedClientError,
 } from "../models/errors/httpclienterrors.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
+import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
@@ -24,10 +26,10 @@ import { Result } from "../types/fp.js";
  * @remarks
  * Returns the raw frames and captions for the current active session. This endpoint is primarily used for diagnostic purposes or custom video processing. Most clients should use the generated video file instead of raw frames.
  */
-export async function videosGetCurrentSessionData(
+export function videosGetCurrentSessionData(
   client: IrisSDKCore,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     components.CurrentSessionVideoDataResponseDto,
     | APIError
@@ -39,13 +41,38 @@ export async function videosGetCurrentSessionData(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    options,
+  ));
+}
+
+async function $do(
+  client: IrisSDKCore,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      components.CurrentSessionVideoDataResponseDto,
+      | APIError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const path = pathToFunc("/api/videos/current-session/video-data")();
 
-  const headers = new Headers({
+  const headers = new Headers(compactMap({
     Accept: "application/json",
-  });
+  }));
 
   const context = {
+    baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "getCurrentSessionVideoData",
     oAuth2Scopes: [],
 
@@ -66,7 +93,7 @@ export async function videosGetCurrentSessionData(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -77,7 +104,7 @@ export async function videosGetCurrentSessionData(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -92,11 +119,12 @@ export async function videosGetCurrentSessionData(
     | ConnectionError
   >(
     M.json(200, components.CurrentSessionVideoDataResponseDto$inboundSchema),
-    M.fail([400, "4XX", "5XX"]),
+    M.fail([400, "4XX"]),
+    M.fail("5XX"),
   )(response);
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

@@ -124,7 +124,7 @@ export type GenerateVideoResponseDtoRecording = {
    * Size of the generated video in bytes
    */
   videoSize?: number | undefined;
-  additionalProperties: { [k: string]: any };
+  additionalProperties?: { [k: string]: any };
 };
 
 export type GenerateVideoResponseDto = {
@@ -218,6 +218,7 @@ export const GenerateVideoResponseDtoRecording$inboundSchema: z.ZodType<
     videoSize: z.number().optional(),
   }).catchall(z.any()),
   "additionalProperties",
+  true,
 );
 
 /** @internal */

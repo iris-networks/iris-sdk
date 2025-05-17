@@ -7,7 +7,7 @@ Default Operator Type
 ```typescript
 import { UpdateConfigDtoDefaultOperator } from "iris-sdk/models/components";
 
-let value: UpdateConfigDtoDefaultOperator = "computer";
+let value: UpdateConfigDtoDefaultOperator = "browser";
 ```
 
 ## Values

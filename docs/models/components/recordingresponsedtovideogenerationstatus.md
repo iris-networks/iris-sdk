@@ -7,7 +7,7 @@ Status of video generation
 ```typescript
 import { RecordingResponseDtoVideoGenerationStatus } from "iris-sdk/models/components";
 
-let value: RecordingResponseDtoVideoGenerationStatus = "pending";
+let value: RecordingResponseDtoVideoGenerationStatus = "completed";
 ```
 
 ## Values

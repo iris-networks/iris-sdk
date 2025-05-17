@@ -124,7 +124,7 @@ export type SaveSessionRecordingResponseDtoRecording = {
    * Size of the generated video in bytes
    */
   videoSize?: number | undefined;
-  additionalProperties: { [k: string]: any };
+  additionalProperties?: { [k: string]: any };
 };
 
 export type SaveSessionRecordingResponseDto = {
@@ -215,6 +215,7 @@ export const SaveSessionRecordingResponseDtoRecording$inboundSchema: z.ZodType<
     videoSize: z.number().optional(),
   }).catchall(z.any()),
   "additionalProperties",
+  true,
 );
 
 /** @internal */

@@ -7,7 +7,7 @@ Status of video generation
 ```typescript
 import { VideoGenerationStatus } from "iris-sdk/models/components";
 
-let value: VideoGenerationStatus = "failed";
+let value: VideoGenerationStatus = "in_progress";
 ```
 
 ## Values

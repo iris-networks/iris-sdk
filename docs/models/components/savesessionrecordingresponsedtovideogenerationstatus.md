@@ -7,7 +7,7 @@ Status of video generation
 ```typescript
 import { SaveSessionRecordingResponseDtoVideoGenerationStatus } from "iris-sdk/models/components";
 
-let value: SaveSessionRecordingResponseDtoVideoGenerationStatus = "completed";
+let value: SaveSessionRecordingResponseDtoVideoGenerationStatus = "in_progress";
 ```
 
 ## Values

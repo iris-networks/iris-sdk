@@ -11,11 +11,11 @@ let value: RecordingResponseDto = {
     id: "<id>",
     sessionId: "<id>",
     title: "<value>",
-    createdAt: 960.98,
-    duration: 9764.59,
-    frameCount: 4686.51,
-    filePath: "/var/tmp/farm_bourgeoisie.kar",
-    size: 9292.96,
+    createdAt: 8739.24,
+    duration: 5913.36,
+    frameCount: 9122.75,
+    filePath: "/usr/behind.xlt",
+    size: 4745.8,
   },
 };
 ```

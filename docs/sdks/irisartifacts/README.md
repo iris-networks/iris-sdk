@@ -94,7 +94,7 @@ const irisSDK = new IrisSDK();
 
 async function run() {
   await irisSDK.irisArtifacts.downloadFile({
-    path: "/usr/obj",
+    path: "/usr/include",
   });
 
 
@@ -117,7 +117,7 @@ const irisSDK = new IrisSDKCore();
 
 async function run() {
   const res = await irisArtifactsDownloadFile(irisSDK, {
-    path: "/usr/obj",
+    path: "/usr/include",
   });
 
   if (!res.ok) {
@@ -164,7 +164,7 @@ const irisSDK = new IrisSDK();
 
 async function run() {
   await irisSDK.irisArtifacts.downloadFolder({
-    path: "/tmp",
+    path: "/media",
   });
 
 
@@ -187,7 +187,7 @@ const irisSDK = new IrisSDKCore();
 
 async function run() {
   const res = await irisArtifactsDownloadFolder(irisSDK, {
-    path: "/tmp",
+    path: "/media",
   });
 
   if (!res.ok) {

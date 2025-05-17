@@ -9,11 +9,11 @@ let value: VideoRecordingDto = {
   id: "<id>",
   sessionId: "<id>",
   title: "<value>",
-  createdAt: 6818.20,
-  duration: 3595.08,
-  frameCount: 4370.32,
-  filePath: "/usr/X11R6/minus.bz2",
-  size: 9883.74,
+  createdAt: 9471.79,
+  duration: 7917.85,
+  frameCount: 4086.6,
+  filePath: "/etc/mail/well_via.ics",
+  size: 3009.9,
 };
 ```
 

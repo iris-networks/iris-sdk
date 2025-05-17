@@ -1,27 +1,30 @@
 lockVersion: 2.0.0
 id: 9b971081-3d7e-4f4a-97fe-f59e6a07657d
 management:
-  docChecksum: 79d0e68db73bef546ddb6cb2da4e9ba8
+  docChecksum: 0e2bfa208d98ff70011a9d69b38e42cb
   docVersion: 0.1.0
-  speakeasyVersion: 1.460.3
-  generationVersion: 2.484.0
-  releaseVersion: 0.1.1
-  configChecksum: 4b513f8b1302ac8cbe6173b0b0393524
+  speakeasyVersion: 1.546.1
+  generationVersion: 2.604.2
+  releaseVersion: 0.2.0
+  configChecksum: 28a55161b5a19f814b88cf036115c4c3
+  repoURL: https://github.com/iris-networks/iris-sdk.git
+  installationURL: https://github.com/iris-networks/iris-sdk
 features:
   typescript:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     additionalProperties: 0.1.1
     constsAndDefaults: 0.1.11
-    core: 3.18.12
+    core: 3.21.8
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.2
     globalSecurityCallbacks: 0.1.0
-    globalServerURLs: 2.82.4
+    globalServerURLs: 2.82.5
     groups: 2.81.2
+    mcpServer: 0.9.2
     nameOverrides: 2.81.2
     responseFormat: 0.2.3
     retries: 2.83.0
@@ -31,10 +34,8 @@ generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
   - .devcontainer/setup.sh
-  - .eslintrc.cjs
   - .gitattributes
   - .npmignore
-  - CONTRIBUTING.md
   - FUNCTIONS.md
   - RUNTIMES.md
   - USAGE.md
@@ -137,6 +138,7 @@ generatedFiles:
   - docs/sdks/video/README.md
   - docs/sdks/videoediting/README.md
   - docs/sdks/videos/README.md
+  - eslint.config.mjs
   - jsr.json
   - package.json
   - src/core.ts
@@ -198,6 +200,57 @@ generatedFiles:
   - src/lib/sdks.ts
   - src/lib/security.ts
   - src/lib/url.ts
+  - src/mcp-server/build.mts
+  - src/mcp-server/cli.ts
+  - src/mcp-server/cli/start/command.ts
+  - src/mcp-server/cli/start/impl.ts
+  - src/mcp-server/console-logger.ts
+  - src/mcp-server/extensions.ts
+  - src/mcp-server/mcp-server.ts
+  - src/mcp-server/prompts.ts
+  - src/mcp-server/resources.ts
+  - src/mcp-server/scopes.ts
+  - src/mcp-server/server.ts
+  - src/mcp-server/shared.ts
+  - src/mcp-server/tools.ts
+  - src/mcp-server/tools/configGet.ts
+  - src/mcp-server/tools/configUpdate.ts
+  - src/mcp-server/tools/filesDelete.ts
+  - src/mcp-server/tools/filesDownload.ts
+  - src/mcp-server/tools/filesGetInfo.ts
+  - src/mcp-server/tools/filesList.ts
+  - src/mcp-server/tools/filesUpload.ts
+  - src/mcp-server/tools/humanLayerApprove.ts
+  - src/mcp-server/tools/humanLayerGetRequests.ts
+  - src/mcp-server/tools/irisArtifactsDownloadFile.ts
+  - src/mcp-server/tools/irisArtifactsDownloadFolder.ts
+  - src/mcp-server/tools/irisArtifactsList.ts
+  - src/mcp-server/tools/operatorsGetTypes.ts
+  - src/mcp-server/tools/rpaBatchExecute.ts
+  - src/mcp-server/tools/rpaGetParameterTemplate.ts
+  - src/mcp-server/tools/rpaGetStatus.ts
+  - src/mcp-server/tools/rpaStartExecution.ts
+  - src/mcp-server/tools/rpaStopExecution.ts
+  - src/mcp-server/tools/videoEditingDeleteFrame.ts
+  - src/mcp-server/tools/videoEditingRegenerate.ts
+  - src/mcp-server/tools/videoEditingUpdateCaption.ts
+  - src/mcp-server/tools/videoExecuteRpa.ts
+  - src/mcp-server/tools/videoGetAnalysisResults.ts
+  - src/mcp-server/tools/videoStreamOriginal.ts
+  - src/mcp-server/tools/videoStreamProcessed.ts
+  - src/mcp-server/tools/videoUpload.ts
+  - src/mcp-server/tools/videosDeleteRecording.ts
+  - src/mcp-server/tools/videosDownload.ts
+  - src/mcp-server/tools/videosGenerate.ts
+  - src/mcp-server/tools/videosGetCurrentSessionData.ts
+  - src/mcp-server/tools/videosGetFramesAndCaptions.ts
+  - src/mcp-server/tools/videosGetMetadata.ts
+  - src/mcp-server/tools/videosGetRecordingData.ts
+  - src/mcp-server/tools/videosGetStatus.ts
+  - src/mcp-server/tools/videosGetThumbnail.ts
+  - src/mcp-server/tools/videosList.ts
+  - src/mcp-server/tools/videosSaveCurrentSession.ts
+  - src/mcp-server/tools/videosStream.ts
   - src/models/components/artifactitemdto.ts
   - src/models/components/artifactscontentdto.ts
   - src/models/components/batchexecuterpadto.ts
@@ -273,6 +326,7 @@ generatedFiles:
   - src/sdk/video.ts
   - src/sdk/videoediting.ts
   - src/sdk/videos.ts
+  - src/types/async.ts
   - src/types/blobs.ts
   - src/types/constdatetime.ts
   - src/types/enums.ts
@@ -287,17 +341,19 @@ examples:
     speakeasy-default-get-config:
       responses:
         "200":
-          application/json: {"vlmBaseUrl": "https://colorful-wasabi.info/", "vlmApiKey": "<value>", "vlmModelName": "<value>", "vlmProvider": "<value>", "language": "<value>", "defaultOperator": "computer", "maxLoopCount": "7559.75", "loopIntervalInMs": "2966.24"}
+          application/json: {"vlmBaseUrl": "https://nifty-decongestant.net", "vlmApiKey": "<value>", "vlmModelName": "<value>", "vlmProvider": "<value>", "language": "<value>", "defaultOperator": "computer", "maxLoopCount": 5890.33, "loopIntervalInMs": 5029.12}
   updateConfig:
     speakeasy-default-update-config:
+      requestBody:
+        application/json: {}
       responses:
         "200":
-          application/json: {"vlmBaseUrl": "https://hefty-importance.biz/", "vlmApiKey": "<value>", "vlmModelName": "<value>", "vlmProvider": "<value>", "language": "<value>", "defaultOperator": "computer", "maxLoopCount": "6961.48", "loopIntervalInMs": "3105.13"}
+          application/json: {"vlmBaseUrl": "https://neat-consistency.name/", "vlmApiKey": "<value>", "vlmModelName": "<value>", "vlmProvider": "<value>", "language": "<value>", "defaultOperator": "browser", "maxLoopCount": 8904.49, "loopIntervalInMs": 2766.34}
   listRecordings:
     speakeasy-default-list-recordings:
       responses:
         "200":
-          application/json: {"recordings": [{"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": "8260.60", "duration": "1943.01", "frameCount": "2567.40", "filePath": "/usr/X11R6/usually_as_geez.woff", "size": "4535.86"}]}
+          application/json: {"recordings": [{"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": 1653.78, "duration": 283.9, "frameCount": 3294.43, "filePath": "/private/readmit_how.eot", "size": 3802.31}, {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": 1653.78, "duration": 283.9, "frameCount": 3294.43, "filePath": "/private/readmit_how.eot", "size": 3802.31}]}
   getRecordingMetadata:
     speakeasy-default-get-recording-metadata:
       parameters:
@@ -305,7 +361,7 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {"success": true, "recording": {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": "1483.43", "duration": "1920.61", "frameCount": "197.18", "filePath": "/usr/bin/meh_following_overburden.vst", "size": "3694.39", "key": "<value>"}}
+          application/json: {"success": true, "recording": {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": 9556.52, "duration": 5131.71, "frameCount": 4987.95, "filePath": "/home/user/apropos.woff2", "size": 6692.47}}
   deleteRecording:
     speakeasy-default-delete-recording:
       parameters:
@@ -327,16 +383,19 @@ examples:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          image/png: "x-file: example.file"
   saveCurrentSession:
     speakeasy-default-save-current-session:
       responses:
         "201":
-          application/json: {"success": true, "recording": {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": "7917.11", "duration": "3267.17", "frameCount": "9844.91", "filePath": "/opt/bin/uh_huh_inasmuch_ouch.rmi", "size": "234.24", "key": "<value>"}}
+          application/json: {"success": true, "recording": {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": 2450.81, "duration": 1307.06, "frameCount": 3550.27, "filePath": "/selinux/emergent_accompanist_consequently.mjs", "size": 6222.92}}
   getCurrentSessionVideoData:
     speakeasy-default-get-current-session-video-data:
       responses:
         "200":
-          application/json: {"success": true, "videoData": {"frames": ["data:image/png;base64,iVBORw0KGgo..."], "captions": [{"timestamp": 1651234567890, "frameIndex": 0}]}}
+          application/json: {"success": true, "videoData": {"frames": ["data:image/png;base64,iVBORw0KGgo..."], "captions": [{"timestamp": 1651234567890, "conversation": {}, "frameIndex": 0}]}}
   getRecordingVideoData:
     speakeasy-default-get-recording-video-data:
       parameters:
@@ -344,12 +403,15 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {"success": true, "replayData": {"frames": ["data:image/png;base64,iVBORw0KGgo..."], "captions": [{"timestamp": 1651234567890, "frameIndex": 0}, {"timestamp": 1651234567890, "frameIndex": 0}, {"timestamp": 1651234567890, "frameIndex": 0}]}}
+          application/json: {"success": true, "replayData": {"frames": ["data:image/png;base64,iVBORw0KGgo..."], "captions": [{"timestamp": 1651234567890, "conversation": {}, "frameIndex": 0}]}}
   downloadRecording:
     speakeasy-default-download-recording:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/zip: "x-file: example.file"
   generateVideo:
     speakeasy-default-generate-video:
       parameters:
@@ -359,7 +421,7 @@ examples:
         application/json: {"fps": 0.2, "captionsEnabled": true, "format": "mp4", "quality": "medium"}
       responses:
         "201":
-          application/json: {"success": true, "videoPath": "/Users/user/.iris/videos/12345678-1234-5678-1234-567812345678/video.mp4", "recording": {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": "3292.59", "duration": "8537.85", "frameCount": "9295.28", "filePath": "/selinux/whoa.vsd", "size": "7864.48", "key": "<value>"}}
+          application/json: {"success": true, "videoPath": "/Users/user/.iris/videos/12345678-1234-5678-1234-567812345678/video.mp4", "recording": {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": 1525.81, "duration": 9140.8, "frameCount": 5387.49, "filePath": "/Network/yet_webbed.html", "size": 8772.39}}
   streamVideo:
     speakeasy-default-stream-video:
       parameters:
@@ -367,11 +429,14 @@ examples:
           id: "<id>"
         query: {}
       responses:
+        "200":
+          video/mp4: "x-file: example.file"
+          video/webm: "x-file: example.file"
+          image/gif: "x-file: example.file"
         "202":
-          image/gif: "0x393Da038A7"
-          video/mp4: "0x7A5a251Cea"
-          video/webm: "0xaD61A28Bc7"
-        "200": {}
+          image/gif: "0xcc8f3d8Bca"
+          video/mp4: "0x2c3D2d6F15"
+          video/webm: "0xae343dda5a"
   getFramesAndCaptions:
     speakeasy-default-get-frames-and-captions:
       parameters:
@@ -379,13 +444,13 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {"success": true, "frames": ["<value>", "<value>"], "captions": [{"timestamp": 1651234567890, "frameIndex": 0}, {"timestamp": 1651234567890, "frameIndex": 0}]}
+          application/json: {"success": true, "frames": ["<value 1>", "<value 2>", "<value 3>"], "captions": []}
   deleteFrame:
     speakeasy-default-delete-frame:
       parameters:
         path:
           id: "<id>"
-          frameIndex: "1413.38"
+          frameIndex: 1580.86
       responses:
         "200":
           application/json: {"success": true}
@@ -394,7 +459,7 @@ examples:
       parameters:
         path:
           id: "<id>"
-          frameIndex: "2778.08"
+          frameIndex: 2353.28
       requestBody:
         application/json: {"text": "New caption text here"}
       responses:
@@ -412,7 +477,7 @@ examples:
     speakeasy-default-get-operator-types:
       responses:
         "200":
-          application/json: {"types": ["computer"]}
+          application/json: {"types": []}
   startExecution:
     speakeasy-default-start-execution:
       requestBody:
@@ -443,7 +508,7 @@ examples:
           recordingId: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6"
       responses:
         "200":
-          application/json: {"recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6"}
+          application/json: {"recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "parameterTemplate": {}}
   batchExecute:
     speakeasy-default-batch-execute:
       requestBody:
@@ -454,7 +519,7 @@ examples:
   uploadVideo:
     speakeasy-default-upload-video:
       requestBody:
-        multipart/form-data: {"file": {}}
+        multipart/form-data: {"file": {"": "x-file: example.file"}}
       responses:
         "200":
           application/json: {"analysisId": "1682598432741", "originalVideo": "recording-1682598432741.mp4", "processedVideo": "processed-recording-1682598432741.mp4", "message": "Video uploaded and analyzed successfully"}
@@ -484,7 +549,7 @@ examples:
   uploadFile:
     speakeasy-default-upload-file:
       requestBody:
-        multipart/form-data: {"file": {}}
+        multipart/form-data: {"file": {"": "x-file: example.file"}}
       responses:
         "200":
           application/json: {"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "message": "File uploaded successfully"}
@@ -492,7 +557,7 @@ examples:
     speakeasy-default-list-files:
       responses:
         "200":
-          application/json: [{"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "uploadDate": "2023-04-27T14:00:32.741Z"}, {"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "uploadDate": "2023-04-27T14:00:32.741Z"}]
+          application/json: [{"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "uploadDate": "2023-04-27T14:00:32.741Z"}, {"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "uploadDate": "2023-04-27T14:00:32.741Z"}, {"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "uploadDate": "2023-04-27T14:00:32.741Z"}]
   getFileInfo:
     speakeasy-default-get-file-info:
       parameters:
@@ -532,10 +597,11 @@ examples:
     speakeasy-default-download-artifact-file:
       parameters:
         path:
-          path: "/usr/obj"
+          path: "/usr/include"
   downloadArtifactFolder:
     speakeasy-default-download-artifact-folder:
       parameters:
         path:
-          path: "/tmp"
+          path: "/media"
+examplesVersion: 1.0.2
 generatedTests: {}

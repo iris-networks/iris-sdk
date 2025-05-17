@@ -6,6 +6,7 @@ import * as z from "zod";
 import { IrisSDKCore } from "../core.js";
 import { encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
+import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { pathToFunc } from "../lib/url.js";
@@ -19,6 +20,7 @@ import {
 } from "../models/errors/httpclienterrors.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
+import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
@@ -27,11 +29,11 @@ import { Result } from "../types/fp.js";
  * @remarks
  * Executes automation steps extracted from video analysis. This endpoint enables the system to perform actions it learned through visual observation. Using a reasoning-based approach, the automation adapts to dynamic UI elements and handles environmental variations while following the core workflow pattern. This creates resilient processes that maintain functionality even when the target system has minor visual or layout changes.
  */
-export async function videoExecuteRpa(
+export function videoExecuteRpa(
   client: IrisSDKCore,
   request: operations.ExecuteRpaStepsRequest,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     void,
     | APIError
@@ -43,13 +45,39 @@ export async function videoExecuteRpa(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: IrisSDKCore,
+  request: operations.ExecuteRpaStepsRequest,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      void,
+      | APIError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const parsed = safeParse(
     request,
     (value) => operations.ExecuteRpaStepsRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return parsed;
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = null;
@@ -63,11 +91,12 @@ export async function videoExecuteRpa(
 
   const path = pathToFunc("/api/video/execute/{id}")(pathParams);
 
-  const headers = new Headers({
+  const headers = new Headers(compactMap({
     Accept: "*/*",
-  });
+  }));
 
   const context = {
+    baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "executeRpaSteps",
     oAuth2Scopes: [],
 
@@ -89,7 +118,7 @@ export async function videoExecuteRpa(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -100,7 +129,7 @@ export async function videoExecuteRpa(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -115,11 +144,12 @@ export async function videoExecuteRpa(
     | ConnectionError
   >(
     M.nil(200, z.void()),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response);
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

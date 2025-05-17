@@ -11,11 +11,11 @@ let value: SaveSessionRecordingResponseDtoRecording = {
   id: "<id>",
   sessionId: "<id>",
   title: "<value>",
-  createdAt: 1317.98,
-  duration: 7163.27,
-  frameCount: 2894.06,
-  filePath: "/etc/ppp/oof_failing.mjs",
-  size: 6994.79,
+  createdAt: 4835.43,
+  duration: 7060.39,
+  frameCount: 4322.24,
+  filePath: "/opt/share/out_earnest_phony.map",
+  size: 4888.05,
 };
 ```
 
