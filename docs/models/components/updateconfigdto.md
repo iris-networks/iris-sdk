@@ -1,0 +1,22 @@
+# UpdateConfigDto
+
+## Example Usage
+
+```typescript
+import { UpdateConfigDto } from "iris-sdk/models/components";
+
+let value: UpdateConfigDto = {};
+```
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `vlmBaseUrl`                                                                                           | *string*                                                                                               | :heavy_minus_sign:                                                                                     | VLM Base URL                                                                                           |
+| `vlmApiKey`                                                                                            | *string*                                                                                               | :heavy_minus_sign:                                                                                     | VLM API Key                                                                                            |
+| `vlmModelName`                                                                                         | *string*                                                                                               | :heavy_minus_sign:                                                                                     | VLM Model Name                                                                                         |
+| `vlmProvider`                                                                                          | *string*                                                                                               | :heavy_minus_sign:                                                                                     | VLM Provider                                                                                           |
+| `language`                                                                                             | *string*                                                                                               | :heavy_minus_sign:                                                                                     | Language                                                                                               |
+| `defaultOperator`                                                                                      | [components.UpdateConfigDtoDefaultOperator](../../models/components/updateconfigdtodefaultoperator.md) | :heavy_minus_sign:                                                                                     | Default Operator Type                                                                                  |
+| `maxLoopCount`                                                                                         | *number*                                                                                               | :heavy_minus_sign:                                                                                     | Maximum Loop Count                                                                                     |
+| `loopIntervalInMs`                                                                                     | *number*                                                                                               | :heavy_minus_sign:                                                                                     | Loop Interval in Milliseconds                                                                          |

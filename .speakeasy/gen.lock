@@ -1,0 +1,541 @@
+lockVersion: 2.0.0
+id: 9b971081-3d7e-4f4a-97fe-f59e6a07657d
+management:
+  docChecksum: 79d0e68db73bef546ddb6cb2da4e9ba8
+  docVersion: 0.1.0
+  speakeasyVersion: 1.460.3
+  generationVersion: 2.484.0
+  releaseVersion: 0.1.1
+  configChecksum: 4b513f8b1302ac8cbe6173b0b0393524
+features:
+  typescript:
+    acceptHeaders: 2.81.2
+    additionalDependencies: 0.1.0
+    additionalProperties: 0.1.1
+    constsAndDefaults: 0.1.11
+    core: 3.18.12
+    defaultEnabledRetries: 0.1.0
+    devContainers: 2.90.0
+    downloadStreams: 0.1.1
+    enumUnions: 0.1.0
+    envVarSecurityUsage: 0.1.2
+    globalSecurityCallbacks: 0.1.0
+    globalServerURLs: 2.82.4
+    groups: 2.81.2
+    nameOverrides: 2.81.2
+    responseFormat: 0.2.3
+    retries: 2.83.0
+    sdkHooks: 0.2.0
+    uploadStreams: 0.1.0
+generatedFiles:
+  - .devcontainer/README.md
+  - .devcontainer/devcontainer.json
+  - .devcontainer/setup.sh
+  - .eslintrc.cjs
+  - .gitattributes
+  - .npmignore
+  - CONTRIBUTING.md
+  - FUNCTIONS.md
+  - RUNTIMES.md
+  - USAGE.md
+  - docs/lib/utils/retryconfig.md
+  - docs/models/components/artifactitemdto.md
+  - docs/models/components/artifactscontentdto.md
+  - docs/models/components/batchexecuterpadto.md
+  - docs/models/components/caption.md
+  - docs/models/components/captiondatadto.md
+  - docs/models/components/configresponsedto.md
+  - docs/models/components/conversation.md
+  - docs/models/components/currentsessionvideodataresponsedto.md
+  - docs/models/components/defaultoperator.md
+  - docs/models/components/deleterecordingresponsedto.md
+  - docs/models/components/fileinfodto.md
+  - docs/models/components/filet.md
+  - docs/models/components/fileuploaddto.md
+  - docs/models/components/fileuploaddtofile.md
+  - docs/models/components/fileuploadresponsedto.md
+  - docs/models/components/format.md
+  - docs/models/components/framesandcaptionsresponsedto.md
+  - docs/models/components/generatevideodto.md
+  - docs/models/components/generatevideoresponsedto.md
+  - docs/models/components/generatevideoresponsedtooperatortype.md
+  - docs/models/components/generatevideoresponsedtorecording.md
+  - docs/models/components/generatevideoresponsedtovideogenerationstatus.md
+  - docs/models/components/operatortype.md
+  - docs/models/components/operatortypesdto.md
+  - docs/models/components/parameteroverrides.md
+  - docs/models/components/parametertemplate.md
+  - docs/models/components/parametertemplateresponsedto.md
+  - docs/models/components/quality.md
+  - docs/models/components/recording.md
+  - docs/models/components/recordinglistresponsedto.md
+  - docs/models/components/recordingresponsedto.md
+  - docs/models/components/recordingresponsedtooperatortype.md
+  - docs/models/components/recordingresponsedtovideogenerationstatus.md
+  - docs/models/components/rpaexecutionstatusdto.md
+  - docs/models/components/rpaexecutionstatusdtooperatortype.md
+  - docs/models/components/rpaexecutionstatusdtostatus.md
+  - docs/models/components/rpastepsdto.md
+  - docs/models/components/savesessionrecordingresponsedto.md
+  - docs/models/components/savesessionrecordingresponsedtooperatortype.md
+  - docs/models/components/savesessionrecordingresponsedtorecording.md
+  - docs/models/components/savesessionrecordingresponsedtovideogenerationstatus.md
+  - docs/models/components/sessionreplaydataresponsedto.md
+  - docs/models/components/simplesuccessresponsedto.md
+  - docs/models/components/startrpaexecutiondto.md
+  - docs/models/components/status.md
+  - docs/models/components/successresponsedto.md
+  - docs/models/components/type.md
+  - docs/models/components/types.md
+  - docs/models/components/updatecaptiondto.md
+  - docs/models/components/updateconfigdto.md
+  - docs/models/components/updateconfigdtodefaultoperator.md
+  - docs/models/components/videoanalysisresponsedto.md
+  - docs/models/components/videodata.md
+  - docs/models/components/videodatadto.md
+  - docs/models/components/videogenerationstatus.md
+  - docs/models/components/videorecordingdto.md
+  - docs/models/components/videostatusresponsedto.md
+  - docs/models/components/videostreaminprogressresponsedto.md
+  - docs/models/components/videostreaminprogressresponsedtostatus.md
+  - docs/models/components/videouploaddto.md
+  - docs/models/operations/approverequestrequest.md
+  - docs/models/operations/deletefilerequest.md
+  - docs/models/operations/deletefileresponsebody.md
+  - docs/models/operations/deleteframerequest.md
+  - docs/models/operations/deleterecordingrequest.md
+  - docs/models/operations/downloadartifactfilerequest.md
+  - docs/models/operations/downloadartifactfolderrequest.md
+  - docs/models/operations/downloadfilerequest.md
+  - docs/models/operations/downloadrecordingrequest.md
+  - docs/models/operations/executerpastepsrequest.md
+  - docs/models/operations/generatevideorequest.md
+  - docs/models/operations/getanalysisresultsrequest.md
+  - docs/models/operations/getexecutionstatusrequest.md
+  - docs/models/operations/getfileinforequest.md
+  - docs/models/operations/getframesandcaptionsrequest.md
+  - docs/models/operations/getparametertemplaterequest.md
+  - docs/models/operations/getrecordingmetadatarequest.md
+  - docs/models/operations/getrecordingthumbnailrequest.md
+  - docs/models/operations/getrecordingvideodatarequest.md
+  - docs/models/operations/getvideostatusrequest.md
+  - docs/models/operations/listartifactsrequest.md
+  - docs/models/operations/regeneratevideorequest.md
+  - docs/models/operations/stopexecutionrequest.md
+  - docs/models/operations/streamoriginalvideorequest.md
+  - docs/models/operations/streamprocessedvideorequest.md
+  - docs/models/operations/streamvideorequest.md
+  - docs/models/operations/streamvideoresponse.md
+  - docs/models/operations/updatecaptionrequest.md
+  - docs/sdks/config/README.md
+  - docs/sdks/files/README.md
+  - docs/sdks/humanlayer/README.md
+  - docs/sdks/irisartifacts/README.md
+  - docs/sdks/irissdk/README.md
+  - docs/sdks/operators/README.md
+  - docs/sdks/rpa/README.md
+  - docs/sdks/video/README.md
+  - docs/sdks/videoediting/README.md
+  - docs/sdks/videos/README.md
+  - jsr.json
+  - package.json
+  - src/core.ts
+  - src/funcs/configGet.ts
+  - src/funcs/configUpdate.ts
+  - src/funcs/filesDelete.ts
+  - src/funcs/filesDownload.ts
+  - src/funcs/filesGetInfo.ts
+  - src/funcs/filesList.ts
+  - src/funcs/filesUpload.ts
+  - src/funcs/humanLayerApprove.ts
+  - src/funcs/humanLayerGetRequests.ts
+  - src/funcs/irisArtifactsDownloadFile.ts
+  - src/funcs/irisArtifactsDownloadFolder.ts
+  - src/funcs/irisArtifactsList.ts
+  - src/funcs/operatorsGetTypes.ts
+  - src/funcs/rpaBatchExecute.ts
+  - src/funcs/rpaGetParameterTemplate.ts
+  - src/funcs/rpaGetStatus.ts
+  - src/funcs/rpaStartExecution.ts
+  - src/funcs/rpaStopExecution.ts
+  - src/funcs/videoEditingDeleteFrame.ts
+  - src/funcs/videoEditingRegenerate.ts
+  - src/funcs/videoEditingUpdateCaption.ts
+  - src/funcs/videoExecuteRpa.ts
+  - src/funcs/videoGetAnalysisResults.ts
+  - src/funcs/videoStreamOriginal.ts
+  - src/funcs/videoStreamProcessed.ts
+  - src/funcs/videoUpload.ts
+  - src/funcs/videosDeleteRecording.ts
+  - src/funcs/videosDownload.ts
+  - src/funcs/videosGenerate.ts
+  - src/funcs/videosGetCurrentSessionData.ts
+  - src/funcs/videosGetFramesAndCaptions.ts
+  - src/funcs/videosGetMetadata.ts
+  - src/funcs/videosGetRecordingData.ts
+  - src/funcs/videosGetStatus.ts
+  - src/funcs/videosGetThumbnail.ts
+  - src/funcs/videosList.ts
+  - src/funcs/videosSaveCurrentSession.ts
+  - src/funcs/videosStream.ts
+  - src/hooks/hooks.ts
+  - src/hooks/index.ts
+  - src/hooks/types.ts
+  - src/index.ts
+  - src/lib/base64.ts
+  - src/lib/config.ts
+  - src/lib/dlv.ts
+  - src/lib/encodings.ts
+  - src/lib/env.ts
+  - src/lib/files.ts
+  - src/lib/http.ts
+  - src/lib/is-plain-object.ts
+  - src/lib/logger.ts
+  - src/lib/matchers.ts
+  - src/lib/primitives.ts
+  - src/lib/retries.ts
+  - src/lib/schemas.ts
+  - src/lib/sdks.ts
+  - src/lib/security.ts
+  - src/lib/url.ts
+  - src/models/components/artifactitemdto.ts
+  - src/models/components/artifactscontentdto.ts
+  - src/models/components/batchexecuterpadto.ts
+  - src/models/components/captiondatadto.ts
+  - src/models/components/configresponsedto.ts
+  - src/models/components/currentsessionvideodataresponsedto.ts
+  - src/models/components/deleterecordingresponsedto.ts
+  - src/models/components/fileinfodto.ts
+  - src/models/components/fileuploaddto.ts
+  - src/models/components/fileuploadresponsedto.ts
+  - src/models/components/framesandcaptionsresponsedto.ts
+  - src/models/components/generatevideodto.ts
+  - src/models/components/generatevideoresponsedto.ts
+  - src/models/components/index.ts
+  - src/models/components/operatortypesdto.ts
+  - src/models/components/parametertemplateresponsedto.ts
+  - src/models/components/recordinglistresponsedto.ts
+  - src/models/components/recordingresponsedto.ts
+  - src/models/components/rpaexecutionstatusdto.ts
+  - src/models/components/rpastepsdto.ts
+  - src/models/components/savesessionrecordingresponsedto.ts
+  - src/models/components/sessionreplaydataresponsedto.ts
+  - src/models/components/simplesuccessresponsedto.ts
+  - src/models/components/startrpaexecutiondto.ts
+  - src/models/components/successresponsedto.ts
+  - src/models/components/updatecaptiondto.ts
+  - src/models/components/updateconfigdto.ts
+  - src/models/components/videoanalysisresponsedto.ts
+  - src/models/components/videodatadto.ts
+  - src/models/components/videorecordingdto.ts
+  - src/models/components/videostatusresponsedto.ts
+  - src/models/components/videostreaminprogressresponsedto.ts
+  - src/models/components/videouploaddto.ts
+  - src/models/errors/apierror.ts
+  - src/models/errors/httpclienterrors.ts
+  - src/models/errors/index.ts
+  - src/models/errors/sdkvalidationerror.ts
+  - src/models/operations/approverequest.ts
+  - src/models/operations/deletefile.ts
+  - src/models/operations/deleteframe.ts
+  - src/models/operations/deleterecording.ts
+  - src/models/operations/downloadartifactfile.ts
+  - src/models/operations/downloadartifactfolder.ts
+  - src/models/operations/downloadfile.ts
+  - src/models/operations/downloadrecording.ts
+  - src/models/operations/executerpasteps.ts
+  - src/models/operations/generatevideo.ts
+  - src/models/operations/getanalysisresults.ts
+  - src/models/operations/getexecutionstatus.ts
+  - src/models/operations/getfileinfo.ts
+  - src/models/operations/getframesandcaptions.ts
+  - src/models/operations/getparametertemplate.ts
+  - src/models/operations/getrecordingmetadata.ts
+  - src/models/operations/getrecordingthumbnail.ts
+  - src/models/operations/getrecordingvideodata.ts
+  - src/models/operations/getvideostatus.ts
+  - src/models/operations/index.ts
+  - src/models/operations/listartifacts.ts
+  - src/models/operations/regeneratevideo.ts
+  - src/models/operations/stopexecution.ts
+  - src/models/operations/streamoriginalvideo.ts
+  - src/models/operations/streamprocessedvideo.ts
+  - src/models/operations/streamvideo.ts
+  - src/models/operations/updatecaption.ts
+  - src/sdk/config.ts
+  - src/sdk/files.ts
+  - src/sdk/humanlayer.ts
+  - src/sdk/index.ts
+  - src/sdk/irisartifacts.ts
+  - src/sdk/operators.ts
+  - src/sdk/rpa.ts
+  - src/sdk/sdk.ts
+  - src/sdk/video.ts
+  - src/sdk/videoediting.ts
+  - src/sdk/videos.ts
+  - src/types/blobs.ts
+  - src/types/constdatetime.ts
+  - src/types/enums.ts
+  - src/types/fp.ts
+  - src/types/index.ts
+  - src/types/operations.ts
+  - src/types/rfcdate.ts
+  - src/types/streams.ts
+  - tsconfig.json
+examples:
+  getConfig:
+    speakeasy-default-get-config:
+      responses:
+        "200":
+          application/json: {"vlmBaseUrl": "https://colorful-wasabi.info/", "vlmApiKey": "<value>", "vlmModelName": "<value>", "vlmProvider": "<value>", "language": "<value>", "defaultOperator": "computer", "maxLoopCount": "7559.75", "loopIntervalInMs": "2966.24"}
+  updateConfig:
+    speakeasy-default-update-config:
+      responses:
+        "200":
+          application/json: {"vlmBaseUrl": "https://hefty-importance.biz/", "vlmApiKey": "<value>", "vlmModelName": "<value>", "vlmProvider": "<value>", "language": "<value>", "defaultOperator": "computer", "maxLoopCount": "6961.48", "loopIntervalInMs": "3105.13"}
+  listRecordings:
+    speakeasy-default-list-recordings:
+      responses:
+        "200":
+          application/json: {"recordings": [{"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": "8260.60", "duration": "1943.01", "frameCount": "2567.40", "filePath": "/usr/X11R6/usually_as_geez.woff", "size": "4535.86"}]}
+  getRecordingMetadata:
+    speakeasy-default-get-recording-metadata:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"success": true, "recording": {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": "1483.43", "duration": "1920.61", "frameCount": "197.18", "filePath": "/usr/bin/meh_following_overburden.vst", "size": "3694.39", "key": "<value>"}}
+  deleteRecording:
+    speakeasy-default-delete-recording:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"success": true}
+  getVideoStatus:
+    speakeasy-default-get-video-status:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"recordingId": "12345678-1234-5678-1234-567812345678", "hasVideo": true, "status": "completed", "message": "Video generation is complete", "startedAt": 1651234567890, "completedAt": 1651234597890, "elapsedSeconds": 30, "format": "mp4", "sizeMB": 2.5, "error": "FFmpeg process exited with code 1"}
+  getRecordingThumbnail:
+    speakeasy-default-get-recording-thumbnail:
+      parameters:
+        path:
+          id: "<id>"
+  saveCurrentSession:
+    speakeasy-default-save-current-session:
+      responses:
+        "201":
+          application/json: {"success": true, "recording": {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": "7917.11", "duration": "3267.17", "frameCount": "9844.91", "filePath": "/opt/bin/uh_huh_inasmuch_ouch.rmi", "size": "234.24", "key": "<value>"}}
+  getCurrentSessionVideoData:
+    speakeasy-default-get-current-session-video-data:
+      responses:
+        "200":
+          application/json: {"success": true, "videoData": {"frames": ["data:image/png;base64,iVBORw0KGgo..."], "captions": [{"timestamp": 1651234567890, "frameIndex": 0}]}}
+  getRecordingVideoData:
+    speakeasy-default-get-recording-video-data:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"success": true, "replayData": {"frames": ["data:image/png;base64,iVBORw0KGgo..."], "captions": [{"timestamp": 1651234567890, "frameIndex": 0}, {"timestamp": 1651234567890, "frameIndex": 0}, {"timestamp": 1651234567890, "frameIndex": 0}]}}
+  downloadRecording:
+    speakeasy-default-download-recording:
+      parameters:
+        path:
+          id: "<id>"
+  generateVideo:
+    speakeasy-default-generate-video:
+      parameters:
+        path:
+          id: "<id>"
+      requestBody:
+        application/json: {"fps": 0.2, "captionsEnabled": true, "format": "mp4", "quality": "medium"}
+      responses:
+        "201":
+          application/json: {"success": true, "videoPath": "/Users/user/.iris/videos/12345678-1234-5678-1234-567812345678/video.mp4", "recording": {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": "3292.59", "duration": "8537.85", "frameCount": "9295.28", "filePath": "/selinux/whoa.vsd", "size": "7864.48", "key": "<value>"}}
+  streamVideo:
+    speakeasy-default-stream-video:
+      parameters:
+        path:
+          id: "<id>"
+        query: {}
+      responses:
+        "202":
+          image/gif: "0x393Da038A7"
+          video/mp4: "0x7A5a251Cea"
+          video/webm: "0xaD61A28Bc7"
+        "200": {}
+  getFramesAndCaptions:
+    speakeasy-default-get-frames-and-captions:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"success": true, "frames": ["<value>", "<value>"], "captions": [{"timestamp": 1651234567890, "frameIndex": 0}, {"timestamp": 1651234567890, "frameIndex": 0}]}
+  deleteFrame:
+    speakeasy-default-delete-frame:
+      parameters:
+        path:
+          id: "<id>"
+          frameIndex: "1413.38"
+      responses:
+        "200":
+          application/json: {"success": true}
+  updateCaption:
+    speakeasy-default-update-caption:
+      parameters:
+        path:
+          id: "<id>"
+          frameIndex: "2778.08"
+      requestBody:
+        application/json: {"text": "New caption text here"}
+      responses:
+        "200":
+          application/json: {"success": true}
+  regenerateVideo:
+    speakeasy-default-regenerate-video:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "201":
+          application/json: {"success": true}
+  getOperatorTypes:
+    speakeasy-default-get-operator-types:
+      responses:
+        "200":
+          application/json: {"types": ["computer"]}
+  startExecution:
+    speakeasy-default-start-execution:
+      requestBody:
+        application/json: {"recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "actionDelay": 1500}
+      responses:
+        "201":
+          application/json: {"executionId": "rpa_1695872345678", "recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "status": "running", "currentActionIndex": 3, "totalActions": 15, "startedAt": 1695872345678, "operatorType": "browser", "errorMessage": "Failed to execute click action: Element not found"}
+  stopExecution:
+    speakeasy-default-stop-execution:
+      parameters:
+        path:
+          executionId: "rpa_1695872345678"
+      responses:
+        "200":
+          application/json: {"executionId": "rpa_1695872345678", "recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "status": "running", "currentActionIndex": 3, "totalActions": 15, "startedAt": 1695872345678, "operatorType": "browser", "errorMessage": "Failed to execute click action: Element not found"}
+  getExecutionStatus:
+    speakeasy-default-get-execution-status:
+      parameters:
+        path:
+          executionId: "rpa_1695872345678"
+      responses:
+        "200":
+          application/json: {"executionId": "rpa_1695872345678", "recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "status": "running", "currentActionIndex": 3, "totalActions": 15, "startedAt": 1695872345678, "operatorType": "browser", "errorMessage": "Failed to execute click action: Element not found"}
+  getParameterTemplate:
+    speakeasy-default-get-parameter-template:
+      parameters:
+        path:
+          recordingId: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6"
+      responses:
+        "200":
+          application/json: {"recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6"}
+  batchExecute:
+    speakeasy-default-batch-execute:
+      requestBody:
+        application/json: {"recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "actionDelay": 1500, "parameterSets": ["{\"name\":\"Run 1\",\"parameterOverrides\":{\"2.action_inputs.content\":\"First search term\"}}", "{\"name\":\"Run 2\",\"parameterOverrides\":{\"2.action_inputs.content\":\"Second search term\"}}"]}
+      responses:
+        "201":
+          application/json: {"success": true, "message": "RPA execution stopped successfully"}
+  uploadVideo:
+    speakeasy-default-upload-video:
+      requestBody:
+        multipart/form-data: {"file": {}}
+      responses:
+        "200":
+          application/json: {"analysisId": "1682598432741", "originalVideo": "recording-1682598432741.mp4", "processedVideo": "processed-recording-1682598432741.mp4", "message": "Video uploaded and analyzed successfully"}
+  getAnalysisResults:
+    speakeasy-default-get-analysis-results:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"analysisId": "1682598432741", "rpaSteps": "1. Move mouse to position (125, 50)\n2. Click left mouse button\n3. Type \"example.com\"\n4. Press ENTER key\n5. Wait 2 seconds\n6. Move mouse to position (250, 150)\n7. Click left mouse button", "processedVideoUrl": "/api/video/processed/processed-recording-1682598432741.mp4", "originalVideoUrl": "/api/video/original/recording-1682598432741.mp4"}
+  executeRpaSteps:
+    speakeasy-default-execute-rpa-steps:
+      parameters:
+        path:
+          id: "<id>"
+  streamProcessedVideo:
+    speakeasy-default-stream-processed-video:
+      parameters:
+        path:
+          filename: "example.file"
+  streamOriginalVideo:
+    speakeasy-default-stream-original-video:
+      parameters:
+        path:
+          filename: "example.file"
+  uploadFile:
+    speakeasy-default-upload-file:
+      requestBody:
+        multipart/form-data: {"file": {}}
+      responses:
+        "200":
+          application/json: {"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "message": "File uploaded successfully"}
+  listFiles:
+    speakeasy-default-list-files:
+      responses:
+        "200":
+          application/json: [{"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "uploadDate": "2023-04-27T14:00:32.741Z"}, {"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "uploadDate": "2023-04-27T14:00:32.741Z"}]
+  getFileInfo:
+    speakeasy-default-get-file-info:
+      parameters:
+        path:
+          id: "1682598432741"
+      responses:
+        "200":
+          application/json: {"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "uploadDate": "2023-04-27T14:00:32.741Z"}
+  deleteFile:
+    speakeasy-default-delete-file:
+      parameters:
+        path:
+          id: "1682598432741"
+      responses:
+        "200":
+          application/json: {}
+  downloadFile:
+    speakeasy-default-download-file:
+      parameters:
+        path:
+          filename: "document-1682598432741.pdf"
+  getRequests: {}
+  approveRequest:
+    speakeasy-default-approve-request:
+      parameters:
+        path:
+          requestId: "<id>"
+  listArtifacts:
+    speakeasy-default-list-artifacts:
+      parameters:
+        query:
+          path: "code/my-project"
+      responses:
+        "200":
+          application/json: {"currentPath": "code/my-project", "parentPath": "code", "items": []}
+  downloadArtifactFile:
+    speakeasy-default-download-artifact-file:
+      parameters:
+        path:
+          path: "/usr/obj"
+  downloadArtifactFolder:
+    speakeasy-default-download-artifact-folder:
+      parameters:
+        path:
+          path: "/tmp"
+generatedTests: {}

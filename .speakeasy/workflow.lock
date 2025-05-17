@@ -1,0 +1,36 @@
+speakeasyVersion: 1.460.3
+sources:
+    Zenobia Intelligent Automation Platform API:
+        sourceNamespace: zenobia-intelligent-automation-platform-api
+        sourceRevisionDigest: sha256:6a4efbc8ffa5b5d50acbd5b439d1f0847b2e91f9a8aa30a7f9f049fed2a3a836
+        sourceBlobDigest: sha256:fd5665c48dd91665419bdb4ae4393b2ef70b97e09a5a5731a506bbf5d38a7ead
+        tags:
+            - latest
+            - 0.1.0
+targets:
+    iris-sdk:
+        source: Zenobia Intelligent Automation Platform API
+        sourceNamespace: zenobia-intelligent-automation-platform-api
+        sourceRevisionDigest: sha256:6a4efbc8ffa5b5d50acbd5b439d1f0847b2e91f9a8aa30a7f9f049fed2a3a836
+        sourceBlobDigest: sha256:fd5665c48dd91665419bdb4ae4393b2ef70b97e09a5a5731a506bbf5d38a7ead
+        codeSamplesNamespace: zenobia-intelligent-automation-platform-api-typescript-code-samples
+        codeSamplesRevisionDigest: sha256:c359b67080ce2afdd81556bc08e10a489765160c93cd4725fc972e4206b37ae0
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Zenobia Intelligent Automation Platform API:
+            inputs:
+                - location: https://raw.githubusercontent.com/pokemonlabs/iris.release/refs/heads/main/openapi.json
+            overlays:
+                - location: .speakeasy/speakeasy-modifications-overlay.yaml
+            registry:
+                location: registry.speakeasyapi.dev/iris-ed/main/zenobia-intelligent-automation-platform-api
+    targets:
+        iris-sdk:
+            target: typescript
+            source: Zenobia Intelligent Automation Platform API
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/iris-ed/main/zenobia-intelligent-automation-platform-api-typescript-code-samples
+                blocking: false

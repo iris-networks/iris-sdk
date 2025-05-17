@@ -1,0 +1,293 @@
+overlay: 1.0.0
+info:
+  title: Speakeasy Modifications
+  version: 0.0.2
+  x-speakeasy-metadata:
+    after: ""
+    before: ""
+    type: speakeasy-modifications
+actions:
+  - target: $["paths"]["/api/files/upload"]["post"]
+    update:
+      x-speakeasy-name-override: upload
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.files.uploadFile()
+      after: sdk.files.upload()
+      reviewed_at: 1747493956370
+      created_at: 1747493953843
+  - target: $["paths"]["/api/video/original/{filename}"]["get"]
+    update:
+      x-speakeasy-name-override: streamOriginal
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.video.streamOriginalVideo()
+      after: sdk.video.streamOriginal()
+      reviewed_at: 1747493956370
+      created_at: 1747493953842
+  - target: $["paths"]["/api/iris-artifacts/download/folder/{path}"]["get"]
+    update:
+      x-speakeasy-group: irisArtifacts
+      x-speakeasy-name-override: downloadFolder
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.iris-artifacts.downloadArtifactFolder()
+      after: sdk.irisArtifacts.downloadFolder()
+      reviewed_at: 1747493956370
+      created_at: 1747493953843
+  - target: $["paths"]["/api/files"]["get"]
+    update:
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.files.listFiles()
+      after: sdk.files.list()
+      reviewed_at: 1747493956370
+      created_at: 1747493953843
+  - target: $["paths"]["/api/files/download/{filename}"]["get"]
+    update:
+      x-speakeasy-name-override: download
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.files.downloadFile()
+      after: sdk.files.download()
+      reviewed_at: 1747493956370
+      created_at: 1747493953844
+  - target: $["paths"]["/api/human-layer/requests"]["get"]
+    update:
+      x-speakeasy-group: humanLayer
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.Human Layer.getRequests()
+      after: sdk.humanLayer.getRequests()
+      reviewed_at: 1747493956370
+      created_at: 1747493953842
+  - target: $["paths"]["/api/videos/{id}/download"]["get"]
+    update:
+      x-speakeasy-name-override: download
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.Videos.downloadRecording()
+      after: sdk.videos.download()
+      reviewed_at: 1747493956370
+      created_at: 1747493953843
+  - target: $["paths"]["/api/videos/current-session/video-data"]["get"]
+    update:
+      x-speakeasy-name-override: getCurrentSessionData
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.Videos.getCurrentSessionVideoData()
+      after: sdk.videos.getCurrentSessionData()
+      reviewed_at: 1747493956370
+      created_at: 1747493953844
+  - target: $["paths"]["/api/videos/{id}/thumbnail"]["get"]
+    update:
+      x-speakeasy-name-override: getThumbnail
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.Videos.getRecordingThumbnail()
+      after: sdk.videos.getThumbnail()
+      reviewed_at: 1747493956370
+      created_at: 1747493953844
+  - target: $["paths"]["/api/videos/{id}/video-data"]["get"]
+    update:
+      x-speakeasy-name-override: getRecordingData
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.Videos.getRecordingVideoData()
+      after: sdk.videos.getRecordingData()
+      reviewed_at: 1747493956370
+      created_at: 1747493953842
+  - target: $["paths"]["/api/video/execute/{id}"]["post"]
+    update:
+      x-speakeasy-name-override: executeRpa
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.video.executeRpaSteps()
+      after: sdk.video.executeRpa()
+      reviewed_at: 1747493956370
+      created_at: 1747493953842
+  - target: $["paths"]["/api/config"]["get"]
+    update:
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.config.getConfig()
+      after: sdk.config.get()
+      reviewed_at: 1747493956370
+      created_at: 1747493953843
+  - target: $["paths"]["/api/videos/{id}/captions/{frameIndex}"]["put"]
+    update:
+      x-speakeasy-group: videoEditing
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.Video Editing.updateCaption()
+      after: sdk.videoEditing.updateCaption()
+      reviewed_at: 1747493956370
+      created_at: 1747493953842
+  - target: $["paths"]["/api/videos/{id}/regenerate"]["post"]
+    update:
+      x-speakeasy-group: videoEditing
+      x-speakeasy-name-override: regenerate
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.Video Editing.regenerateVideo()
+      after: sdk.videoEditing.regenerate()
+      reviewed_at: 1747493956370
+      created_at: 1747493953843
+  - target: $["paths"]["/api/iris-artifacts/download/file/{path}"]["get"]
+    update:
+      x-speakeasy-group: irisArtifacts
+      x-speakeasy-name-override: downloadFile
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.iris-artifacts.downloadArtifactFile()
+      after: sdk.irisArtifacts.downloadFile()
+      reviewed_at: 1747493956370
+      created_at: 1747493953842
+  - target: $["paths"]["/api/video/processed/{filename}"]["get"]
+    update:
+      x-speakeasy-name-override: streamProcessed
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.video.streamProcessedVideo()
+      after: sdk.video.streamProcessed()
+      reviewed_at: 1747493956370
+      created_at: 1747493953843
+  - target: $["paths"]["/api/videos/{id}/video-status"]["get"]
+    update:
+      x-speakeasy-name-override: getStatus
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.Videos.getVideoStatus()
+      after: sdk.videos.getStatus()
+      reviewed_at: 1747493956370
+      created_at: 1747493953843
+  - target: $["paths"]["/api/human-layer/{requestId}/approve"]["post"]
+    update:
+      x-speakeasy-group: humanLayer
+      x-speakeasy-name-override: approve
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.Human Layer.approveRequest()
+      after: sdk.humanLayer.approve()
+      reviewed_at: 1747493956370
+      created_at: 1747493953844
+  - target: $["paths"]["/api/videos/{id}/frames"]["get"]
+    update:
+      x-speakeasy-group: videos
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.Video Editing.getFramesAndCaptions()
+      after: sdk.videos.getFramesAndCaptions()
+      reviewed_at: 1747493956370
+      created_at: 1747493953844
+  - target: $["paths"]["/api/video/upload"]["post"]
+    update:
+      x-speakeasy-name-override: upload
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.video.uploadVideo()
+      after: sdk.video.upload()
+      reviewed_at: 1747493956370
+      created_at: 1747493953843
+  - target: $["paths"]["/api/videos"]["get"]
+    update:
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.Videos.listRecordings()
+      after: sdk.videos.list()
+      reviewed_at: 1747493956370
+      created_at: 1747493953842
+  - target: $["paths"]["/api/videos/{id}/generate-video"]["post"]
+    update:
+      x-speakeasy-name-override: generate
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.Videos.generateVideo()
+      after: sdk.videos.generate()
+      reviewed_at: 1747493956370
+      created_at: 1747493953842
+  - target: $["paths"]["/api/videos/{id}/video"]["get"]
+    update:
+      x-speakeasy-name-override: stream
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.Videos.streamVideo()
+      after: sdk.videos.stream()
+      reviewed_at: 1747493956370
+      created_at: 1747493953844
+  - target: $["paths"]["/api/operators/types"]["get"]
+    update:
+      x-speakeasy-name-override: getTypes
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.operators.getOperatorTypes()
+      after: sdk.operators.getTypes()
+      reviewed_at: 1747493956370
+      created_at: 1747493953842
+  - target: $["paths"]["/api/iris-artifacts/list"]["get"]
+    update:
+      x-speakeasy-group: irisArtifacts
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.iris-artifacts.listArtifacts()
+      after: sdk.irisArtifacts.list()
+      reviewed_at: 1747493956370
+      created_at: 1747493953843
+  - target: $["paths"]["/api/rpa/{executionId}/status"]["get"]
+    update:
+      x-speakeasy-name-override: getStatus
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.rpa.getExecutionStatus()
+      after: sdk.rpa.getStatus()
+      reviewed_at: 1747493956370
+      created_at: 1747493953843
+  - target: $["paths"]["/api/files/{id}"]["delete"]
+    update:
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.files.deleteFile()
+      after: sdk.files.delete()
+      reviewed_at: 1747493956370
+      created_at: 1747493953842
+  - target: $["paths"]["/api/files/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getInfo
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.files.getFileInfo()
+      after: sdk.files.getInfo()
+      reviewed_at: 1747493956370
+      created_at: 1747493953843
+  - target: $["paths"]["/api/config"]["put"]
+    update:
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.config.updateConfig()
+      after: sdk.config.update()
+      reviewed_at: 1747493956370
+      created_at: 1747493953843
+  - target: $["paths"]["/api/videos/{id}/frames/{frameIndex}"]["delete"]
+    update:
+      x-speakeasy-group: videoEditing
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.Video Editing.deleteFrame()
+      after: sdk.videoEditing.deleteFrame()
+      reviewed_at: 1747493956370
+      created_at: 1747493953843
+  - target: $["paths"]["/api/videos/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getMetadata
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.Videos.getRecordingMetadata()
+      after: sdk.videos.getMetadata()
+      reviewed_at: 1747493956370
+      created_at: 1747493953842

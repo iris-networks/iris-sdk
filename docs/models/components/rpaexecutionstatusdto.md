@@ -1,0 +1,31 @@
+# RpaExecutionStatusDto
+
+## Example Usage
+
+```typescript
+import { RpaExecutionStatusDto } from "iris-sdk/models/components";
+
+let value: RpaExecutionStatusDto = {
+  executionId: "rpa_1695872345678",
+  recordingId: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
+  status: "running",
+  currentActionIndex: 3,
+  totalActions: 15,
+  startedAt: 1695872345678,
+  operatorType: "browser",
+  errorMessage: "Failed to execute click action: Element not found",
+};
+```
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  | Example                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `executionId`                                                                                                | *string*                                                                                                     | :heavy_check_mark:                                                                                           | The ID of the RPA execution                                                                                  | rpa_1695872345678                                                                                            |
+| `recordingId`                                                                                                | *string*                                                                                                     | :heavy_check_mark:                                                                                           | The ID of the recording being automated                                                                      | a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6                                                                         |
+| `status`                                                                                                     | [components.RpaExecutionStatusDtoStatus](../../models/components/rpaexecutionstatusdtostatus.md)             | :heavy_check_mark:                                                                                           | Current status of the execution                                                                              | running                                                                                                      |
+| `currentActionIndex`                                                                                         | *number*                                                                                                     | :heavy_check_mark:                                                                                           | Current action index being executed                                                                          | 3                                                                                                            |
+| `totalActions`                                                                                               | *number*                                                                                                     | :heavy_check_mark:                                                                                           | Total number of actions to execute                                                                           | 15                                                                                                           |
+| `startedAt`                                                                                                  | *number*                                                                                                     | :heavy_check_mark:                                                                                           | Timestamp when the execution started                                                                         | 1695872345678                                                                                                |
+| `operatorType`                                                                                               | [components.RpaExecutionStatusDtoOperatorType](../../models/components/rpaexecutionstatusdtooperatortype.md) | :heavy_check_mark:                                                                                           | Operator type being used for execution                                                                       | browser                                                                                                      |
+| `errorMessage`                                                                                               | *string*                                                                                                     | :heavy_minus_sign:                                                                                           | Error message if execution failed                                                                            | Failed to execute click action: Element not found                                                            |
