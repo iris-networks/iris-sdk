@@ -27,7 +27,6 @@ const irisSDK = new IrisSDK();
 async function run() {
   const result = await irisSDK.rpa.startExecution({
     recordingId: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
-    actionDelay: 1500,
   });
 
   // Handle the result
@@ -52,7 +51,6 @@ const irisSDK = new IrisSDKCore();
 async function run() {
   const res = await rpaStartExecution(irisSDK, {
     recordingId: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
-    actionDelay: 1500,
   });
 
   if (!res.ok) {
@@ -317,7 +315,6 @@ const irisSDK = new IrisSDK();
 async function run() {
   const result = await irisSDK.rpa.batchExecute({
     recordingId: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
-    actionDelay: 1500,
     parameterSets: [
       "{\"name\":\"Run 1\",\"parameterOverrides\":{\"2.action_inputs.content\":\"First search term\"}}",
       "{\"name\":\"Run 2\",\"parameterOverrides\":{\"2.action_inputs.content\":\"Second search term\"}}",
@@ -346,7 +343,6 @@ const irisSDK = new IrisSDKCore();
 async function run() {
   const res = await rpaBatchExecute(irisSDK, {
     recordingId: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
-    actionDelay: 1500,
     parameterSets: [
       "{\"name\":\"Run 1\",\"parameterOverrides\":{\"2.action_inputs.content\":\"First search term\"}}",
       "{\"name\":\"Run 2\",\"parameterOverrides\":{\"2.action_inputs.content\":\"Second search term\"}}",

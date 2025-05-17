@@ -11,11 +11,11 @@ let value: Recording = {
   id: "<id>",
   sessionId: "<id>",
   title: "<value>",
-  createdAt: 1613.10,
-  duration: 6531.08,
-  frameCount: 2532.92,
-  filePath: "/private/skateboard.mar",
-  size: 8379.45,
+  createdAt: 7316.66,
+  duration: 7903.93,
+  frameCount: 7305.01,
+  filePath: "/proc/ugh_since_thankfully.pptx",
+  size: 3379.78,
 };
 ```
 

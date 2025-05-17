@@ -11,11 +11,11 @@ let value: GenerateVideoResponseDtoRecording = {
   id: "<id>",
   sessionId: "<id>",
   title: "<value>",
-  createdAt: 5743.25,
-  duration: 6532.01,
-  frameCount: 6521.03,
-  filePath: "/opt/sbin/vastly_but_inventory.jpeg",
-  size: 8663.82,
+  createdAt: 88.21,
+  duration: 1307.82,
+  frameCount: 9341.85,
+  filePath: "/private/tmp/um_briskly.xsd",
+  size: 1207.45,
 };
 ```
 

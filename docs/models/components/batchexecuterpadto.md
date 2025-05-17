@@ -7,7 +7,6 @@ import { BatchExecuteRpaDto } from "iris-sdk/models/components";
 
 let value: BatchExecuteRpaDto = {
   recordingId: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
-  actionDelay: 1500,
   parameterSets: [
     "{\"name\":\"Run 1\",\"parameterOverrides\":{\"2.action_inputs.content\":\"First search term\"}}",
     "{\"name\":\"Run 2\",\"parameterOverrides\":{\"2.action_inputs.content\":\"Second search term\"}}",

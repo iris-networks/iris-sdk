@@ -5,6 +5,7 @@
 import { IrisSDKCore } from "../core.js";
 import { encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
+import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { pathToFunc } from "../lib/url.js";
@@ -19,6 +20,7 @@ import {
 } from "../models/errors/httpclienterrors.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
+import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
@@ -27,11 +29,11 @@ import { Result } from "../types/fp.js";
  * @remarks
  * Permanently deletes a recording and all associated files. This operation cannot be undone. It removes all frames, captions, metadata, and the generated video file.
  */
-export async function videosDeleteRecording(
+export function videosDeleteRecording(
   client: IrisSDKCore,
   request: operations.DeleteRecordingRequest,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     components.DeleteRecordingResponseDto,
     | APIError
@@ -43,13 +45,39 @@ export async function videosDeleteRecording(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: IrisSDKCore,
+  request: operations.DeleteRecordingRequest,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      components.DeleteRecordingResponseDto,
+      | APIError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const parsed = safeParse(
     request,
     (value) => operations.DeleteRecordingRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return parsed;
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = null;
@@ -63,11 +91,12 @@ export async function videosDeleteRecording(
 
   const path = pathToFunc("/api/videos/{id}")(pathParams);
 
-  const headers = new Headers({
+  const headers = new Headers(compactMap({
     Accept: "application/json",
-  });
+  }));
 
   const context = {
+    baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "deleteRecording",
     oAuth2Scopes: [],
 
@@ -89,7 +118,7 @@ export async function videosDeleteRecording(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -100,7 +129,7 @@ export async function videosDeleteRecording(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -115,11 +144,12 @@ export async function videosDeleteRecording(
     | ConnectionError
   >(
     M.json(200, components.DeleteRecordingResponseDto$inboundSchema),
-    M.fail([404, "4XX", "5XX"]),
+    M.fail([404, "4XX"]),
+    M.fail("5XX"),
   )(response);
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

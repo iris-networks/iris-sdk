@@ -6,7 +6,7 @@
 import { DownloadArtifactFileRequest } from "iris-sdk/models/operations";
 
 let value: DownloadArtifactFileRequest = {
-  path: "/usr",
+  path: "/usr/lib",
 };
 ```
 

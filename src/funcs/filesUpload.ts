@@ -3,8 +3,10 @@
  */
 
 import { IrisSDKCore } from "../core.js";
+import { appendForm } from "../lib/encodings.js";
 import { readableStreamToArrayBuffer } from "../lib/files.js";
 import * as M from "../lib/matchers.js";
+import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { pathToFunc } from "../lib/url.js";
@@ -18,6 +20,7 @@ import {
   UnexpectedClientError,
 } from "../models/errors/httpclienterrors.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
+import { APICall, APIPromise } from "../types/async.js";
 import { isBlobLike } from "../types/blobs.js";
 import { Result } from "../types/fp.js";
 import { isReadableStream } from "../types/streams.js";
@@ -28,11 +31,11 @@ import { isReadableStream } from "../types/streams.js";
  * @remarks
  * Upload a file for later processing. The system stores the file and provides a unique identifier for future reference.
  */
-export async function filesUpload(
+export function filesUpload(
   client: IrisSDKCore,
   request: components.FileUploadDto,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     components.FileUploadResponseDto,
     | APIError
@@ -44,25 +47,52 @@ export async function filesUpload(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: IrisSDKCore,
+  request: components.FileUploadDto,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      components.FileUploadResponseDto,
+      | APIError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const parsed = safeParse(
     request,
     (value) => components.FileUploadDto$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return parsed;
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = new FormData();
 
   if (isBlobLike(payload.file)) {
-    body.append("file", payload.file);
+    appendForm(body, "file", payload.file);
   } else if (isReadableStream(payload.file.content)) {
     const buffer = await readableStreamToArrayBuffer(payload.file.content);
     const blob = new Blob([buffer], { type: "application/octet-stream" });
-    body.append("file", blob);
+    appendForm(body, "file", blob);
   } else {
-    body.append(
+    appendForm(
+      body,
       "file",
       new Blob([payload.file.content], { type: "application/octet-stream" }),
       payload.file.fileName,
@@ -71,11 +101,12 @@ export async function filesUpload(
 
   const path = pathToFunc("/api/files/upload")();
 
-  const headers = new Headers({
+  const headers = new Headers(compactMap({
     Accept: "application/json",
-  });
+  }));
 
   const context = {
+    baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "uploadFile",
     oAuth2Scopes: [],
 
@@ -97,7 +128,7 @@ export async function filesUpload(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -108,7 +139,7 @@ export async function filesUpload(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -123,11 +154,12 @@ export async function filesUpload(
     | ConnectionError
   >(
     M.json(200, components.FileUploadResponseDto$inboundSchema),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response);
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

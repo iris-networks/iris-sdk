@@ -7,7 +7,7 @@ Operator type used for the session
 ```typescript
 import { SaveSessionRecordingResponseDtoOperatorType } from "iris-sdk/models/components";
 
-let value: SaveSessionRecordingResponseDtoOperatorType = "browser";
+let value: SaveSessionRecordingResponseDtoOperatorType = "computer";
 ```
 
 ## Values

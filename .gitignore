@@ -1,3 +1,11 @@
+/mcp-server
+/bin
+/.eslintcache
+.DS_Store
+**/.speakeasy/temp/
+**/.speakeasy/logs/
+.DS_Store
+/.speakeasy/reports
 /models
 /models/errors
 /types

@@ -6,14 +6,14 @@
 import { ConfigResponseDto } from "iris-sdk/models/components";
 
 let value: ConfigResponseDto = {
-  vlmBaseUrl: "https://perky-making.info",
+  vlmBaseUrl: "https://posh-stir-fry.name",
   vlmApiKey: "<value>",
   vlmModelName: "<value>",
   vlmProvider: "<value>",
   language: "<value>",
-  defaultOperator: "computer",
-  maxLoopCount: 4375.87,
-  loopIntervalInMs: 8917.73,
+  defaultOperator: "browser",
+  maxLoopCount: 7259.66,
+  loopIntervalInMs: 7022.44,
 };
 ```
 

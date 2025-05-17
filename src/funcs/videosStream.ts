@@ -5,6 +5,7 @@
 import { IrisSDKCore } from "../core.js";
 import { encodeFormQuery, encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
+import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { pathToFunc } from "../lib/url.js";
@@ -18,6 +19,7 @@ import {
 } from "../models/errors/httpclienterrors.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
+import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 export enum StreamAcceptEnum {
@@ -32,11 +34,11 @@ export enum StreamAcceptEnum {
  * @remarks
  * Streams the generated video file for a recording. This endpoint can be used directly in video players, such as in an HTML5 video tag. By default, videos play at 0.2 frames per second (5 seconds per frame) to allow time to read the captions. If the video has not been generated yet, it will attempt to generate it on-demand. If generation is already in progress, it returns a status update instead of the video. The endpoint supports both streaming (default) and download modes. The video duration will be correctly calculated based on the frame rate and number of screenshots.
  */
-export async function videosStream(
+export function videosStream(
   client: IrisSDKCore,
   request: operations.StreamVideoRequest,
   options?: RequestOptions & { acceptHeaderOverride?: StreamAcceptEnum },
-): Promise<
+): APIPromise<
   Result<
     operations.StreamVideoResponse,
     | APIError
@@ -48,13 +50,39 @@ export async function videosStream(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: IrisSDKCore,
+  request: operations.StreamVideoRequest,
+  options?: RequestOptions & { acceptHeaderOverride?: StreamAcceptEnum },
+): Promise<
+  [
+    Result<
+      operations.StreamVideoResponse,
+      | APIError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const parsed = safeParse(
     request,
     (value) => operations.StreamVideoRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return parsed;
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = null;
@@ -72,12 +100,13 @@ export async function videosStream(
     "download": payload.download,
   });
 
-  const headers = new Headers({
+  const headers = new Headers(compactMap({
     Accept: options?.acceptHeaderOverride
       || "image/gif;q=1, video/mp4;q=0.7, video/webm;q=0",
-  });
+  }));
 
   const context = {
+    baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "streamVideo",
     oAuth2Scopes: [],
 
@@ -100,7 +129,7 @@ export async function videosStream(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -111,7 +140,7 @@ export async function videosStream(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -143,11 +172,12 @@ export async function videosStream(
     M.bytes(202, operations.StreamVideoResponse$inboundSchema, {
       ctype: "video/webm",
     }),
-    M.fail([404, "4XX", 500, "5XX"]),
+    M.fail([404, "4XX"]),
+    M.fail([500, "5XX"]),
   )(response);
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

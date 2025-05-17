@@ -5,12 +5,7 @@
 ```typescript
 import { GenerateVideoDto } from "iris-sdk/models/components";
 
-let value: GenerateVideoDto = {
-  fps: 0.2,
-  captionsEnabled: true,
-  format: "mp4",
-  quality: "medium",
-};
+let value: GenerateVideoDto = {};
 ```
 
 ## Fields

@@ -5,6 +5,7 @@
 import * as z from "zod";
 import { IrisSDKCore } from "../core.js";
 import * as M from "../lib/matchers.js";
+import { compactMap } from "../lib/primitives.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { pathToFunc } from "../lib/url.js";
 import { APIError } from "../models/errors/apierror.js";
@@ -16,15 +17,16 @@ import {
   UnexpectedClientError,
 } from "../models/errors/httpclienterrors.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
+import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
  * Get all pending human layer requests
  */
-export async function humanLayerGetRequests(
+export function humanLayerGetRequests(
   client: IrisSDKCore,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     void,
     | APIError
@@ -36,13 +38,38 @@ export async function humanLayerGetRequests(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    options,
+  ));
+}
+
+async function $do(
+  client: IrisSDKCore,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      void,
+      | APIError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const path = pathToFunc("/api/human-layer/requests")();
 
-  const headers = new Headers({
+  const headers = new Headers(compactMap({
     Accept: "*/*",
-  });
+  }));
 
   const context = {
+    baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "getRequests",
     oAuth2Scopes: [],
 
@@ -63,7 +90,7 @@ export async function humanLayerGetRequests(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -74,7 +101,7 @@ export async function humanLayerGetRequests(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -89,11 +116,12 @@ export async function humanLayerGetRequests(
     | ConnectionError
   >(
     M.nil(200, z.void()),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response);
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

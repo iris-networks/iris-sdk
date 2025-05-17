@@ -7,7 +7,7 @@ import { UpdateCaptionRequest } from "iris-sdk/models/operations";
 
 let value: UpdateCaptionRequest = {
   id: "<id>",
-  frameIndex: 672.50,
+  frameIndex: 6619.75,
   updateCaptionDto: {
     caption: {},
     text: "New caption text here",

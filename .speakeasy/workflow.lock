@@ -1,20 +1,21 @@
-speakeasyVersion: 1.460.3
+speakeasyVersion: 1.546.1
 sources:
     Zenobia Intelligent Automation Platform API:
         sourceNamespace: zenobia-intelligent-automation-platform-api
-        sourceRevisionDigest: sha256:6a4efbc8ffa5b5d50acbd5b439d1f0847b2e91f9a8aa30a7f9f049fed2a3a836
-        sourceBlobDigest: sha256:fd5665c48dd91665419bdb4ae4393b2ef70b97e09a5a5731a506bbf5d38a7ead
+        sourceRevisionDigest: sha256:a716ef645e12e8678451838b852796074878d658a25f745645679b39abdc45a8
+        sourceBlobDigest: sha256:0c8d7bd4c35bf5b9ffa4817986135614df2bde763eaece2e154c49865c8ef6c5
         tags:
             - latest
+            - speakeasy-sdk-regen-1747494410
             - 0.1.0
 targets:
     iris-sdk:
         source: Zenobia Intelligent Automation Platform API
         sourceNamespace: zenobia-intelligent-automation-platform-api
-        sourceRevisionDigest: sha256:6a4efbc8ffa5b5d50acbd5b439d1f0847b2e91f9a8aa30a7f9f049fed2a3a836
-        sourceBlobDigest: sha256:fd5665c48dd91665419bdb4ae4393b2ef70b97e09a5a5731a506bbf5d38a7ead
+        sourceRevisionDigest: sha256:a716ef645e12e8678451838b852796074878d658a25f745645679b39abdc45a8
+        sourceBlobDigest: sha256:0c8d7bd4c35bf5b9ffa4817986135614df2bde763eaece2e154c49865c8ef6c5
         codeSamplesNamespace: zenobia-intelligent-automation-platform-api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:c359b67080ce2afdd81556bc08e10a489765160c93cd4725fc972e4206b37ae0
+        codeSamplesRevisionDigest: sha256:745785aacd3078db943a908cc5dfac663552848be782b4e1486a0008e3d8c671
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

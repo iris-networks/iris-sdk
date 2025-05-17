@@ -5,6 +5,7 @@
 import { IrisSDKCore } from "../core.js";
 import { encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
+import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { pathToFunc } from "../lib/url.js";
@@ -19,6 +20,7 @@ import {
 } from "../models/errors/httpclienterrors.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
+import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
@@ -27,11 +29,11 @@ import { Result } from "../types/fp.js";
  * @remarks
  * Returns a template with all parameterizable fields in a recording. This endpoint enables the core caching capability by extracting variable input points from recorded tasks. It identifies text entry fields, search queries, and other customizable elements that can be modified for each execution. This allows a single recorded workflow to be adapted for multiple scenarios without re-recording.
  */
-export async function rpaGetParameterTemplate(
+export function rpaGetParameterTemplate(
   client: IrisSDKCore,
   request: operations.GetParameterTemplateRequest,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     components.ParameterTemplateResponseDto,
     | APIError
@@ -43,6 +45,32 @@ export async function rpaGetParameterTemplate(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: IrisSDKCore,
+  request: operations.GetParameterTemplateRequest,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      components.ParameterTemplateResponseDto,
+      | APIError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const parsed = safeParse(
     request,
     (value) =>
@@ -50,7 +78,7 @@ export async function rpaGetParameterTemplate(
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return parsed;
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = null;
@@ -66,11 +94,12 @@ export async function rpaGetParameterTemplate(
     pathParams,
   );
 
-  const headers = new Headers({
+  const headers = new Headers(compactMap({
     Accept: "application/json",
-  });
+  }));
 
   const context = {
+    baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "getParameterTemplate",
     oAuth2Scopes: [],
 
@@ -92,7 +121,7 @@ export async function rpaGetParameterTemplate(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -103,7 +132,7 @@ export async function rpaGetParameterTemplate(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -118,11 +147,12 @@ export async function rpaGetParameterTemplate(
     | ConnectionError
   >(
     M.json(200, components.ParameterTemplateResponseDto$inboundSchema),
-    M.fail([400, "4XX", "5XX"]),
+    M.fail([400, "4XX"]),
+    M.fail("5XX"),
   )(response);
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

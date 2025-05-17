@@ -5,6 +5,7 @@
 import { IrisSDKCore } from "../core.js";
 import { encodeJSON, encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
+import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { pathToFunc } from "../lib/url.js";
@@ -19,6 +20,7 @@ import {
 } from "../models/errors/httpclienterrors.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
+import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
@@ -27,11 +29,11 @@ import { Result } from "../types/fp.js";
  * @remarks
  * Creates a video file from the frames of a recording with customizable options. This endpoint allows you to specify frame rate, caption settings, output format, and quality level. By default, videos play at 0.2 frames per second (5 seconds per frame) to allow time to read the captions. Videos are generated asynchronously, and you can check the status using the video-status endpoint. Note that videos are also generated automatically when a recording is created, so this endpoint is mostly useful for regenerating with different settings. The generated video will have the correct duration with each screenshot displayed for the specified amount of time.
  */
-export async function videosGenerate(
+export function videosGenerate(
   client: IrisSDKCore,
   request: operations.GenerateVideoRequest,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     components.GenerateVideoResponseDto,
     | APIError
@@ -43,13 +45,39 @@ export async function videosGenerate(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: IrisSDKCore,
+  request: operations.GenerateVideoRequest,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      components.GenerateVideoResponseDto,
+      | APIError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const parsed = safeParse(
     request,
     (value) => operations.GenerateVideoRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return parsed;
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = encodeJSON("body", payload.GenerateVideoDto, { explode: true });
@@ -63,12 +91,13 @@ export async function videosGenerate(
 
   const path = pathToFunc("/api/videos/{id}/generate-video")(pathParams);
 
-  const headers = new Headers({
+  const headers = new Headers(compactMap({
     "Content-Type": "application/json",
     Accept: "application/json",
-  });
+  }));
 
   const context = {
+    baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "generateVideo",
     oAuth2Scopes: [],
 
@@ -90,7 +119,7 @@ export async function videosGenerate(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -101,7 +130,7 @@ export async function videosGenerate(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -116,11 +145,12 @@ export async function videosGenerate(
     | ConnectionError
   >(
     M.json(201, components.GenerateVideoResponseDto$inboundSchema),
-    M.fail([400, 404, "4XX", "5XX"]),
+    M.fail([400, 404, "4XX"]),
+    M.fail("5XX"),
   )(response);
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

@@ -13,11 +13,11 @@ let value: GenerateVideoResponseDto = {
     id: "<id>",
     sessionId: "<id>",
     title: "<value>",
-    createdAt: 9755.22,
-    duration: 8558.03,
-    frameCount: 117.14,
-    filePath: "/opt/furthermore_overcharge_general.vst",
-    size: 2098.44,
+    createdAt: 6254.33,
+    duration: 7946.75,
+    frameCount: 8061.5,
+    filePath: "/etc/ppp/serve_upon.exe",
+    size: 9141.28,
   },
 };
 ```

@@ -6,7 +6,7 @@
 import { DownloadArtifactFolderRequest } from "iris-sdk/models/operations";
 
 let value: DownloadArtifactFolderRequest = {
-  path: "/private",
+  path: "/home/user",
 };
 ```
 

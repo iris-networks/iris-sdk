@@ -4,6 +4,7 @@
 
 import { IrisSDKCore } from "../core.js";
 import * as M from "../lib/matchers.js";
+import { compactMap } from "../lib/primitives.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { pathToFunc } from "../lib/url.js";
 import * as components from "../models/components/index.js";
@@ -16,6 +17,7 @@ import {
   UnexpectedClientError,
 } from "../models/errors/httpclienterrors.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
+import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
@@ -24,10 +26,10 @@ import { Result } from "../types/fp.js";
  * @remarks
  * Saves the current active session as a video recording. This endpoint captures all screenshots collected during the session, stores them on disk, and initiates automatic video generation in the background. The video generation process happens asynchronously and can be monitored via the video-status endpoint. This recording captures both visual states and action contexts, creating a complete task record that can be analyzed, modified, or transformed into reusable automation workflows.
  */
-export async function videosSaveCurrentSession(
+export function videosSaveCurrentSession(
   client: IrisSDKCore,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     components.SaveSessionRecordingResponseDto,
     | APIError
@@ -39,13 +41,38 @@ export async function videosSaveCurrentSession(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    options,
+  ));
+}
+
+async function $do(
+  client: IrisSDKCore,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      components.SaveSessionRecordingResponseDto,
+      | APIError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const path = pathToFunc("/api/videos/save-current-session")();
 
-  const headers = new Headers({
+  const headers = new Headers(compactMap({
     Accept: "application/json",
-  });
+  }));
 
   const context = {
+    baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "saveCurrentSession",
     oAuth2Scopes: [],
 
@@ -66,7 +93,7 @@ export async function videosSaveCurrentSession(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -77,7 +104,7 @@ export async function videosSaveCurrentSession(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -92,11 +119,12 @@ export async function videosSaveCurrentSession(
     | ConnectionError
   >(
     M.json(201, components.SaveSessionRecordingResponseDto$inboundSchema),
-    M.fail([400, "4XX", "5XX"]),
+    M.fail([400, "4XX"]),
+    M.fail("5XX"),
   )(response);
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

@@ -23,7 +23,7 @@ const irisSDK = new IrisSDK();
 async function run() {
   const result = await irisSDK.videoEditing.deleteFrame({
     id: "<id>",
-    frameIndex: 1413.38,
+    frameIndex: 1580.86,
   });
 
   // Handle the result
@@ -48,7 +48,7 @@ const irisSDK = new IrisSDKCore();
 async function run() {
   const res = await videoEditingDeleteFrame(irisSDK, {
     id: "<id>",
-    frameIndex: 1413.38,
+    frameIndex: 1580.86,
   });
 
   if (!res.ok) {
@@ -97,7 +97,7 @@ const irisSDK = new IrisSDK();
 async function run() {
   const result = await irisSDK.videoEditing.updateCaption({
     id: "<id>",
-    frameIndex: 2778.08,
+    frameIndex: 2353.28,
     updateCaptionDto: {
       text: "New caption text here",
     },
@@ -125,7 +125,7 @@ const irisSDK = new IrisSDKCore();
 async function run() {
   const res = await videoEditingUpdateCaption(irisSDK, {
     id: "<id>",
-    frameIndex: 2778.08,
+    frameIndex: 2353.28,
     updateCaptionDto: {
       text: "New caption text here",
     },

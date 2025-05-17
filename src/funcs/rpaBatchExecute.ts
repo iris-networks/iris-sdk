@@ -5,6 +5,7 @@
 import { IrisSDKCore } from "../core.js";
 import { encodeJSON } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
+import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { pathToFunc } from "../lib/url.js";
@@ -18,6 +19,7 @@ import {
   UnexpectedClientError,
 } from "../models/errors/httpclienterrors.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
+import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
@@ -26,11 +28,11 @@ import { Result } from "../types/fp.js";
  * @remarks
  * Starts multiple RPA executions with different parameter values. This powerful endpoint enables scalable automation by running the same recorded task with variations across multiple datasets. It efficiently creates independent execution instances for each parameter set, allowing parallel processing of tasks that share the same workflow but operate on different inputs. This is particularly useful for batch processing scenarios like data entry, record updates, or multi-account operations.
  */
-export async function rpaBatchExecute(
+export function rpaBatchExecute(
   client: IrisSDKCore,
   request: components.BatchExecuteRpaDto,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     components.SimpleSuccessResponseDto,
     | APIError
@@ -42,25 +44,52 @@ export async function rpaBatchExecute(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: IrisSDKCore,
+  request: components.BatchExecuteRpaDto,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      components.SimpleSuccessResponseDto,
+      | APIError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const parsed = safeParse(
     request,
     (value) => components.BatchExecuteRpaDto$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return parsed;
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
   const path = pathToFunc("/api/rpa/batch-execute")();
 
-  const headers = new Headers({
+  const headers = new Headers(compactMap({
     "Content-Type": "application/json",
     Accept: "application/json",
-  });
+  }));
 
   const context = {
+    baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "batchExecute",
     oAuth2Scopes: [],
 
@@ -82,7 +111,7 @@ export async function rpaBatchExecute(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -93,7 +122,7 @@ export async function rpaBatchExecute(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -108,11 +137,12 @@ export async function rpaBatchExecute(
     | ConnectionError
   >(
     M.json(201, components.SimpleSuccessResponseDto$inboundSchema),
-    M.fail([400, "4XX", "5XX"]),
+    M.fail([400, "4XX"]),
+    M.fail("5XX"),
   )(response);
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

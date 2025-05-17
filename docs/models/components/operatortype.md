@@ -7,7 +7,7 @@ Operator type used for the session
 ```typescript
 import { OperatorType } from "iris-sdk/models/components";
 
-let value: OperatorType = "computer";
+let value: OperatorType = "browser";
 ```
 
 ## Values
