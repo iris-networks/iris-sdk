@@ -5,8 +5,8 @@ management:
   docVersion: 0.1.0
   speakeasyVersion: 1.546.1
   generationVersion: 2.604.2
-  releaseVersion: 0.2.0
-  configChecksum: 28a55161b5a19f814b88cf036115c4c3
+  releaseVersion: 0.2.1
+  configChecksum: f7620bedecfe0806bd0d6319356aa63f
   repoURL: https://github.com/iris-networks/iris-sdk.git
   installationURL: https://github.com/iris-networks/iris-sdk
 features:
