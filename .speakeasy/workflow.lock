@@ -2,20 +2,20 @@ speakeasyVersion: 1.546.1
 sources:
     Zenobia Intelligent Automation Platform API:
         sourceNamespace: zenobia-intelligent-automation-platform-api
-        sourceRevisionDigest: sha256:a716ef645e12e8678451838b852796074878d658a25f745645679b39abdc45a8
+        sourceRevisionDigest: sha256:a15d5da61636ad8a483d17cd642ec2f118a0dfe06cf0fffc513162d3cbc5867e
         sourceBlobDigest: sha256:0c8d7bd4c35bf5b9ffa4817986135614df2bde763eaece2e154c49865c8ef6c5
         tags:
             - latest
-            - speakeasy-sdk-regen-1747494410
+            - speakeasy-sdk-regen-1747505453
             - 0.1.0
 targets:
     iris-sdk:
         source: Zenobia Intelligent Automation Platform API
         sourceNamespace: zenobia-intelligent-automation-platform-api
-        sourceRevisionDigest: sha256:a716ef645e12e8678451838b852796074878d658a25f745645679b39abdc45a8
+        sourceRevisionDigest: sha256:a15d5da61636ad8a483d17cd642ec2f118a0dfe06cf0fffc513162d3cbc5867e
         sourceBlobDigest: sha256:0c8d7bd4c35bf5b9ffa4817986135614df2bde763eaece2e154c49865c8ef6c5
         codeSamplesNamespace: zenobia-intelligent-automation-platform-api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:745785aacd3078db943a908cc5dfac663552848be782b4e1486a0008e3d8c671
+        codeSamplesRevisionDigest: sha256:9ce126259d3c32437284a0100c9f9c3a8bdfcd54a630d6642b752ccaa7f356ba
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
