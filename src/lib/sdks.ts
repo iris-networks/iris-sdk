@@ -302,6 +302,18 @@ export class ClientSDK {
   }
 }
 
+const SENSITIVE_HEADERS = new Set([
+  "authorization",
+  "cookie",
+  "set-cookie",
+  "x-api-key",
+  "proxy-authorization",
+]);
+
+function redactHeaderValue(name: string, value: string): string {
+  return SENSITIVE_HEADERS.has(name.toLowerCase()) ? "[REDACTED]" : value;
+}
+
 const jsonLikeContentTypeRE = /(application|text)\/.*?\+*json.*/;
 const jsonlLikeContentTypeRE =
   /(application|text)\/(.*?\+*\bjsonl\b.*|.*?\+*\bx-ndjson\b.*)/;
@@ -317,7 +329,7 @@ async function logRequest(logger: Logger | undefined, req: Request) {
 
   logger.group("Headers:");
   for (const [k, v] of req.headers.entries()) {
-    logger.log(`${k}: ${v}`);
+    logger.log(`${k}: ${redactHeaderValue(k, v)}`);
   }
   logger.groupEnd();
 
@@ -363,7 +375,7 @@ async function logResponse(
 
   logger.group("Headers:");
   for (const [k, v] of res.headers.entries()) {
-    logger.log(`${k}: ${v}`);
+    logger.log(`${k}: ${redactHeaderValue(k, v)}`);
   }
   logger.groupEnd();
 
