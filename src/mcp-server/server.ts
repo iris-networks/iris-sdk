@@ -61,7 +61,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "IrisSDK",
-    version: "0.2.1",
+    version: "0.3.0",
   });
 
   const client = new IrisSDKCore({

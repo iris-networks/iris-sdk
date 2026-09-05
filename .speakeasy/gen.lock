@@ -1,35 +1,1545 @@
 lockVersion: 2.0.0
 id: 9b971081-3d7e-4f4a-97fe-f59e6a07657d
 management:
-  docChecksum: 0e2bfa208d98ff70011a9d69b38e42cb
+  docChecksum: c1f7bdee4695858b12f8b540f20c6270
   docVersion: 0.1.0
-  speakeasyVersion: 1.546.1
-  generationVersion: 2.604.2
-  releaseVersion: 0.2.1
-  configChecksum: f7620bedecfe0806bd0d6319356aa63f
+  speakeasyVersion: 1.796.4
+  generationVersion: 2.935.1
+  releaseVersion: 0.3.0
+  configChecksum: 5d0615f46db515d21c3525e7b7fd7652
   repoURL: https://github.com/iris-networks/iris-sdk.git
   installationURL: https://github.com/iris-networks/iris-sdk
+persistentEdits:
+  generation_id: 1c30962c-48f5-4b93-a62f-e30779cf0001
+  pristine_commit_hash: f092c25e4f5fad30859076ec781e1ff63a811c91
+  pristine_tree_hash: 7b4022b45e3a586763cee75884eef0c3a33f4e2b
 features:
   typescript:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
-    additionalProperties: 0.1.1
-    constsAndDefaults: 0.1.11
-    core: 3.21.8
+    additionalProperties: 0.1.4
+    constsAndDefaults: 0.1.14
+    core: 3.31.6
     defaultEnabledRetries: 0.1.0
-    devContainers: 2.90.0
+    devContainers: 2.90.1
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.2
     globalSecurityCallbacks: 0.1.0
-    globalServerURLs: 2.82.5
-    groups: 2.81.2
-    mcpServer: 0.9.2
-    nameOverrides: 2.81.2
-    responseFormat: 0.2.3
-    retries: 2.83.0
-    sdkHooks: 0.2.0
-    uploadStreams: 0.1.0
+    globalServerURLs: 2.83.1
+    groups: 2.81.3
+    mcpServer: 0.9.4
+    nameOverrides: 2.81.4
+    responseFormat: 0.3.0
+    retries: 2.83.2
+    sdkHooks: 0.4.0
+    uploadStreams: 0.1.1
+trackedFiles:
+  .devcontainer/README.md:
+    id: b170c0f184ac
+    last_write_checksum: sha1:027f8db0f402b75d6e4bb4fd8f295967b1114724
+    pristine_git_object: 78f1b4e9becfaeebd759732605110718211596e1
+  .devcontainer/devcontainer.json:
+    id: b34062a34eb1
+    last_write_checksum: sha1:d0b15193202c961e7d1875864ddb15f9d17c84dd
+    pristine_git_object: 4d560dd5f40afaf10d96eb75b1f02cd48bbd640c
+  .devcontainer/setup.sh:
+    id: 5f1dfbfeb8eb
+    last_write_checksum: sha1:de03f8e937c94c5c8c36345950ce3e4a4c99aa1e
+    pristine_git_object: 3d43554fe2477183e967450070207f822f9ebba1
+  .gitattributes:
+    id: 24139dae6567
+    last_write_checksum: sha1:26d16d8297b104945139da8c25bd38feeaad3e25
+    pristine_git_object: 113eead5093c17d43a46159132885318f281a68a
+  .npmignore:
+    id: aa70c1f807c3
+    last_write_checksum: sha1:6572da81f2e7a978ec29c22c2210bf461c5897b2
+    pristine_git_object: 670ac0a62d7e568c9d44a14f5deafb8442a255d8
+  FUNCTIONS.md:
+    id: 21b9df02aaeb
+    last_write_checksum: sha1:0d529f0b819e6e0085500d2f1c68dd311a61fbf2
+    pristine_git_object: 882c75230ccbfc470849e3775008ac7a06900c27
+  RUNTIMES.md:
+    id: 620c490847b6
+    last_write_checksum: sha1:e45b854f02c357cbcfdb8c3663000e8339e16505
+    pristine_git_object: 27731c3b5ace66bedc454ed5acbe15075aacd3dc
+  USAGE.md:
+    id: 3aed33ce6e6f
+    last_write_checksum: sha1:48f35643072ec49d63b12b927fe80a6b197c223e
+    pristine_git_object: a448aed85cf867937f26adb0c057ed0227d3cd22
+  docs/lib/utils/retryconfig.md:
+    id: 0ce9707cb848
+    last_write_checksum: sha1:bc4454e196fcd219f5a78da690375a884f5ed07b
+    pristine_git_object: 08f95f4552349360b2c0b01802aa71ec3a55d2c2
+  docs/models/components/artifactitemdto.md:
+    id: 2900f82ab5a8
+    last_write_checksum: sha1:c57bdb7e60018b8648ded5d58f297f76a8c07831
+    pristine_git_object: 2a16d253acb0c80d8a35ec1694984b56e4a6e7be
+  docs/models/components/artifactscontentdto.md:
+    id: 01f6c95c20e5
+    last_write_checksum: sha1:fd2ab5e43fe1bf0e812e498d78d1685968f4feb1
+    pristine_git_object: a68f6d0186a3342704156527e85ed702c84eb32d
+  docs/models/components/batchexecuterpadto.md:
+    id: 33265577595a
+    last_write_checksum: sha1:7df3334b1ab2d0aa3640263279f9bdf32b320c47
+    pristine_git_object: 79f1332f75822b56a44724f24be99c3b443e6704
+  docs/models/components/caption.md:
+    id: 4f4566ef92d2
+    last_write_checksum: sha1:db2e2d0ddf39bde5c0413ff7e35f7411b922ee9d
+    pristine_git_object: 7e38a9f967cc8efa136d8abe5579793985eed6f8
+  docs/models/components/captiondatadto.md:
+    id: 3c50851ed80c
+    last_write_checksum: sha1:8907c32707b9c61c9cbfdc3d715bf6b6a6e1b35c
+    pristine_git_object: 4765eec3078aa187b4a6239c6d5a5e7d903f7c00
+  docs/models/components/configresponsedto.md:
+    id: 5fd271843ba8
+    last_write_checksum: sha1:4ebe1c2b02ff86d543da478a4818c4e5af6c1724
+    pristine_git_object: 799cf02f25685dc98324c54d9bbcdc0afbb54900
+  docs/models/components/conversation.md:
+    id: 070575d34724
+    last_write_checksum: sha1:4fff4fae80d9ced7d2a2890eefd3ffc728f5b756
+    pristine_git_object: 92761693d80233aa85cb04351aefb88e9ec10a68
+  docs/models/components/currentsessionvideodataresponsedto.md:
+    id: 1595452fb2ad
+    last_write_checksum: sha1:bebec77d3412b9e9566817c1a1d69f0c14ed67b8
+    pristine_git_object: b3a142e88e91f93e0bb8689646e49263aa31e92a
+  docs/models/components/defaultoperator.md:
+    id: c27855a172f6
+    last_write_checksum: sha1:2b53de9b80df17ff03e8fc023c7b5babd983c11a
+    pristine_git_object: 84c32d91245fcb00889a5e9c734d6774947c3262
+  docs/models/components/deleterecordingresponsedto.md:
+    id: f75a0c5a8741
+    last_write_checksum: sha1:df21ccfb8da59d62949cb36ae1b13040f83ac7be
+    pristine_git_object: 0ce444b787430e42e33d2d71491bf7baf2195284
+  docs/models/components/fileinfodto.md:
+    id: baff123a2813
+    last_write_checksum: sha1:c89cfe9fd82808f4fa28adc72ea798fed7c8436b
+    pristine_git_object: 92c0a30207df03542e91bcb06c4327bf1c01d807
+  docs/models/components/filet.md:
+    id: 1d4366ab038f
+    last_write_checksum: sha1:0dc159899bd31d4ca32f4b7c4cbd0792291e71db
+    pristine_git_object: 0e298059c022a26f8cc91bf28e270be83b016bdb
+  docs/models/components/fileuploaddto.md:
+    id: a778ddd2b6b9
+    last_write_checksum: sha1:182d5dc919f0314c68718a81fb5cca4b2c37c605
+    pristine_git_object: 22e8d845a43cf19ac5ddfafb9613f940d8ac7646
+  docs/models/components/fileuploaddtofile.md:
+    id: 584412ae0f78
+    last_write_checksum: sha1:deabce67ea5547fd3a2217d37b67226d8d92064e
+    pristine_git_object: fcb85aacc6f67ac3d45e5e70dfa7388660f11408
+  docs/models/components/fileuploadresponsedto.md:
+    id: b32d351705c5
+    last_write_checksum: sha1:9d22ca628a3f901f0d1c891c58981d676185f06f
+    pristine_git_object: 62f83153d1d05a8f3501ef02fdf47954abd26966
+  docs/models/components/format.md:
+    id: 211ae0b56651
+    last_write_checksum: sha1:516dcb73f74ac464e00d1d82081c46d322fd11b4
+    pristine_git_object: 37b2b9a4a16b7eb3f467c522f91af1507939c5a2
+  docs/models/components/framesandcaptionsresponsedto.md:
+    id: 288ac1de3d0f
+    last_write_checksum: sha1:3ca9fba60ee614c8181413fe14cafb56fdd191de
+    pristine_git_object: 66e05f7ef38c4ebf75038e830484ebfbc0d574bd
+  docs/models/components/generatevideodto.md:
+    id: 1afbef3ac9d7
+    last_write_checksum: sha1:d08bbea5b33a622f701bd51cd00c4369089f9146
+    pristine_git_object: d9270f5b2bb99af3c625665f90262de4e05f2de5
+  docs/models/components/generatevideoresponsedto.md:
+    id: 78d10fae540f
+    last_write_checksum: sha1:d357b7421397b1894d2e2686b15b77a305c59c30
+    pristine_git_object: a07f26e4d1ef0d8f8ce76dc5095a569ed43fd405
+  docs/models/components/generatevideoresponsedtooperatortype.md:
+    id: 3723c298d2b7
+    last_write_checksum: sha1:6987622d40dda1584878faf703cd7219dfd4bd53
+    pristine_git_object: 80a25b2456e72831827b9b08aba4539749a8ef3e
+  docs/models/components/generatevideoresponsedtorecording.md:
+    id: 9f124a6f6b94
+    last_write_checksum: sha1:2eba9ac0150a650573e8f9084a3b417cba8f054a
+    pristine_git_object: c8fcd918fbb37d8c8cf9c93e933344cd21f84878
+  docs/models/components/generatevideoresponsedtovideogenerationstatus.md:
+    id: 14e037a0c06c
+    last_write_checksum: sha1:447afe9a8692e128dd09b013efad4e10eef4a6ed
+    pristine_git_object: 31dae906cd2830eb37c35c17c8e36fb09ef774f6
+  docs/models/components/operatortype.md:
+    id: 19603b186498
+    last_write_checksum: sha1:db43995f9482c1870496d04289bf07d5cd0a1a5d
+    pristine_git_object: 23f6594a849b6ff033571c09a31c2f4e55a4a4af
+  docs/models/components/operatortypesdto.md:
+    id: 6c1f88ac8494
+    last_write_checksum: sha1:bfa8fbb00626ed59fccc0914793dc7e93215567c
+    pristine_git_object: fe0af2cffafb427f371e70fa061555e81bb37425
+  docs/models/components/parameteroverrides.md:
+    id: 7a216350e188
+    last_write_checksum: sha1:81da1bd7ffdd406616e1c999a3ff81509e6f72a2
+    pristine_git_object: 799d4aa26d212e3c8322d515acd40acd93850ee0
+  docs/models/components/parametertemplate.md:
+    id: 8d2e29c8fecc
+    last_write_checksum: sha1:5659442fd2942b70a9443d6720374d16ed3688c3
+    pristine_git_object: fc5b9aa7aeabf254b2ff46347c38ea091e1f2d6e
+  docs/models/components/parametertemplateresponsedto.md:
+    id: 7f4df5b9efb9
+    last_write_checksum: sha1:384ed49a377bffdaeeb537de7dc767c18e58e533
+    pristine_git_object: 78eee40470710edb989c31b2616959409344cdf2
+  docs/models/components/quality.md:
+    id: 3a64a4a8111d
+    last_write_checksum: sha1:5d5f2ac129e27fde81193f53ae414b5d79675e49
+    pristine_git_object: 6f2f04c083cdfb9a537a1985251c9998e6b9ce0b
+  docs/models/components/recording.md:
+    id: 55422ccc9fc3
+    last_write_checksum: sha1:124ce61f0ee59b57343f9a518a3a96b3281f2ca9
+    pristine_git_object: 09cfecf16f99a2977b5aa466fdb9fa51c0b3ebde
+  docs/models/components/recordinglistresponsedto.md:
+    id: 26be09d06b9c
+    last_write_checksum: sha1:a943d4da07e2c94567aa59ceddbd97a16009b417
+    pristine_git_object: 44371d893e12ef628dcbb1ec029aa067a3369bb7
+  docs/models/components/recordingresponsedto.md:
+    id: c6120d6bfb48
+    last_write_checksum: sha1:8d824dacf2e33d439e436cc1c5a9bfbc05713494
+    pristine_git_object: 1fd54d51c3809f0762c0758f34cbec5e9beb2317
+  docs/models/components/recordingresponsedtooperatortype.md:
+    id: 49c8fc380f9a
+    last_write_checksum: sha1:b14154d152ff8f22817846ab30d14382019b3920
+    pristine_git_object: e10f8d7f27b3c05cb0dd96c27dfc22c2aaa81b50
+  docs/models/components/recordingresponsedtovideogenerationstatus.md:
+    id: e836f0f18ce9
+    last_write_checksum: sha1:25656b33d564bf128a6ccd632150e4907847c4a8
+    pristine_git_object: 8fd049ec1784c57f3e8630ae07a50c36eb6aabc9
+  docs/models/components/rpaexecutionstatusdto.md:
+    id: 7f19b55505a9
+    last_write_checksum: sha1:965566a53d07ce2f882013d86b9351f499b48b7d
+    pristine_git_object: 782886eb01310d1ba02412cfa4834d26d0bbadf5
+  docs/models/components/rpaexecutionstatusdtooperatortype.md:
+    id: 1768e3f1433b
+    last_write_checksum: sha1:d99db87576309534550ea69dc05bccc2e8c9d1ae
+    pristine_git_object: b12a8a73e3f5a58e7586b19254e168e61a02e699
+  docs/models/components/rpaexecutionstatusdtostatus.md:
+    id: fadaca278977
+    last_write_checksum: sha1:eed71a3bbb2dc99776d51f7d943e1cf422761881
+    pristine_git_object: f0fdcda32ecc870f04d1107ac5ff346e9b94ff8a
+  docs/models/components/rpastepsdto.md:
+    id: ae7fb5332f4f
+    last_write_checksum: sha1:e150c969bacec7237acfad01f128daade219087b
+    pristine_git_object: 5016424264d88981aa99e8950fffb22ebcd98e2f
+  docs/models/components/savesessionrecordingresponsedto.md:
+    id: 95381db77a83
+    last_write_checksum: sha1:cb277ad88b11be1ae703fcb5f7143d932730082b
+    pristine_git_object: d7ed54f0230b8e9bdfafea491a49445cb065db03
+  docs/models/components/savesessionrecordingresponsedtooperatortype.md:
+    id: 0f7efee8088c
+    last_write_checksum: sha1:f3484e0a156d0614315883b3211e0152d5871a95
+    pristine_git_object: c283b6cc0cf98ea9c5599aef1cbb03909a646d50
+  docs/models/components/savesessionrecordingresponsedtorecording.md:
+    id: f478136f0988
+    last_write_checksum: sha1:f8b3012f50644a6618ac85f8b2648d63649f39cd
+    pristine_git_object: 87c29c3cdef8bde92fdcfd5f31a907c8b1e696ea
+  docs/models/components/savesessionrecordingresponsedtovideogenerationstatus.md:
+    id: ee6ac684afbb
+    last_write_checksum: sha1:fe0662107955cffa265147120a6ce9408387eb26
+    pristine_git_object: 55225893832b0ec4c85383b122c33005f8ff800e
+  docs/models/components/sessionreplaydataresponsedto.md:
+    id: c87f15d38c41
+    last_write_checksum: sha1:13845f858daf60d319f18e87c8219388011a017e
+    pristine_git_object: 9cde22a1bef91c5254f78fb980cec7149850e852
+  docs/models/components/simplesuccessresponsedto.md:
+    id: 811951558b60
+    last_write_checksum: sha1:56932c976599f661cfae60f70b1d7ed453002f11
+    pristine_git_object: 165781c981a583872b553df4338313e6760b929e
+  docs/models/components/startrpaexecutiondto.md:
+    id: 7ec35a5e4921
+    last_write_checksum: sha1:bc44bbb7616325a430f2038d6004288279ca6301
+    pristine_git_object: 729983f49c290f41faf7b50877a78c7ac1a41c9d
+  docs/models/components/status.md:
+    id: e26b2fe7f53e
+    last_write_checksum: sha1:b3312669faa1e022ec8e715a00c9743cfca918e9
+    pristine_git_object: 12f457baf3befd8ea2ac76ad188984773b5647ba
+  docs/models/components/successresponsedto.md:
+    id: 740f0871d918
+    last_write_checksum: sha1:a33adbb7fcd9f166167f203f9324112b4b8c847d
+    pristine_git_object: 3d3e84195fe3c8751aa5ac5a7981109fa990c994
+  docs/models/components/type.md:
+    id: 9f07f2d18a9f
+    last_write_checksum: sha1:31f714fb7f751a574ab562d55271a307cbc1dcd1
+    pristine_git_object: 9a2d570b416b27ff1cab8d72041530cc0907ad9c
+  docs/models/components/types.md:
+    id: 6a1bb97ecb34
+    last_write_checksum: sha1:385a7287a4e00ea35ee0ce0b87b30c05ee7e4091
+    pristine_git_object: 089121c5a9792ad0fcb7f68090c23e8474210568
+  docs/models/components/updatecaptiondto.md:
+    id: e5d952d27b7c
+    last_write_checksum: sha1:e8f83e5cd6ee781305118a238d2cb4c92f33415a
+    pristine_git_object: e5bb274917594bce53de5a804f20695d2b6a11a9
+  docs/models/components/updateconfigdto.md:
+    id: 8bcba91c9d49
+    last_write_checksum: sha1:4ec1764680480be41d5ee751c04ab97eb5ff9d19
+    pristine_git_object: 42ad55fb064efda1c5553d95c1d558540a4f4866
+  docs/models/components/updateconfigdtodefaultoperator.md:
+    id: f91f09cc91ba
+    last_write_checksum: sha1:c745c57d489af49ed8b4a6938c37aa96bfa8c115
+    pristine_git_object: 5f9a0adfe6b3ed86348f8c36c4548a777394d9c9
+  docs/models/components/videoanalysisresponsedto.md:
+    id: b519039d936f
+    last_write_checksum: sha1:00d5e55eab61e06c348f6b95f84541e7c06d3fb6
+    pristine_git_object: 69af6a30994956cee9efd4645a44e1906af73528
+  docs/models/components/videodata.md:
+    id: 254c5322c985
+    last_write_checksum: sha1:5d8c1cae6b1be6f60af7b1fb7820a2e169a75a68
+    pristine_git_object: 37f9c26b26abc29faec95d65f72e9ecba0050b48
+  docs/models/components/videodatadto.md:
+    id: e195c454a2e9
+    last_write_checksum: sha1:ff507bbb144230af1bf41698666ad932d2ebfebc
+    pristine_git_object: 37e5a394be06f5a7f58feb7beae6a9409ac40de5
+  docs/models/components/videogenerationstatus.md:
+    id: 6f5caac579b1
+    last_write_checksum: sha1:8c3439d6e5bbc074f7d2f4288a70a1586ad61f47
+    pristine_git_object: b2bef4c89c8cfbcecdf5f93d392e07500ea17e81
+  docs/models/components/videorecordingdto.md:
+    id: c0ab738f6596
+    last_write_checksum: sha1:e35677f9080fe60c186f010fadc518710468c0ac
+    pristine_git_object: 6727d696030b9b78bf0e2b89d578bf6db7fa3861
+  docs/models/components/videostatusresponsedto.md:
+    id: 59a9e7787dfe
+    last_write_checksum: sha1:f2447d9e57f240012f47ddf565256e905b9522ea
+    pristine_git_object: 061d3d40b30e0307b7ddb4031169041368372545
+  docs/models/components/videostreaminprogressresponsedto.md:
+    id: 483a74ad317c
+    last_write_checksum: sha1:4ec7e469354b08fa250aa61d6b3a3e51a92f09ee
+    pristine_git_object: 76d7b49451b28c1e7ad41d91d8edffa2f270e755
+  docs/models/components/videostreaminprogressresponsedtostatus.md:
+    id: f2a1012f54ac
+    last_write_checksum: sha1:0cca0f91e95a08ea63c48b579131288a538c844a
+    pristine_git_object: a76170d2459e727a86ecdc245edbb69ec7c9a2ff
+  docs/models/components/videouploaddto.md:
+    id: ccdb448913e5
+    last_write_checksum: sha1:274ec060aba69aba27b1213a8f0db4919445c120
+    pristine_git_object: 49fdbca2566a0c95064d5f48133d3e80a45b54e2
+  docs/models/operations/approverequestrequest.md:
+    id: f703ac118749
+    last_write_checksum: sha1:ac913b2f37fa846bd00a12ff99b512cb6c599e0b
+    pristine_git_object: 6aaa64341173f4fd81c53db3e839b486b5fa5f68
+  docs/models/operations/deletefilerequest.md:
+    id: 5b901b4a4a7d
+    last_write_checksum: sha1:bf62a267f232957ab76e7b6a29ca8b364cfc1350
+    pristine_git_object: 05694e9e27c2f885ac90037c5cf8cdb568d23606
+  docs/models/operations/deletefileresponsebody.md:
+    id: 22fccb69994a
+    last_write_checksum: sha1:484c7d471acb329925e6b393c168770f2f5c4ee9
+    pristine_git_object: f96a5975aa81337156a73cedd9d71b4aca069533
+  docs/models/operations/deleteframerequest.md:
+    id: 479f7178015a
+    last_write_checksum: sha1:faf47183c67abf4b262140fe85408c868c6af934
+    pristine_git_object: 6ad24f981257ba5ecbc585b15669b64c203204e8
+  docs/models/operations/deleterecordingrequest.md:
+    id: 79baf77bcc5b
+    last_write_checksum: sha1:a499d6e231394bf2d571eeeef5f47d9b0a64d3d5
+    pristine_git_object: 14ea39cbe4b6c4c98bec92800ba669a135104078
+  docs/models/operations/downloadartifactfilerequest.md:
+    id: eb810817eb34
+    last_write_checksum: sha1:8601d291cdeef2513dd9f8df3ac04b8590f76134
+    pristine_git_object: 93fbc447793dd87c97fb4e3a938bf925af42f4d5
+  docs/models/operations/downloadartifactfolderrequest.md:
+    id: 4b6d1639002a
+    last_write_checksum: sha1:0ad98ebf84cafb2c400e030c09d59d156c29eddd
+    pristine_git_object: 3d9fff03ba12c18461db08a5667faae57f1c7305
+  docs/models/operations/downloadfilerequest.md:
+    id: 43042d9c5cfe
+    last_write_checksum: sha1:b740a1a88dc917dd39606c53a68d95d85328a0ae
+    pristine_git_object: 57e05e93dba3ec74c7469c4942cbcd5425e0d414
+  docs/models/operations/downloadrecordingrequest.md:
+    id: 70d5eda6bfa3
+    last_write_checksum: sha1:6b146dd4bcac0a8e7e514c01c8c6f5f6631d6353
+    pristine_git_object: 77f046751c13fba394c6847e42c28831daaea3cc
+  docs/models/operations/executerpastepsrequest.md:
+    id: bb60e6f1049f
+    last_write_checksum: sha1:90774678d9b37c51a38a3fc8d3e60daa28371e79
+    pristine_git_object: d83ae54e48555d16d81a0509deed4bbb3a70488b
+  docs/models/operations/generatevideorequest.md:
+    id: b7ef659e4921
+    last_write_checksum: sha1:bc487eea4c5e47de7ea9c126e2c4fd8268f595e4
+    pristine_git_object: 136db423066e24a54f25f67a7a9622064f02d6f7
+  docs/models/operations/getanalysisresultsrequest.md:
+    id: 3df7961dcfa9
+    last_write_checksum: sha1:ddc337995f30a7bd7fc0260311d1a49a0ec8beff
+    pristine_git_object: 46396296bd5e23c17c20198a16d16118f892b963
+  docs/models/operations/getexecutionstatusrequest.md:
+    id: f17a0dc5991d
+    last_write_checksum: sha1:60f9afff7be26bd3a74baba32ee80a563144b3f2
+    pristine_git_object: eaf3af7fff2480db867506e4edf2fc27e875217e
+  docs/models/operations/getfileinforequest.md:
+    id: ea8dda713e2d
+    last_write_checksum: sha1:4009d4e07c89ee1f1a23f557ba70318166c7d9b4
+    pristine_git_object: 94019b743bee44ab510d059cb98415620a7849f3
+  docs/models/operations/getframesandcaptionsrequest.md:
+    id: 27f3fa5fdca8
+    last_write_checksum: sha1:93d06949feb32722499f6bdfa4706f3f4a0d2072
+    pristine_git_object: 918358daaad6911a48c8cdcb6c63b53f0d7bb4b2
+  docs/models/operations/getparametertemplaterequest.md:
+    id: c74c5219d3f8
+    last_write_checksum: sha1:d0659088879224e56e5ef886c80ad05aa5232c67
+    pristine_git_object: d10bdc8366dcd115bc6c19f5c2e6878f5674cd1f
+  docs/models/operations/getrecordingmetadatarequest.md:
+    id: c98825b466fc
+    last_write_checksum: sha1:aab71dc6c200ae213fa73df9993cb276a1647cf2
+    pristine_git_object: 3ff844f574a9c1eac2be1071b41babb19574fa6f
+  docs/models/operations/getrecordingthumbnailrequest.md:
+    id: b0e98567a231
+    last_write_checksum: sha1:437784378a5e263c3e1d56cb2209ca553ac8ecd2
+    pristine_git_object: c8143a9b6af72baa80ac1f019d8fc9d9ff4955e2
+  docs/models/operations/getrecordingvideodatarequest.md:
+    id: d1244288460a
+    last_write_checksum: sha1:21086793c869f69dd910072584e6fddb6e07369d
+    pristine_git_object: d61c3d6be6349a1af23d334c8a9b44632cb1f7ca
+  docs/models/operations/getvideostatusrequest.md:
+    id: fbe301adb195
+    last_write_checksum: sha1:88b2f9c7273e09e27928a3641596c68b8f9423b2
+    pristine_git_object: 1a42ab51c738792ffc7e315297fab558e6ff5d9b
+  docs/models/operations/listartifactsrequest.md:
+    id: 1f87abace56d
+    last_write_checksum: sha1:668b8b6a5845921cfe4fb1788acaf838d4e18085
+    pristine_git_object: 5265b3a32b2f7db072fc05a1e6ebdd085932d298
+  docs/models/operations/regeneratevideorequest.md:
+    id: d411058c68b8
+    last_write_checksum: sha1:02599ce70500ef87ab4bb9a624ce130c05c0fa7a
+    pristine_git_object: aec94a1e82db2c0ab601b74cc673e73e47121fd9
+  docs/models/operations/stopexecutionrequest.md:
+    id: f5542f2ac8ac
+    last_write_checksum: sha1:7445402269e66ba46787cf2fb9c1f29dc88c6684
+    pristine_git_object: 70415df6b42158de14a59b4ecebce9ac4e688629
+  docs/models/operations/streamoriginalvideorequest.md:
+    id: 3a6f1ab36635
+    last_write_checksum: sha1:25122bbf36e0acaf7d5e24b5c512507619059539
+    pristine_git_object: 6500d09423f73c6f605b88ca5d2ecc52a9902636
+  docs/models/operations/streamprocessedvideorequest.md:
+    id: 5a7f618ff032
+    last_write_checksum: sha1:196804cc521280e95e1ca4773f7f5f592d7d881f
+    pristine_git_object: ac835ce03f3676fc145a78aa5fe7c7629e26cd7e
+  docs/models/operations/streamvideorequest.md:
+    id: 73e3bf3b6695
+    last_write_checksum: sha1:b616f9a61b58b4d9a12c95cdc91b9ee3c1fbd263
+    pristine_git_object: 9c9e2d02fdffe65a9e0542a3071ca57a7c314179
+  docs/models/operations/streamvideoresponse.md:
+    id: 2bc475e45aeb
+    last_write_checksum: sha1:725a0762e3fe63df3216e21b850d58d1f2f83ac0
+    pristine_git_object: 3e5ad389b55af683ecd75aeff71917fd66a19083
+  docs/models/operations/updatecaptionrequest.md:
+    id: a75768adb522
+    last_write_checksum: sha1:da2bf5de0edf980b3a841a5c1d6fee12238f5577
+    pristine_git_object: cbd3fc2156e62158929eae7fcdc644030fd9cfb6
+  docs/sdks/config/README.md:
+    id: 1cb3aceda90c
+    last_write_checksum: sha1:ed3967d39fcb715a0e8f6a7d77329299bba845da
+    pristine_git_object: 1c350a4f8c6e0a114c889a1ba034250b256fa7bd
+  docs/sdks/files/README.md:
+    id: e576d7a117f0
+    last_write_checksum: sha1:984a991f61b09e86849aff0935ff9124093772ba
+    pristine_git_object: 182b06097dfe9fae1083ae792e9aec2ce0b045ac
+  docs/sdks/humanlayer/README.md:
+    id: 7a4523ac7905
+    last_write_checksum: sha1:d0c09f7e405423d176bdcdadf854ef12dde5e78e
+    pristine_git_object: dfc7b21c8b6bc83895a460e1f63f6419b3fd283a
+  docs/sdks/irisartifacts/README.md:
+    id: f1e85de8fab7
+    last_write_checksum: sha1:952b8ee5a96ef87a88c920da4cbb56567129a399
+    pristine_git_object: 5158307dd2eb720394e71b9abc4f4d593aab332c
+  docs/sdks/operators/README.md:
+    id: 216b4a780027
+    last_write_checksum: sha1:a57e58b41284820ff8e908e8b48dd811b5e0825c
+    pristine_git_object: 3fa36ebb686bf22861b6b1e09cf7c51083d43dd0
+  docs/sdks/rpa/README.md:
+    id: 1fa1d37671c0
+    last_write_checksum: sha1:bca29c1f7022eaf2dca6c6e622bf7b56e6dffafa
+    pristine_git_object: 615a2f5959958b8391faad33133b2e478aef2daa
+  docs/sdks/video/README.md:
+    id: 0b01dca84f9e
+    last_write_checksum: sha1:50a9601817fd122d81cd584d8b688a6916b6d906
+    pristine_git_object: 1e4317beac6a84e84ee43b29eac36e22ab41d17e
+  docs/sdks/videoediting/README.md:
+    id: 15d3f636577e
+    last_write_checksum: sha1:4a254aed1a7ac4ae14d71b94a2e46317fba02b4f
+    pristine_git_object: 040f6878b0639517ac8431270c0f1dec3088d875
+  docs/sdks/videos/README.md:
+    id: 29b3d586493c
+    last_write_checksum: sha1:3c73992fcd6ade8b2c947749cf300cffb16e5bfa
+    pristine_git_object: 1bb812a02f7d459924b9614eb571f2d524e11f2e
+  eslint.config.mjs:
+    id: 461c8d07f6da
+    last_write_checksum: sha1:9398f326377fe47f67af2df6eb6370750c0790b4
+    pristine_git_object: 67bccfec985be20a00970d90155752832dd47135
+  examples/.env.template:
+    id: 52cbe5afed92
+    last_write_checksum: sha1:e0b0d813c4583dff4e4ac01a92c7194022de05fe
+    pristine_git_object: bad455e96f304e9eb18b6077a3491c7d4b11ed24
+  examples/README.md:
+    id: 9d0f69d6e677
+    last_write_checksum: sha1:9e7bb4ace7a91147f356a85c5989517a61f089fc
+    pristine_git_object: e64085410f6adc61ddf3b59111bef54e28220251
+  examples/configGet.example.ts:
+    id: c27b03446522
+    last_write_checksum: sha1:b1e644bd565ed06946f709d73c3fffc82363b529
+    pristine_git_object: 377e739bc7a88e5d9b9e9163bb38a1d1b0cd97cb
+  examples/package.json:
+    id: c1d7b0ec8e7e
+    last_write_checksum: sha1:dc05d79960cecddfdc1682d734cda198f3781dd5
+    pristine_git_object: 3ad3f03c351e9c6ecf5dd622d3a5629b56e689fc
+  jsr.json:
+    id: 7f6ab7767282
+    last_write_checksum: sha1:5bb3c2574277c704515169b693ee0d24aac692aa
+    pristine_git_object: 229421e961e8388a57772e7676566662df5a5a2d
+  package.json:
+    id: 7030d0b2f71b
+    last_write_checksum: sha1:4a7cf5fec325b22856f7af4e8038823aa992d95e
+    pristine_git_object: d6d9ee193cad307244e3c3b4e0f0f50a785be965
+  src/core.ts:
+    id: f431fdbcd144
+    last_write_checksum: sha1:ad53a902930095bee847b888ffab11eec544c7bf
+    pristine_git_object: 82bce763f6c52244f728f9e9700d0b7548e80fcf
+  src/funcs/configGet.ts:
+    id: ba1cafbcd35c
+    last_write_checksum: sha1:222dcac783acc57e1493df834f3855b3a0a40d3c
+    pristine_git_object: 63daf28cec72f064adb576725549804e11e46540
+  src/funcs/configUpdate.ts:
+    id: 96860d072964
+    last_write_checksum: sha1:3aa508d987be2db0f06b2588d0c821b1039e7364
+    pristine_git_object: 84563c65ade8207546cfad981ba3d6c2a5ef14d3
+  src/funcs/filesDelete.ts:
+    id: f46eef07df95
+    last_write_checksum: sha1:15b68989d1aa58c9b715b7c7cfc8a201e8fa19b8
+    pristine_git_object: 8e3b9919759f7cafd20b4404c844a4a6c35e3375
+  src/funcs/filesDownload.ts:
+    id: 9862679000aa
+    last_write_checksum: sha1:4e7564891c51d9e4c5a9a69b6e155b20a921e135
+    pristine_git_object: 9cd78db2d6cf586a407790970f01cefbfb8aea0e
+  src/funcs/filesGetInfo.ts:
+    id: 02dc2ba34b32
+    last_write_checksum: sha1:26bd9e813554c03f7445f4e5cfd6911c16d417e6
+    pristine_git_object: afedcd564c432526468d98720feb19fde4ac2321
+  src/funcs/filesList.ts:
+    id: 115b762b69b6
+    last_write_checksum: sha1:2ae4b9d292b93c0e92cb723d2af77fb98c656d6f
+    pristine_git_object: acdb5560be45f38ea97390a01366ac50b29ed490
+  src/funcs/filesUpload.ts:
+    id: 9dba8b973eea
+    last_write_checksum: sha1:4b8e2d51270b2996da885516f8446b162ad9e6aa
+    pristine_git_object: 1cc0d074d2167f75a3a2dcb4fe38ca0bc218c0f7
+  src/funcs/humanLayerApprove.ts:
+    id: 2549a4ca0325
+    last_write_checksum: sha1:145577b69b80d7c74aaabe7f36df4aefb3885e44
+    pristine_git_object: 41eda82c61cd4ebb35b3f20c5759e966e96292f8
+  src/funcs/humanLayerGetRequests.ts:
+    id: a96793ab394e
+    last_write_checksum: sha1:1e598f055857c53c1d51ff3d8e1f775d1e2ba29f
+    pristine_git_object: 56f30f7ab42c915940fd48b39141d02f6eb92966
+  src/funcs/irisArtifactsDownloadFile.ts:
+    id: 11a10fab621c
+    last_write_checksum: sha1:12baefca483080dbd6b0ce95b78c04722754d26a
+    pristine_git_object: 0d2f285ae25f3da2ba14755b2694bee7c8ad6759
+  src/funcs/irisArtifactsDownloadFolder.ts:
+    id: 76ada682da14
+    last_write_checksum: sha1:c7eea0c19ef00ae504e858308c4d80596aa412c1
+    pristine_git_object: ad3892a2b548911f609c3fb9b594a7327296fdd6
+  src/funcs/irisArtifactsList.ts:
+    id: 2c9704e0ad37
+    last_write_checksum: sha1:16d5817ef905bcb1bcb350410db2460cd4cade8d
+    pristine_git_object: 9a3552e9703c38c81f272b6bf1417c69e03b85e9
+  src/funcs/operatorsGetTypes.ts:
+    id: c84b5576cb7b
+    last_write_checksum: sha1:e5c9c4c8e298439cc3ef3449fcfaf113b8e13e87
+    pristine_git_object: 3e985836a5ea71a7850b228cf45043efb15c04d5
+  src/funcs/rpaBatchExecute.ts:
+    id: 8a7dc3c4b83e
+    last_write_checksum: sha1:480bc895eca7e8a03cc82959a2716b1c084c1635
+    pristine_git_object: e2f5db29b384888bb1ccea8018e09cafca5a51fc
+  src/funcs/rpaGetParameterTemplate.ts:
+    id: 154cc155c99f
+    last_write_checksum: sha1:6e0241d7e6cbe3f76a602b809351ff77cd560cf2
+    pristine_git_object: ee9a7711bfb1225021661b65121346ea0eeeb9b2
+  src/funcs/rpaGetStatus.ts:
+    id: baa6f9c3bd92
+    last_write_checksum: sha1:a2242edc64bda53b4d8f2d3d7d5617528f18cc55
+    pristine_git_object: 704d26cc19809b09b1426598251c669c3f53d461
+  src/funcs/rpaStartExecution.ts:
+    id: b837825d3931
+    last_write_checksum: sha1:b474366c971ec200f7bbeaa622db3fb738ad3fa0
+    pristine_git_object: 14cb1bfcc5ffc321cc84b554fca2049ad4a8dc33
+  src/funcs/rpaStopExecution.ts:
+    id: 617ad47dc4a4
+    last_write_checksum: sha1:4e49d4d611748f46949b5e59e5a9443a4b74870d
+    pristine_git_object: 5d587cf246556ea4b2347847f3780eb963621a0e
+  src/funcs/videoEditingDeleteFrame.ts:
+    id: af02d2ae65dc
+    last_write_checksum: sha1:da7cd9d8c1ba0c662804ac3e6b40f5b548a7b4b6
+    pristine_git_object: 7d67ddbc29def262edc8c04ae669ef6e4269ba6c
+  src/funcs/videoEditingRegenerate.ts:
+    id: 204786408b87
+    last_write_checksum: sha1:cd7dcc8ab311d38465283ea290fed52f6a56ae00
+    pristine_git_object: 402bf7a9b3ca188adc1284a43c8f05db67dee49c
+  src/funcs/videoEditingUpdateCaption.ts:
+    id: 05602e096dd8
+    last_write_checksum: sha1:978b75c4e01189d959eab1c72d05f9fb2ff9cf23
+    pristine_git_object: 627315f4886ca0d3d681c71c6dac646f5ae7b2ba
+  src/funcs/videoExecuteRpa.ts:
+    id: 3c4b21b5d6de
+    last_write_checksum: sha1:47532ea8ae7cac68699ba1eddfe36bc890d6eb67
+    pristine_git_object: 454c85cec9c92a331b0999925cbee5c1e97587d0
+  src/funcs/videoGetAnalysisResults.ts:
+    id: 90118d4387d7
+    last_write_checksum: sha1:747a899dd1fb514e6cef1c2489bd668cb9a6540e
+    pristine_git_object: 2345c889f2b85a1723c1a793283fbd50f9583173
+  src/funcs/videoStreamOriginal.ts:
+    id: ac9c9f85cdf4
+    last_write_checksum: sha1:45ea6375a99583433013912c573cfe87117a692f
+    pristine_git_object: 0df36346192f72c983b072578b082fde4a3827c3
+  src/funcs/videoStreamProcessed.ts:
+    id: 391f1f6b6420
+    last_write_checksum: sha1:1e0da459c659f3b4cca29cf7780ab9b3310dc17b
+    pristine_git_object: 0eb4b22d030f9f81187ebb3d8432d93fd0981be6
+  src/funcs/videoUpload.ts:
+    id: e5c504991f31
+    last_write_checksum: sha1:cb0f4340d6c648c5b66502c50e7454c2ec2dbc3c
+    pristine_git_object: 1339690d5fcbc455ad1aa967591d00314647622e
+  src/funcs/videosDeleteRecording.ts:
+    id: 004dc6034fbc
+    last_write_checksum: sha1:19884eadd57f22ff07a2ed70a4cb7ad911bca9cf
+    pristine_git_object: 274f7985573695e9a7a5d22c0fb9884b30ffc74c
+  src/funcs/videosDownload.ts:
+    id: fe2a77b08382
+    last_write_checksum: sha1:86adf811cb7f4884fa38da1405eb38093bb60bec
+    pristine_git_object: 497f2c4f3ccd4249f46d28030ed6599b7d1b2d8d
+  src/funcs/videosGenerate.ts:
+    id: 96c9a0546bd1
+    last_write_checksum: sha1:2991173b6a7c8b38396675f5b1d334db375b9b91
+    pristine_git_object: 61fc61b199c134d45bc31e2f9f18e79941d9938c
+  src/funcs/videosGetCurrentSessionData.ts:
+    id: c2a004c59a34
+    last_write_checksum: sha1:6ed6fa25f61a663f5e0e8036af536aca68db2c55
+    pristine_git_object: 37cc7f35a13fbd9d00caea8ad5016be8ec340aa1
+  src/funcs/videosGetFramesAndCaptions.ts:
+    id: 76339dfe1f1c
+    last_write_checksum: sha1:d959824e5219b87d778cfa0bb6117ddf227370b1
+    pristine_git_object: ecfaa839504933d8ad68ca197cf7c02b59be96f9
+  src/funcs/videosGetMetadata.ts:
+    id: 28053fea1ecd
+    last_write_checksum: sha1:9f33012920a175dde373a22d41b283993246e52d
+    pristine_git_object: 89053e0e18dba8696ab6f0bde77edd3401412806
+  src/funcs/videosGetRecordingData.ts:
+    id: 7892c65efcd5
+    last_write_checksum: sha1:cde09e3acd6ab05ef3889d771cb32ba9e7267983
+    pristine_git_object: fa0aefe4c1165d316ee56abb1653e01b96693266
+  src/funcs/videosGetStatus.ts:
+    id: ba0d77dea104
+    last_write_checksum: sha1:6753b0355caa795c5af97d607bf07bc0872dfde2
+    pristine_git_object: b98a234bff183ec5904ad1e6a657cc6f9ba331cc
+  src/funcs/videosGetThumbnail.ts:
+    id: b11c924f2814
+    last_write_checksum: sha1:6b7752965e31d4a8d5fdce92cd90baf5e917948e
+    pristine_git_object: 572dcc841b1dd2d6d879e1610ade6211ee8adcbf
+  src/funcs/videosList.ts:
+    id: 24ca906d92b8
+    last_write_checksum: sha1:f9b5e7991da655f6f03b9aff0161c579dcbf10c2
+    pristine_git_object: 9dfc7ea7ad303bb0c5dc99b3a75dad1c957ee362
+  src/funcs/videosSaveCurrentSession.ts:
+    id: a444d5e56156
+    last_write_checksum: sha1:9f56b142675c1c636270ae2056fcded02d28ccc5
+    pristine_git_object: 4872910550da516e77755bb0696643b055669b3b
+  src/funcs/videosStream.ts:
+    id: 19c5261ceb01
+    last_write_checksum: sha1:61716ae0df6dc5087ce674c4e835db069eb09510
+    pristine_git_object: a956aa54491e9134fab55274169db53fc2f1b49a
+  src/hooks/hooks.ts:
+    id: a2463fc6f69b
+    last_write_checksum: sha1:646c1538dbffb2552af9d7516de64c339b5e96c2
+    pristine_git_object: fc9b13b25900a363b2123d2bad90f541e1d5d176
+  src/hooks/index.ts:
+    id: 5f2dab62b520
+    last_write_checksum: sha1:1a11c073a6cd792932218e1d4ed36b8567bad8ef
+    pristine_git_object: f60ec7acd76141a71d78008c5a362eb0236d8335
+  src/hooks/types.ts:
+    id: 2a02d86ec24f
+    last_write_checksum: sha1:da18f72efc4b8bef7912bc70fc6166b4be2f8a95
+    pristine_git_object: 5ffda46a9def49d060911f29656c75d88095bcdd
+  src/index.ts:
+    id: c5fb850250c7
+    last_write_checksum: sha1:35c9cde3ae14b18b3f893a1afe8b6c44f8760f24
+    pristine_git_object: dbcba164a0082e3bb8c43cf21fa7f8ffb9d35dfc
+  src/lib/base64.ts:
+    id: "598522066688"
+    last_write_checksum: sha1:b0b12ddbd8625efb47c0e955a18641aeb10c6532
+    pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
+  src/lib/config.ts:
+    id: 320761608fb3
+    last_write_checksum: sha1:930f8b588fbc6733c3b9ecb2322cf7bb80f59100
+    pristine_git_object: acf3cbf30642031e6380057bd718ec7e1294a91c
+  src/lib/encodings.ts:
+    id: 3bd8ead98afd
+    last_write_checksum: sha1:a257d6f6108693db2197617c579400bc8f0da914
+    pristine_git_object: d6e751fe6a9a39af519df802d05c999f6783bae8
+  src/lib/env.ts:
+    id: c52972a3b198
+    last_write_checksum: sha1:083635dd6c2d6c770badbd6ccf15df4dbc085b17
+    pristine_git_object: 14ac6af5ba3dabcac8cd627195836e5c6086f3f2
+  src/lib/files.ts:
+    id: e5efa54fcb95
+    last_write_checksum: sha1:795c14026405d547bfc47012f7ad9666e530fa7f
+    pristine_git_object: 6ca6b37d35a12448da176ee2517cc036db12c81c
+  src/lib/http.ts:
+    id: 63a80782d37e
+    last_write_checksum: sha1:a56435907625a816051aa2131d60909c59f1da27
+    pristine_git_object: 6b7a6cf3e281cae246708b1aca4a27730e08fe61
+  src/lib/logger.ts:
+    id: 7ee7741a02bf
+    last_write_checksum: sha1:0ec9d3a2a34c362746b767e4f9a746c055d57a7b
+    pristine_git_object: d181f2937d4128afbe9b0327e0f81d1fa9c877b7
+  src/lib/matchers.ts:
+    id: d54b2253b719
+    last_write_checksum: sha1:43e3184df0c1dc3d7ba2d50ccdd7655d3a6697ce
+    pristine_git_object: efc0928ae61beebe1eff5f15c0cc1305fcbaf194
+  src/lib/primitives.ts:
+    id: 74859f750b28
+    last_write_checksum: sha1:fe3abb7d6b61596e346873519bcec9b2eaa61467
+    pristine_git_object: 8ce65db0f7c0d6b68f5edc3ebf518121e284e954
+  src/lib/retries.ts:
+    id: b24a69d15639
+    last_write_checksum: sha1:42c8f6cc4c875be236230a8c760f4f32d8c1ab68
+    pristine_git_object: 21a647e1e9ae64817fcd63b5dd6bb5a51b63d225
+  src/lib/schemas.ts:
+    id: deb4b531fae1
+    last_write_checksum: sha1:209cfaabfa7fc1c1310f97453215cb0755619c6e
+    pristine_git_object: 47edb9725c2482c667e2ddc8a56b1fec4285c492
+  src/lib/sdks.ts:
+    id: 8a6d91f1218d
+    last_write_checksum: sha1:4bd5f4b35e46db610eb9c9ddda667eddb60a3fe7
+    pristine_git_object: 3562f0af24d6b5685e76fa81512fc2bc360b5719
+  src/lib/security.ts:
+    id: 0502afa7922e
+    last_write_checksum: sha1:5c3cfadf9de75e6f9910cb759505abc50cd663d4
+    pristine_git_object: 7850aeab64338fbcb5f636709f1af9bbd2216602
+  src/lib/url.ts:
+    id: b0057e24ed76
+    last_write_checksum: sha1:3bceadd74bf0b31adf13eb06b7531077c3e07d65
+    pristine_git_object: 79e7ce660b3732053e3adcbb5a4cdeb51496e8aa
+  src/mcp-server/build.mts:
+    id: f7a2ed2de4d7
+    last_write_checksum: sha1:1a7a5dc9ace5a5d707bd8d2339f76719e525e7eb
+    pristine_git_object: a04739f2ac2154c097ea821daf364ee4c037a820
+  src/mcp-server/cli.ts:
+    id: 4ade0ef98b00
+    last_write_checksum: sha1:7331efddde881832342fa8779d23be7445d4480c
+    pristine_git_object: b878d8de9f2a0275c3cdbfdcaed48a31092e558a
+  src/mcp-server/cli/start/command.ts:
+    id: b3e53408ccb4
+    last_write_checksum: sha1:c6bc075e0367c6948669465cb370c1beb61ad0ef
+    pristine_git_object: 08354d0d24249abfb7857f1e250a98a59fb89c1a
+  src/mcp-server/cli/start/impl.ts:
+    id: 37494f674015
+    last_write_checksum: sha1:c3eb0b6dd3d40a1fc40497b7c33b0d5a2394dec7
+    pristine_git_object: 74d11fd24b02289ff6d9f284bab9143bc3b1d8a2
+  src/mcp-server/console-logger.ts:
+    id: 57aff4ff2e15
+    last_write_checksum: sha1:66e945860c8318f2a6bb9604a7720a979dacce4b
+    pristine_git_object: d65a295b9545bee0599e46f2a75f2ab5a03c4ae4
+  src/mcp-server/extensions.ts:
+    id: 3d9d20ff158f
+    last_write_checksum: sha1:e36e4b49b77347db80debccc2e77706b0ac7f4a4
+    pristine_git_object: 0955a573c2ce989d63c737410ab8cc28706d9f74
+  src/mcp-server/mcp-server.ts:
+    id: aabbc4ab07c1
+    last_write_checksum: sha1:0f38fe13361c0de68b7c79c640c323cb90f4ce82
+    pristine_git_object: a70686a7cb0f3de72b35d4fc1a3152b2cebab6a2
+  src/mcp-server/prompts.ts:
+    id: 26f3d73cbf31
+    last_write_checksum: sha1:026171b02e920c26e9dc144dc8b21075c98b85a6
+    pristine_git_object: f2b3f054a4defed71eeee16cb4a38c8163014bc9
+  src/mcp-server/resources.ts:
+    id: cb0c57ebeaea
+    last_write_checksum: sha1:cf68f6ba124bc97422705a9b89d3c694919d858d
+    pristine_git_object: fd0b8516c741bbe99b3237426bef2e608646e062
+  src/mcp-server/scopes.ts:
+    id: 8966d24256b2
+    last_write_checksum: sha1:77d0eb95785e84f9fd0b27c4612f8c6470489fe4
+    pristine_git_object: c25696d4c4f70e081fa5d87ad6891874c509a577
+  src/mcp-server/server.ts:
+    id: 2784dd48e82a
+    last_write_checksum: sha1:20ac39cf9a78807d5687478aff039d64ff2382fe
+    pristine_git_object: 279a9f7a8349e74ccf927b7d5225fbf1f6e3e0a4
+  src/mcp-server/shared.ts:
+    id: 074e80d4be1e
+    last_write_checksum: sha1:d89576cea2bef3856b7fc3e65b868875528be042
+    pristine_git_object: bef212f002cac28cb23333a5f291a4ee5ba08521
+  src/mcp-server/tools.ts:
+    id: 654d5d1f2062
+    last_write_checksum: sha1:879bba5541b5c698b05f24ef9724bf03547c1657
+    pristine_git_object: 21b4ee90054846edef06a151f0fc315e4ad78145
+  src/mcp-server/tools/configGet.ts:
+    id: 7d458a058c90
+    last_write_checksum: sha1:8ee946ac46620a2c615991b378cf887e2d018731
+    pristine_git_object: f6d7588d753fada95adca3ad92458410a2482b2d
+  src/mcp-server/tools/configUpdate.ts:
+    id: 1ba66459dc8d
+    last_write_checksum: sha1:ec18dbccbc63bd71e48572148b63eece420a29b0
+    pristine_git_object: c53fb315c5a0047dbd8efae0165f4e5e46b230cb
+  src/mcp-server/tools/filesDelete.ts:
+    id: a2f2920ebc57
+    last_write_checksum: sha1:0bdbac77fb3e4c85887431a9c8aacc1a86850215
+    pristine_git_object: 5201e1ee80062ade8eb816184444e9ed3cde4f52
+  src/mcp-server/tools/filesDownload.ts:
+    id: f4d3ea499676
+    last_write_checksum: sha1:7098163ecac6c625721a915d50699c3317fa3d2e
+    pristine_git_object: 494a600cebfc36e945e87469a545910d0417b4bf
+  src/mcp-server/tools/filesGetInfo.ts:
+    id: 01e79354b47c
+    last_write_checksum: sha1:9b5b261143a52338c71829068c753e05d29670ad
+    pristine_git_object: a3d84b604296417e03fa8e7c358ccf7a6f74f9c3
+  src/mcp-server/tools/filesList.ts:
+    id: 0afa551d32e8
+    last_write_checksum: sha1:8441614e97b1203c1092ae1315e01601807e5b6f
+    pristine_git_object: 7f77bc072497e0798fa78418b59a7d65d92cc163
+  src/mcp-server/tools/filesUpload.ts:
+    id: 24084e4ec375
+    last_write_checksum: sha1:f9ad976b6b96fd1bf139c3ee41e46ab238481c0d
+    pristine_git_object: 60dccc22d3adbdf9b88dd5a0c9649387c96eeee8
+  src/mcp-server/tools/humanLayerApprove.ts:
+    id: 276f67f18877
+    last_write_checksum: sha1:c00495fd3746af0a14b7fd6019256e933864eb08
+    pristine_git_object: fdc20d7633e3f9d77af1b94f9c074a73f07ede9c
+  src/mcp-server/tools/humanLayerGetRequests.ts:
+    id: f62b176b3b6e
+    last_write_checksum: sha1:863315191c2c0ae2dd0164b3218f9aa400ce7a53
+    pristine_git_object: dea6ec877426fe2529bb4f9ef37b0a28d229fe21
+  src/mcp-server/tools/irisArtifactsDownloadFile.ts:
+    id: a092de4737c4
+    last_write_checksum: sha1:d7f9b975453ad0fef84457bdd5785a2f47ea4808
+    pristine_git_object: 2dbb2dd62c9d3ad91b0d4a2c4939ed174a04c5a1
+  src/mcp-server/tools/irisArtifactsDownloadFolder.ts:
+    id: 38aea8a86828
+    last_write_checksum: sha1:403607eb363130d047aee0d1992b9c9801296f7c
+    pristine_git_object: c5376875e57104369b8a707f26a9f48c3214bef9
+  src/mcp-server/tools/irisArtifactsList.ts:
+    id: 1875c3ea3739
+    last_write_checksum: sha1:a937ea457e8297425eda46e087b7a008fe5a8036
+    pristine_git_object: 9426893302454394601c6aa8541a5ca669eda849
+  src/mcp-server/tools/operatorsGetTypes.ts:
+    id: 1dce44054c4c
+    last_write_checksum: sha1:1bbda7a139c9c1e9c84a63bff8d5d236c8b74e24
+    pristine_git_object: 85782ff67b6446b4358f659e55c92526015fc56c
+  src/mcp-server/tools/rpaBatchExecute.ts:
+    id: b2ff4fb1faa8
+    last_write_checksum: sha1:0bc8c4111546ade0ce214463671de6334d449afd
+    pristine_git_object: f3ff7441030de591436244a93e631f1da84908de
+  src/mcp-server/tools/rpaGetParameterTemplate.ts:
+    id: 9371871722b2
+    last_write_checksum: sha1:fb71fad20ee3556e0fee12fc6fcc6e2e042cd090
+    pristine_git_object: c2775ad03a58784048eca4bf2eb0839517892044
+  src/mcp-server/tools/rpaGetStatus.ts:
+    id: ead906ecc5ab
+    last_write_checksum: sha1:26558feacaad261f4e5e1f6d763f4920f0fdcb52
+    pristine_git_object: 05704e798b567b6bbe93e965747ff25432b17de0
+  src/mcp-server/tools/rpaStartExecution.ts:
+    id: 804cb6309b8a
+    last_write_checksum: sha1:7d042a80593b3ac6495a35d3b5cf8f7e1a4b3b7c
+    pristine_git_object: fa079bdda5131882abcf15ba88908228af1d81ab
+  src/mcp-server/tools/rpaStopExecution.ts:
+    id: af15482058a2
+    last_write_checksum: sha1:ff7822609bc04d0afff4779242ff65399b40b320
+    pristine_git_object: aa644c002f6a07f26d0a87741c9e6051511d459b
+  src/mcp-server/tools/videoEditingDeleteFrame.ts:
+    id: 8dbee5cb881f
+    last_write_checksum: sha1:98dc95da8b9fb6a4cdc3b747f6ec2c0877bac001
+    pristine_git_object: 4d460dd35cde811587f45f3a28bbb19b8768ef5f
+  src/mcp-server/tools/videoEditingRegenerate.ts:
+    id: abdacad2307b
+    last_write_checksum: sha1:eb3db4efee093825e16b5408a05ba788f5af7fd7
+    pristine_git_object: e3216b2cf9b426cd37597b2d70821c2269ee6a3e
+  src/mcp-server/tools/videoEditingUpdateCaption.ts:
+    id: ce253e47cf2d
+    last_write_checksum: sha1:64387870596c2dcb042a6d1543977ee9733d94fc
+    pristine_git_object: 26f6b8def497984d886b00f77911de8246808fc3
+  src/mcp-server/tools/videoExecuteRpa.ts:
+    id: f9d59ffaa977
+    last_write_checksum: sha1:b534096acf854bb64d4e441576245452d0470890
+    pristine_git_object: 6fe228daf1a4d59550ab1ec546587a35c489a3ae
+  src/mcp-server/tools/videoGetAnalysisResults.ts:
+    id: 1f093c455139
+    last_write_checksum: sha1:7b6a6c6968304947cacdd828151035c3cd523e6e
+    pristine_git_object: 4fa8ed63c18818a3ea0b944f48d81d2f85c400d7
+  src/mcp-server/tools/videoStreamOriginal.ts:
+    id: 5141c2ad2f9f
+    last_write_checksum: sha1:e68260c5b527231d9c2351eb03dbea108d01acd4
+    pristine_git_object: 2e818ab0f95a228f0487104774121f338b55097e
+  src/mcp-server/tools/videoStreamProcessed.ts:
+    id: d0e2abe4f056
+    last_write_checksum: sha1:955579c2fcd370f86277a9fb7794be15dd37738a
+    pristine_git_object: c327d2bb2531d822085003888824d068e9df0060
+  src/mcp-server/tools/videoUpload.ts:
+    id: ffd5d4052e42
+    last_write_checksum: sha1:1786d174749ecfa7d342d935b05250aecde0f822
+    pristine_git_object: 68fc179432f1319b8634e3904d350952a2fead08
+  src/mcp-server/tools/videosDeleteRecording.ts:
+    id: fbe500b09a4e
+    last_write_checksum: sha1:330dbe6b653dfa6e0616076936fdb406d30b29a3
+    pristine_git_object: 3be38039bd9c2fa6e83c7bf32a0fe292f8014363
+  src/mcp-server/tools/videosDownload.ts:
+    id: 557562fdca25
+    last_write_checksum: sha1:3034dfcb4973a1ab75ab4a83a3ceed26f431d2e9
+    pristine_git_object: e6b4856dbdf12fe112418cf0375cf0c101bac0d8
+  src/mcp-server/tools/videosGenerate.ts:
+    id: 9a1c606c0f21
+    last_write_checksum: sha1:db6eb90fe68bfb75403fdc3bbb9c624012bbb2e8
+    pristine_git_object: b75eacfab2f5a06512cf612e7226118cccaef305
+  src/mcp-server/tools/videosGetCurrentSessionData.ts:
+    id: 0e70182630cc
+    last_write_checksum: sha1:80fce8677a75db707a1d4fb8998dd9958ba39f0c
+    pristine_git_object: aad127319a0d996335abe90233af829d591eb3d7
+  src/mcp-server/tools/videosGetFramesAndCaptions.ts:
+    id: eb46df59f993
+    last_write_checksum: sha1:d8776082a725d631be264b2ee5bc6873ebddd5b5
+    pristine_git_object: 2d398310b06f2357a4973d713081a16698d53838
+  src/mcp-server/tools/videosGetMetadata.ts:
+    id: 961bdef06561
+    last_write_checksum: sha1:676580044122b1eb223221ac47fe068999076cf4
+    pristine_git_object: 21b954eedf0a6fee68823b66e90a4bb5da9ebf7e
+  src/mcp-server/tools/videosGetRecordingData.ts:
+    id: f4624f572e66
+    last_write_checksum: sha1:45ece3a4b06a009af54e362ffe05415840947fe9
+    pristine_git_object: 3192e76ce0a4ee6dc7e03d212ae6e4fb2451527e
+  src/mcp-server/tools/videosGetStatus.ts:
+    id: e27e7b58fd8c
+    last_write_checksum: sha1:c8b298ec750ee336e10dff22417e10c5ea0f886f
+    pristine_git_object: c285caf2f56bbc2ecab2c6e69eb328f1d650b238
+  src/mcp-server/tools/videosGetThumbnail.ts:
+    id: f127f0c3e6e4
+    last_write_checksum: sha1:6ec5dc7b4ef71f65d4221058143ec4d186adc04c
+    pristine_git_object: d5fb8357950362f6cd8656dc461d1600dfea8198
+  src/mcp-server/tools/videosList.ts:
+    id: 0058899c0bf1
+    last_write_checksum: sha1:1729b9627f8d42c18ef8522ce9550a04182df400
+    pristine_git_object: 76a328eedd7fcf752a1d4666d23fc384c5b6687d
+  src/mcp-server/tools/videosSaveCurrentSession.ts:
+    id: 237bb02b5112
+    last_write_checksum: sha1:becf7e9bee26673731e274bbfd8d232af4462991
+    pristine_git_object: d6cee3f2400573a2b98863aec941ccc62dfc6d0f
+  src/mcp-server/tools/videosStream.ts:
+    id: 63dd5393077b
+    last_write_checksum: sha1:0508e2329c34e236ec46a0e1bc420a3cdd318539
+    pristine_git_object: cac3662d7578b5eba5bbb6fd56cf7824cb098e84
+  src/models/components/artifactitemdto.ts:
+    id: d1045c6b2458
+    last_write_checksum: sha1:0f81d603d794694be8368ae51ae1e8b35a8d5d06
+    pristine_git_object: 9d999bf39178d4fcd124c2ab093d8472c7e5a19f
+  src/models/components/artifactscontentdto.ts:
+    id: efad3992b2a5
+    last_write_checksum: sha1:f262494ad6629c61384a644d604ef2e3356ae835
+    pristine_git_object: 93f7c1f9aed0c40967f41cacfd1afc01ac2d27d1
+  src/models/components/batchexecuterpadto.ts:
+    id: b7ce741da6f6
+    last_write_checksum: sha1:9ec14c37d446109c0d861e5f53603b810de3e54d
+    pristine_git_object: 7be77a82f648db686b3a7153f6cdfd902ac243ca
+  src/models/components/captiondatadto.ts:
+    id: 3337664e09e7
+    last_write_checksum: sha1:b26d47331673c35aa7ddcf65689bd19b39c44c6b
+    pristine_git_object: 37334f4be832e7f6fd75ab7b87e686bbfdf1ea7c
+  src/models/components/configresponsedto.ts:
+    id: dfdc4282e6e3
+    last_write_checksum: sha1:3d84b9c7ad74d6e0f2a669b2ae6da9d472d21df8
+    pristine_git_object: c9096aac6f808aed80f116db60f1da57ae2aaecf
+  src/models/components/currentsessionvideodataresponsedto.ts:
+    id: 37fd5420df10
+    last_write_checksum: sha1:d5d0305349e3023bc7fb4e5599e01644198b6ccc
+    pristine_git_object: 1e60ef89bc45159a43350a6f3a367eb1e764535b
+  src/models/components/deleterecordingresponsedto.ts:
+    id: 03e56d41c20f
+    last_write_checksum: sha1:f95c3da9ecd6b806ba18cab96775804c065eb19f
+    pristine_git_object: a8d447bf677a645074e433fcc9415d1b214af048
+  src/models/components/fileinfodto.ts:
+    id: 7b1e54320c8f
+    last_write_checksum: sha1:feacfff0b6564e56fab73da118b122d96447ae0d
+    pristine_git_object: 15be94aadf48d0e09b446b2a8277dc219e0b29e3
+  src/models/components/fileuploaddto.ts:
+    id: 1a706ec87635
+    last_write_checksum: sha1:12bd62dfd510bba8764234796adfff33beee26b7
+    pristine_git_object: 9ba494863bbe0c990e545b4d2413824fa1b4c273
+  src/models/components/fileuploadresponsedto.ts:
+    id: 47af2cf8346f
+    last_write_checksum: sha1:13a92a1d8ae614b58cfdc3a95ef15b022841f1c9
+    pristine_git_object: 5a565ff13d4c31664c016ce6763225b97297e51d
+  src/models/components/framesandcaptionsresponsedto.ts:
+    id: 270fcb706734
+    last_write_checksum: sha1:b8d0fa795e00935519b368119a215ee242d9e12f
+    pristine_git_object: d40bae0b465149ce0144e9e01af028cc38107213
+  src/models/components/generatevideodto.ts:
+    id: fff00316bbcc
+    last_write_checksum: sha1:e617ca09bb7bb06d0979fcfe218ac5cff5b79ea1
+    pristine_git_object: b62447714c2e142520bdd76bf6f47ea91add643e
+  src/models/components/generatevideoresponsedto.ts:
+    id: cef9fab24899
+    last_write_checksum: sha1:13d8c86073ffc74f6f0322ce5ede625b39b1c5c4
+    pristine_git_object: 34a54a5ec17b202400997121dc1e790bc2277c6f
+  src/models/components/index.ts:
+    id: 0aa842dce54d
+    last_write_checksum: sha1:b7437c69e2f1cb41255a9ae30dbe0d32df6c80d7
+    pristine_git_object: 8d17afeee067c0f92da22686756e0c5eca7f76af
+  src/models/components/operatortypesdto.ts:
+    id: deff8b141075
+    last_write_checksum: sha1:e19778cdb0e8c2cc431bc1488697888201784d0f
+    pristine_git_object: 7fd2c3ab07439939a798566d4117e71231f47f97
+  src/models/components/parametertemplateresponsedto.ts:
+    id: 1f79c14cbdd4
+    last_write_checksum: sha1:216df3e84f343bd361974cb0205504a2ff5c67fc
+    pristine_git_object: 15c2a7e86a27f6645044e2cf38e1cd22d631f636
+  src/models/components/recordinglistresponsedto.ts:
+    id: 8c4fcf872c4a
+    last_write_checksum: sha1:379e2451105ea31d113baad79f180f15810a583c
+    pristine_git_object: 2445e4c48790c40f606bd17ad1b628f1ceec494f
+  src/models/components/recordingresponsedto.ts:
+    id: 431dfec06d0d
+    last_write_checksum: sha1:9366d7f437caa35ed172af1f7e48a7d130306c94
+    pristine_git_object: d90d97be6589b4f2ea8b0e866c072aefb286f3ea
+  src/models/components/rpaexecutionstatusdto.ts:
+    id: 4c8fc3ebff63
+    last_write_checksum: sha1:138a186b34d9f7ccaa9ef0108d9b97e5bf97854c
+    pristine_git_object: 6762e1e2ab436c30e2dac1e1ac30a384f6fa570d
+  src/models/components/rpastepsdto.ts:
+    id: e9edce031fdb
+    last_write_checksum: sha1:e8144f76652ebda5b9f17b5676a179fdda3806bc
+    pristine_git_object: 28630ce0cc6ce9c459768c7ef305a2db48526e9a
+  src/models/components/savesessionrecordingresponsedto.ts:
+    id: 4dff71caf85d
+    last_write_checksum: sha1:a4d2cb01c6d156672dc75c0f5ab99afee33e60a2
+    pristine_git_object: 51b2213bbfc359494edb1eec3cdcd77bb484368e
+  src/models/components/sessionreplaydataresponsedto.ts:
+    id: 394220c5335e
+    last_write_checksum: sha1:9317a627b82ecdfee84baa58f3d74aa9efa7b8b1
+    pristine_git_object: 05e6630c68a6dc7af7ce5a8291a470961ec48613
+  src/models/components/simplesuccessresponsedto.ts:
+    id: 0c5da29b4aeb
+    last_write_checksum: sha1:8a992892b2a5ec3d379f51a9ecf135ccedbd6ef7
+    pristine_git_object: c45051673b87b61bee209ada3bbb803ae61e91cc
+  src/models/components/startrpaexecutiondto.ts:
+    id: a9b674208a9e
+    last_write_checksum: sha1:2a096cef6daa9ae5f7781db97405a6ccf292ae8b
+    pristine_git_object: 6234d158c29a557c53fce00481615a8fe91c4857
+  src/models/components/successresponsedto.ts:
+    id: 8eff8ba3f0f6
+    last_write_checksum: sha1:f236cdfb1e7f5f41eb067d29acf8a0fc12253313
+    pristine_git_object: ba5f00a5e9d2eb005e7989884abc2ca547bf9f91
+  src/models/components/updatecaptiondto.ts:
+    id: 54bd21b20a15
+    last_write_checksum: sha1:4c6fcde1ec6f65a9ee6cec93c3110c10c230a59c
+    pristine_git_object: e015fbfeb36962bfa2e7392ab1812a2bd25bcf63
+  src/models/components/updateconfigdto.ts:
+    id: bd879cba7b6d
+    last_write_checksum: sha1:5362f3cdafac863733a367897ab2f4e89412227d
+    pristine_git_object: 182789c230dce0ee89bcc876f3e012605a36e67c
+  src/models/components/videoanalysisresponsedto.ts:
+    id: d1c8648dfffa
+    last_write_checksum: sha1:fcca91e71d5d2aed8b58bdc3e36a2c27e2863b6e
+    pristine_git_object: 33177c56a770ca9997ac7f4ef900e47b203ea8a9
+  src/models/components/videodatadto.ts:
+    id: b9fd7c1558fd
+    last_write_checksum: sha1:199008de1e10b4aae1b10460c7bc39fbdac5e9b5
+    pristine_git_object: c0eb6981f9184cfba310bf900a4d5fb403dfe697
+  src/models/components/videorecordingdto.ts:
+    id: 63d1293e1aae
+    last_write_checksum: sha1:cfa672f70358938f5c0914769fbbd9369ec3bf49
+    pristine_git_object: c4e994745746e4ab7308939c4674200b5526deef
+  src/models/components/videostatusresponsedto.ts:
+    id: 74ef94efbb04
+    last_write_checksum: sha1:a148adb328aba494699c96da0b6d27194ff7e3ad
+    pristine_git_object: 86520b7f7a4c96e7426ef9f7a1446852acfb0296
+  src/models/components/videostreaminprogressresponsedto.ts:
+    id: 10099735eb6e
+    last_write_checksum: sha1:ba93bc8e24bc9c06577c5ec23ac1dd39a42501e9
+    pristine_git_object: a80729318ed4d5d65708292096f0fda48e7e8348
+  src/models/components/videouploaddto.ts:
+    id: fc0179f50489
+    last_write_checksum: sha1:57bc1b21a83965200bd8d4f2e951fc0f1f317d5e
+    pristine_git_object: 391ddde6a944104c3b8c0d8f90ab51d4bb376833
+  src/models/errors/apierror.ts:
+    id: e2280e075454
+    last_write_checksum: sha1:a3085a01266572ea31878c63e7e894395eed8c79
+    pristine_git_object: 1db0447ff1fa2309912894b9ffe79b6be7acdaf6
+  src/models/errors/httpclienterrors.ts:
+    id: 6948de76af99
+    last_write_checksum: sha1:994ced121c54fecd0af038ccfb7855fbfd3868ec
+    pristine_git_object: b34f612124c797c2a1106b9735708f679a90b74f
+  src/models/errors/index.ts:
+    id: c4e22507cb83
+    last_write_checksum: sha1:4f0dc31aac677a1f983d4fa6c4f46a534fa9ef36
+    pristine_git_object: 99fde314091742db9f721aefd5647641098e9ff4
+  src/models/errors/irissdkerror.ts:
+    id: 67f3893e2d2c
+    last_write_checksum: sha1:4c728fbfc61fa52618604889447d6140bcc2a332
+    pristine_git_object: dfcf41f7347ea999fc7748f47383ecb578d4e91c
+  src/models/errors/responsevalidationerror.ts:
+    id: 88ff98a41be9
+    last_write_checksum: sha1:0443207d5f38ae88c9f06f4daa173f386db5f898
+    pristine_git_object: db852d7c041787f169761520034de9b3453f43c8
+  src/models/errors/sdkvalidationerror.ts:
+    id: fb6b2b49c445
+    last_write_checksum: sha1:a69da17627bcc32b820544608f3400423ea53f26
+    pristine_git_object: 6826e1208a5d7b7d310535d18909646522bf0fbd
+  src/models/operations/approverequest.ts:
+    id: c886314e2aed
+    last_write_checksum: sha1:d1924e606d26c84f37fc903ac03daa87afe79646
+    pristine_git_object: 0c81eead0964144ef97b3dfab7aee78baad22541
+  src/models/operations/deletefile.ts:
+    id: 4b741f4bc99e
+    last_write_checksum: sha1:700124e76e53e4f22928dd4402f17e62009817a4
+    pristine_git_object: a3993826ea482c001087239c8dda709e84b5713a
+  src/models/operations/deleteframe.ts:
+    id: 28c6563a0372
+    last_write_checksum: sha1:a86a10fd7db42968e708810a3de2d79ed16b005e
+    pristine_git_object: ca083fc78a1b062d0ccb3ebc049870448e69de06
+  src/models/operations/deleterecording.ts:
+    id: 345de5d6eeff
+    last_write_checksum: sha1:7436c1fc0a8c1a43bc27acf0ba5e7dd15390c14a
+    pristine_git_object: ede57e7995fe3e5eddba4b512d23ad113742e1cc
+  src/models/operations/downloadartifactfile.ts:
+    id: d7fb53d392ba
+    last_write_checksum: sha1:d93af5f80115efd9b3a47d33668158d6fefca917
+    pristine_git_object: fe10ee3c3e4d14e3cc8ebc582381abc83ade4d33
+  src/models/operations/downloadartifactfolder.ts:
+    id: 2eaac4c503d3
+    last_write_checksum: sha1:d9e36a2eb481eaf4a269b1a1c5a7d69d0b04c452
+    pristine_git_object: 93a1ec47c271ce836dde6181e28fcb08f45f914c
+  src/models/operations/downloadfile.ts:
+    id: 9b05a89305a0
+    last_write_checksum: sha1:5e3681c3200e54657de7e77901db5bbac3d08296
+    pristine_git_object: 14256f3bb55525a023177a02bc8e33fd44e9550a
+  src/models/operations/downloadrecording.ts:
+    id: 18099348de1d
+    last_write_checksum: sha1:d9ba7a56a177f5401dc02bdfaf37e648ba431c9c
+    pristine_git_object: b8b4b2c245b85bb4751b9bca6f71c4e192777fd7
+  src/models/operations/executerpasteps.ts:
+    id: c0d0647ac5b3
+    last_write_checksum: sha1:b73386ddf56cf5e86f2276b707489071190c3900
+    pristine_git_object: 474981ca2fa396d6ce66b17e85660030e95f1c76
+  src/models/operations/generatevideo.ts:
+    id: 3722faace09e
+    last_write_checksum: sha1:76d2ebddf6daec4e5367c0f6d68bb24d2dec92ad
+    pristine_git_object: 4de7974c38cf71ccd32b076522893f7b29a3fe34
+  src/models/operations/getanalysisresults.ts:
+    id: 394b38a2b159
+    last_write_checksum: sha1:11ce130a262f053da971ec921b68044a0760636c
+    pristine_git_object: c602fe74e7f3fc2e576be9ccb628e09ba6a0c0de
+  src/models/operations/getexecutionstatus.ts:
+    id: 4c620bf3cbfb
+    last_write_checksum: sha1:4c609f84ea7de22a2dd60e991e6608e0953bb91e
+    pristine_git_object: 9865935d49739506d9e68b318992eb0345fa1eed
+  src/models/operations/getfileinfo.ts:
+    id: 1c56a1462014
+    last_write_checksum: sha1:6747eff1dc6debc2ac326e3fe839b4aeb1f8f2de
+    pristine_git_object: c5fa3ed21732b1bda777ac7b3141bbb905d503e1
+  src/models/operations/getframesandcaptions.ts:
+    id: c3b765a3467e
+    last_write_checksum: sha1:083ec9bdb4d3742d0a426b99583806e701b02cc0
+    pristine_git_object: d4ee735411bc7ee6eb63158cfe25433cda8e7ecd
+  src/models/operations/getparametertemplate.ts:
+    id: fb3643e8dfef
+    last_write_checksum: sha1:083ec1e4b95c6da5d23db485138fc44713445b6b
+    pristine_git_object: 90da817ee43d7eef181da8258661c108ad5d7181
+  src/models/operations/getrecordingmetadata.ts:
+    id: 37e8d1f4c2b8
+    last_write_checksum: sha1:36384060ef47e0393491f88e0fd0f633936c122c
+    pristine_git_object: 10de257615502c414111997ed42d16cdc68b3ac1
+  src/models/operations/getrecordingthumbnail.ts:
+    id: 5cd28881fc88
+    last_write_checksum: sha1:4b780416fbc65cd0feeafbad816d8d450882230d
+    pristine_git_object: 6504b3323ccf25d7b3ebba27a67950b92d871220
+  src/models/operations/getrecordingvideodata.ts:
+    id: 0cb2afc9c76f
+    last_write_checksum: sha1:ab2abf35a5fa8e4c7064e9aa045d058d2d86acd0
+    pristine_git_object: fe9d8d501fa3fac146e36d5ae1e61dfd8b1e7087
+  src/models/operations/getvideostatus.ts:
+    id: 5e82a3b96935
+    last_write_checksum: sha1:cfda5dbeb2ae9a35ccdfa7cf69cbf922ffbc76b7
+    pristine_git_object: d292edbf77ce647aec32d284d2f87d51cf61380a
+  src/models/operations/index.ts:
+    id: 0d9ffaf774d2
+    last_write_checksum: sha1:62aee9ffae75975c9d358cf5524082f12278c7f7
+    pristine_git_object: a218b8a212d59d73f64c2301ebb58494ce6f886d
+  src/models/operations/listartifacts.ts:
+    id: d5133201f48c
+    last_write_checksum: sha1:e587e379a6e1b8ed9ad362c29fd8222102acc792
+    pristine_git_object: 029777e41d038ecf8703074135101209fb6419f5
+  src/models/operations/regeneratevideo.ts:
+    id: 6af5db4d01e6
+    last_write_checksum: sha1:5e05f197e12335bb20b961137f6774d9ab246fd7
+    pristine_git_object: cca85d130946c313ae3721c21bacb28762f3cce5
+  src/models/operations/stopexecution.ts:
+    id: d7dd4a65d1c9
+    last_write_checksum: sha1:29dd3e84a50aea6a80acb569ebc411c517ed600c
+    pristine_git_object: ad72169030233263ebe94fdf8e6bacff40c03cf2
+  src/models/operations/streamoriginalvideo.ts:
+    id: 8c518f918795
+    last_write_checksum: sha1:a3e8bfebdd99c7d53b5b940594925184a6ff3423
+    pristine_git_object: 3d79168a7b7a6ae59c76ce92f2b836455c3e664f
+  src/models/operations/streamprocessedvideo.ts:
+    id: d92d1c76de1e
+    last_write_checksum: sha1:116fbbbc21879236be53238b6079ad17f72e9155
+    pristine_git_object: 33eb84a6cba06cda7f40e3c877487b3acdabc99c
+  src/models/operations/streamvideo.ts:
+    id: 36b54aa9c6e1
+    last_write_checksum: sha1:7be150b0c0a2c11d3e6bb5f2da0326f38cef38f9
+    pristine_git_object: 034f1900956b16b5b05f154eab1304f712730e45
+  src/models/operations/updatecaption.ts:
+    id: b7ce84455931
+    last_write_checksum: sha1:b5e5c05e55542bece0148306712d501c0787ac52
+    pristine_git_object: 29d36752ecf37d120f4ac83ab74b62ff7381bbce
+  src/sdk/config.ts:
+    id: 245460c23f6b
+    last_write_checksum: sha1:5d913378ce8d8c954d2ab02c7ae8be3c4e14b11a
+    pristine_git_object: 82a9a9644a425543b362bf091e6260ab2e0e8f83
+  src/sdk/files.ts:
+    id: bb9172f41ecb
+    last_write_checksum: sha1:a6cc1afd140fa94c408f3ff7128e35b02a2d8c23
+    pristine_git_object: a3cc48544e06883eef7eee34471343140c042b05
+  src/sdk/humanlayer.ts:
+    id: b7f90d6a4b85
+    last_write_checksum: sha1:fb6de014dd095fab7f62f358d7985c26226d6c02
+    pristine_git_object: 438beccfc6b2a88c8df464106071bba9322563dc
+  src/sdk/index.ts:
+    id: a857902a703f
+    last_write_checksum: sha1:ed6d64f2a6135349aa8498b8d8cff9ba85c7fb8f
+    pristine_git_object: ecac2264817bb369ff2dbf0f0e9029807e67ff77
+  src/sdk/irisartifacts.ts:
+    id: 7579a1edee92
+    last_write_checksum: sha1:242fda50e1b084960aa3dd50f544e63c6b06d4c4
+    pristine_git_object: 278a6b5ef5da69ea1710b2684078f6ee7781d408
+  src/sdk/operators.ts:
+    id: ea2c02983456
+    last_write_checksum: sha1:068dba1f05859c51c9e9790fe5e29a21cbbed1dd
+    pristine_git_object: 70b80ef644dd31e799c4b06a20a025c8c94d2728
+  src/sdk/rpa.ts:
+    id: 9a107bfcece5
+    last_write_checksum: sha1:d044815d76e1c7e3af04911476f17fd5e1a39564
+    pristine_git_object: 10694677cb62d1a80e97258d73320f0a785c6dad
+  src/sdk/sdk.ts:
+    id: 784571af2f69
+    last_write_checksum: sha1:c12dad18d196d125fda25567a328a2d3f97c5a86
+    pristine_git_object: 37768632b104c7d40c5c7cef72ebfe499ed40986
+  src/sdk/video.ts:
+    id: 3fed6449b7fe
+    last_write_checksum: sha1:eb365c2b96970d6aa89a620e26b97bfb95abf172
+    pristine_git_object: 10dd3e1812994ba88b54608be2df415b46f1d416
+  src/sdk/videoediting.ts:
+    id: 81d802c805f1
+    last_write_checksum: sha1:2a197ff1a1e7b56d3b4bf6cea5cbb90706a5e3e6
+    pristine_git_object: 0ca8662cfcb5743a54ed2ba2d2fdda8ff5bee1eb
+  src/sdk/videos.ts:
+    id: 76686e430b47
+    last_write_checksum: sha1:a655c357466a93f35c4c3b56e96ab426d1840ae6
+    pristine_git_object: 0920733f5e49ea5bbccb809a843a40689d0ae4f7
+  src/types/async.ts:
+    id: fac8da972f86
+    last_write_checksum: sha1:675d04bb4b4081dc3482f18de98674f9b446e7b4
+    pristine_git_object: 1543b95cf7be9b5a871d7395f259dbd65331dc21
+  src/types/blobs.ts:
+    id: f8ab9b326c86
+    last_write_checksum: sha1:cf45d78916671cb6345a11c97c633c64402bc27c
+    pristine_git_object: cce2892d4f573a120ef3907db90ab15f5979cfda
+  src/types/constdatetime.ts:
+    id: 0f7b6f513917
+    last_write_checksum: sha1:dfaaf9adfaf49808bd4c9dea0039f21b7088d9c0
+    pristine_git_object: fe62144eaf6a2054fc8ca9a98466e70f41b5434d
+  src/types/enums.ts:
+    id: 4d03ddfe5100
+    last_write_checksum: sha1:ee590453d2c87e33e89c633d37ee46907eca0e58
+    pristine_git_object: aba0ffd2a3308a31e516d83b52823d80aa65a8f9
+  src/types/fp.ts:
+    id: ae9f0fb8aab6
+    last_write_checksum: sha1:d24994d58f37a1ca106847fcc6d2e976c6f1c093
+    pristine_git_object: ccbe51eac69dfb0da5131f14fd753c4b47c1d527
+  src/types/index.ts:
+    id: cd7a0a5ed005
+    last_write_checksum: sha1:bf43b3dccb960ca9ae9c5ab940da4786255881cd
+    pristine_git_object: abf0b7ab8f196829df8946da40d627a46da68e3c
+  src/types/operations.ts:
+    id: 314da01dca47
+    last_write_checksum: sha1:c49e724cfb1259296381cb57bc0fcdd2eae45865
+    pristine_git_object: beb81e10f0b9eee2ed398a853fe6f737b743f818
+  src/types/rfcdate.ts:
+    id: 9eb64906dcd6
+    last_write_checksum: sha1:8e5f382e02fe21c2f2e24deb1b7bbf8cddd3dd16
+    pristine_git_object: c79b3f53a3dd922aa2ace5a4191c8652cf9a8e89
+  src/types/streams.ts:
+    id: f99be9c4bf14
+    last_write_checksum: sha1:cc9ced2dd34a76c3a1bd7784ccda1cc3b37ab9a9
+    pristine_git_object: a0163e7a99cea88f21d0ad4ce3af1c720180ee20
+  src/types/unrecognized.ts:
+    id: 476605c40716
+    last_write_checksum: sha1:d33ac686528492f4cdc0dbf81ed343b4afe020fe
+    pristine_git_object: b7a2a13f3dff50663429df24ae2f55b647ff1084
+  tsconfig.json:
+    id: 61ebb9fd6e8c
+    last_write_checksum: sha1:79dc1550d921fefec69f8632ed3b24dad41ca2f6
+    pristine_git_object: 76110f883cac40bb04fb2f376cd69ea8c8d6d215
+examples:
+  getConfig:
+    speakeasy-default-get-config:
+      responses:
+        "200":
+          application/json: {"vlmBaseUrl": "https://nifty-decongestant.net", "vlmApiKey": "<value>", "vlmModelName": "<value>", "vlmProvider": "<value>", "language": "<value>", "defaultOperator": "computer", "maxLoopCount": 5890.33, "loopIntervalInMs": 5029.12}
+  updateConfig:
+    speakeasy-default-update-config:
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"vlmBaseUrl": "https://neat-consistency.name/", "vlmApiKey": "<value>", "vlmModelName": "<value>", "vlmProvider": "<value>", "language": "<value>", "defaultOperator": "browser", "maxLoopCount": 8904.49, "loopIntervalInMs": 2766.34}
+  listRecordings:
+    speakeasy-default-list-recordings:
+      responses:
+        "200":
+          application/json: {"recordings": [{"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": 1653.78, "duration": 283.9, "frameCount": 3294.43, "filePath": "/private/readmit_how.eot", "size": 3802.31}, {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": 1653.78, "duration": 283.9, "frameCount": 3294.43, "filePath": "/private/readmit_how.eot", "size": 3802.31}]}
+  getRecordingMetadata:
+    speakeasy-default-get-recording-metadata:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"success": true, "recording": {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": 9556.52, "duration": 5131.71, "frameCount": 4987.95, "filePath": "/home/user/apropos.woff2", "size": 6692.47}}
+  deleteRecording:
+    speakeasy-default-delete-recording:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"success": true}
+  getVideoStatus:
+    speakeasy-default-get-video-status:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"recordingId": "12345678-1234-5678-1234-567812345678", "hasVideo": true, "status": "completed", "message": "Video generation is complete", "startedAt": 1651234567890, "completedAt": 1651234597890, "elapsedSeconds": 30, "format": "mp4", "sizeMB": 2.5, "error": "FFmpeg process exited with code 1"}
+  getRecordingThumbnail:
+    speakeasy-default-get-recording-thumbnail:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          image/png: "x-file: example.file"
+  saveCurrentSession:
+    speakeasy-default-save-current-session:
+      responses:
+        "201":
+          application/json: {"success": true, "recording": {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": 2450.81, "duration": 1307.06, "frameCount": 3550.27, "filePath": "/selinux/emergent_accompanist_consequently.mjs", "size": 6222.92}}
+  getCurrentSessionVideoData:
+    speakeasy-default-get-current-session-video-data:
+      responses:
+        "200":
+          application/json: {"success": true, "videoData": {"frames": ["base64string1", "base64string2"], "captions": [{"timestamp": 1651234567890, "conversation": {}, "frameIndex": 0}]}}
+  getRecordingVideoData:
+    speakeasy-default-get-recording-video-data:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"success": true, "replayData": {"frames": ["data:image/png;base64,iVBORw0KGgo..."], "captions": [{"timestamp": 1651234567890, "conversation": {}, "frameIndex": 0}]}}
+  downloadRecording:
+    speakeasy-default-download-recording:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/zip: "x-file: example.file"
+  generateVideo:
+    speakeasy-default-generate-video:
+      parameters:
+        path:
+          id: "<id>"
+      requestBody:
+        application/json: {"fps": 0.2, "captionsEnabled": true, "format": "mp4", "quality": "medium"}
+      responses:
+        "201":
+          application/json: {"success": true, "videoPath": "/Users/user/.iris/videos/12345678-1234-5678-1234-567812345678/video.mp4", "recording": {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": 1525.81, "duration": 9140.8, "frameCount": 5387.49, "filePath": "/Network/yet_webbed.html", "size": 8772.39}}
+  streamVideo:
+    speakeasy-default-stream-video:
+      parameters:
+        path:
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          video/mp4: "x-file: example.file"
+          video/webm: "x-file: example.file"
+          image/gif: "x-file: example.file"
+        "202":
+          image/gif: "0xcc8f3d8Bca"
+          video/mp4: "0x2c3D2d6F15"
+          video/webm: "0xae343dda5a"
+  getFramesAndCaptions:
+    speakeasy-default-get-frames-and-captions:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"success": true, "frames": ["<value 1>", "<value 2>", "<value 3>"], "captions": []}
+  deleteFrame:
+    speakeasy-default-delete-frame:
+      parameters:
+        path:
+          id: "<id>"
+          frameIndex: 1580.86
+      responses:
+        "200":
+          application/json: {"success": true}
+  updateCaption:
+    speakeasy-default-update-caption:
+      parameters:
+        path:
+          id: "<id>"
+          frameIndex: 2353.28
+      requestBody:
+        application/json: {"caption": {}, "text": "New caption text here"}
+      responses:
+        "200":
+          application/json: {"success": true}
+  regenerateVideo:
+    speakeasy-default-regenerate-video:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "201":
+          application/json: {"success": true}
+  getOperatorTypes:
+    speakeasy-default-get-operator-types:
+      responses:
+        "200":
+          application/json: {"types": []}
+  startExecution:
+    speakeasy-default-start-execution:
+      requestBody:
+        application/json: {"recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "actionDelay": 1500, "parameterOverrides": {}}
+      responses:
+        "201":
+          application/json: {"executionId": "rpa_1695872345678", "recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "status": "running", "currentActionIndex": 3, "totalActions": 15, "startedAt": 1695872345678, "operatorType": "browser", "errorMessage": "Failed to execute click action: Element not found"}
+  stopExecution:
+    speakeasy-default-stop-execution:
+      parameters:
+        path:
+          executionId: "rpa_1695872345678"
+      responses:
+        "200":
+          application/json: {"executionId": "rpa_1695872345678", "recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "status": "running", "currentActionIndex": 3, "totalActions": 15, "startedAt": 1695872345678, "operatorType": "browser", "errorMessage": "Failed to execute click action: Element not found"}
+  getExecutionStatus:
+    speakeasy-default-get-execution-status:
+      parameters:
+        path:
+          executionId: "rpa_1695872345678"
+      responses:
+        "200":
+          application/json: {"executionId": "rpa_1695872345678", "recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "status": "running", "currentActionIndex": 3, "totalActions": 15, "startedAt": 1695872345678, "operatorType": "browser", "errorMessage": "Failed to execute click action: Element not found"}
+  getParameterTemplate:
+    speakeasy-default-get-parameter-template:
+      parameters:
+        path:
+          recordingId: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6"
+      responses:
+        "200":
+          application/json: {"recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "parameterTemplate": {}}
+  batchExecute:
+    speakeasy-default-batch-execute:
+      requestBody:
+        application/json: {"recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "actionDelay": 1500, "parameterSets": ["{\"name\":\"Run 1\",\"parameterOverrides\":{\"2.action_inputs.content\":\"First search term\"}}", "{\"name\":\"Run 2\",\"parameterOverrides\":{\"2.action_inputs.content\":\"Second search term\"}}"]}
+      responses:
+        "201":
+          application/json: {"success": true, "message": "RPA execution stopped successfully"}
+  uploadVideo:
+    speakeasy-default-upload-video:
+      requestBody:
+        multipart/form-data: {"file": "x-file: example.file"}
+      responses:
+        "200":
+          application/json: {"analysisId": "1682598432741", "originalVideo": "recording-1682598432741.mp4", "processedVideo": "processed-recording-1682598432741.mp4", "message": "Video uploaded and analyzed successfully"}
+  getAnalysisResults:
+    speakeasy-default-get-analysis-results:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"analysisId": "1682598432741", "rpaSteps": "1. Move mouse to position (125, 50)\n2. Click left mouse button\n3. Type \"example.com\"\n4. Press ENTER key\n5. Wait 2 seconds\n6. Move mouse to position (250, 150)\n7. Click left mouse button", "processedVideoUrl": "/api/video/processed/processed-recording-1682598432741.mp4", "originalVideoUrl": "/api/video/original/recording-1682598432741.mp4"}
+  executeRpaSteps:
+    speakeasy-default-execute-rpa-steps:
+      parameters:
+        path:
+          id: "<id>"
+  streamProcessedVideo:
+    speakeasy-default-stream-processed-video:
+      parameters:
+        path:
+          filename: "example.file"
+  streamOriginalVideo:
+    speakeasy-default-stream-original-video:
+      parameters:
+        path:
+          filename: "example.file"
+  uploadFile:
+    speakeasy-default-upload-file:
+      requestBody:
+        multipart/form-data: {"file": "x-file: example.file"}
+      responses:
+        "200":
+          application/json: {"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "message": "File uploaded successfully"}
+  listFiles:
+    speakeasy-default-list-files:
+      responses:
+        "200":
+          application/json: [{"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "uploadDate": "2023-04-27T14:00:32.741Z"}, {"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "uploadDate": "2023-04-27T14:00:32.741Z"}, {"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "uploadDate": "2023-04-27T14:00:32.741Z"}]
+  getFileInfo:
+    speakeasy-default-get-file-info:
+      parameters:
+        path:
+          id: "1682598432741"
+      responses:
+        "200":
+          application/json: {"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "uploadDate": "2023-04-27T14:00:32.741Z"}
+  deleteFile:
+    speakeasy-default-delete-file:
+      parameters:
+        path:
+          id: "1682598432741"
+      responses:
+        "200":
+          application/json: {}
+  downloadFile:
+    speakeasy-default-download-file:
+      parameters:
+        path:
+          filename: "document-1682598432741.pdf"
+  getRequests: {}
+  approveRequest:
+    speakeasy-default-approve-request:
+      parameters:
+        path:
+          requestId: "<id>"
+  listArtifacts:
+    speakeasy-default-list-artifacts:
+      parameters:
+        query:
+          path: "code/my-project"
+      responses:
+        "200":
+          application/json: {"currentPath": "code/my-project", "parentPath": "code", "items": []}
+  downloadArtifactFile:
+    speakeasy-default-download-artifact-file:
+      parameters:
+        path:
+          path: "/usr/include"
+  downloadArtifactFolder:
+    speakeasy-default-download-artifact-folder:
+      parameters:
+        path:
+          path: "/media"
+examplesVersion: 1.0.2
+generatedTests: {}
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
@@ -336,272 +1846,3 @@ generatedFiles:
   - src/types/rfcdate.ts
   - src/types/streams.ts
   - tsconfig.json
-examples:
-  getConfig:
-    speakeasy-default-get-config:
-      responses:
-        "200":
-          application/json: {"vlmBaseUrl": "https://nifty-decongestant.net", "vlmApiKey": "<value>", "vlmModelName": "<value>", "vlmProvider": "<value>", "language": "<value>", "defaultOperator": "computer", "maxLoopCount": 5890.33, "loopIntervalInMs": 5029.12}
-  updateConfig:
-    speakeasy-default-update-config:
-      requestBody:
-        application/json: {}
-      responses:
-        "200":
-          application/json: {"vlmBaseUrl": "https://neat-consistency.name/", "vlmApiKey": "<value>", "vlmModelName": "<value>", "vlmProvider": "<value>", "language": "<value>", "defaultOperator": "browser", "maxLoopCount": 8904.49, "loopIntervalInMs": 2766.34}
-  listRecordings:
-    speakeasy-default-list-recordings:
-      responses:
-        "200":
-          application/json: {"recordings": [{"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": 1653.78, "duration": 283.9, "frameCount": 3294.43, "filePath": "/private/readmit_how.eot", "size": 3802.31}, {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": 1653.78, "duration": 283.9, "frameCount": 3294.43, "filePath": "/private/readmit_how.eot", "size": 3802.31}]}
-  getRecordingMetadata:
-    speakeasy-default-get-recording-metadata:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/json: {"success": true, "recording": {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": 9556.52, "duration": 5131.71, "frameCount": 4987.95, "filePath": "/home/user/apropos.woff2", "size": 6692.47}}
-  deleteRecording:
-    speakeasy-default-delete-recording:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/json: {"success": true}
-  getVideoStatus:
-    speakeasy-default-get-video-status:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/json: {"recordingId": "12345678-1234-5678-1234-567812345678", "hasVideo": true, "status": "completed", "message": "Video generation is complete", "startedAt": 1651234567890, "completedAt": 1651234597890, "elapsedSeconds": 30, "format": "mp4", "sizeMB": 2.5, "error": "FFmpeg process exited with code 1"}
-  getRecordingThumbnail:
-    speakeasy-default-get-recording-thumbnail:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          image/png: "x-file: example.file"
-  saveCurrentSession:
-    speakeasy-default-save-current-session:
-      responses:
-        "201":
-          application/json: {"success": true, "recording": {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": 2450.81, "duration": 1307.06, "frameCount": 3550.27, "filePath": "/selinux/emergent_accompanist_consequently.mjs", "size": 6222.92}}
-  getCurrentSessionVideoData:
-    speakeasy-default-get-current-session-video-data:
-      responses:
-        "200":
-          application/json: {"success": true, "videoData": {"frames": ["data:image/png;base64,iVBORw0KGgo..."], "captions": [{"timestamp": 1651234567890, "conversation": {}, "frameIndex": 0}]}}
-  getRecordingVideoData:
-    speakeasy-default-get-recording-video-data:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/json: {"success": true, "replayData": {"frames": ["data:image/png;base64,iVBORw0KGgo..."], "captions": [{"timestamp": 1651234567890, "conversation": {}, "frameIndex": 0}]}}
-  downloadRecording:
-    speakeasy-default-download-recording:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/zip: "x-file: example.file"
-  generateVideo:
-    speakeasy-default-generate-video:
-      parameters:
-        path:
-          id: "<id>"
-      requestBody:
-        application/json: {"fps": 0.2, "captionsEnabled": true, "format": "mp4", "quality": "medium"}
-      responses:
-        "201":
-          application/json: {"success": true, "videoPath": "/Users/user/.iris/videos/12345678-1234-5678-1234-567812345678/video.mp4", "recording": {"id": "<id>", "sessionId": "<id>", "title": "<value>", "createdAt": 1525.81, "duration": 9140.8, "frameCount": 5387.49, "filePath": "/Network/yet_webbed.html", "size": 8772.39}}
-  streamVideo:
-    speakeasy-default-stream-video:
-      parameters:
-        path:
-          id: "<id>"
-        query: {}
-      responses:
-        "200":
-          video/mp4: "x-file: example.file"
-          video/webm: "x-file: example.file"
-          image/gif: "x-file: example.file"
-        "202":
-          image/gif: "0xcc8f3d8Bca"
-          video/mp4: "0x2c3D2d6F15"
-          video/webm: "0xae343dda5a"
-  getFramesAndCaptions:
-    speakeasy-default-get-frames-and-captions:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/json: {"success": true, "frames": ["<value 1>", "<value 2>", "<value 3>"], "captions": []}
-  deleteFrame:
-    speakeasy-default-delete-frame:
-      parameters:
-        path:
-          id: "<id>"
-          frameIndex: 1580.86
-      responses:
-        "200":
-          application/json: {"success": true}
-  updateCaption:
-    speakeasy-default-update-caption:
-      parameters:
-        path:
-          id: "<id>"
-          frameIndex: 2353.28
-      requestBody:
-        application/json: {"text": "New caption text here"}
-      responses:
-        "200":
-          application/json: {"success": true}
-  regenerateVideo:
-    speakeasy-default-regenerate-video:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "201":
-          application/json: {"success": true}
-  getOperatorTypes:
-    speakeasy-default-get-operator-types:
-      responses:
-        "200":
-          application/json: {"types": []}
-  startExecution:
-    speakeasy-default-start-execution:
-      requestBody:
-        application/json: {"recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "actionDelay": 1500}
-      responses:
-        "201":
-          application/json: {"executionId": "rpa_1695872345678", "recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "status": "running", "currentActionIndex": 3, "totalActions": 15, "startedAt": 1695872345678, "operatorType": "browser", "errorMessage": "Failed to execute click action: Element not found"}
-  stopExecution:
-    speakeasy-default-stop-execution:
-      parameters:
-        path:
-          executionId: "rpa_1695872345678"
-      responses:
-        "200":
-          application/json: {"executionId": "rpa_1695872345678", "recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "status": "running", "currentActionIndex": 3, "totalActions": 15, "startedAt": 1695872345678, "operatorType": "browser", "errorMessage": "Failed to execute click action: Element not found"}
-  getExecutionStatus:
-    speakeasy-default-get-execution-status:
-      parameters:
-        path:
-          executionId: "rpa_1695872345678"
-      responses:
-        "200":
-          application/json: {"executionId": "rpa_1695872345678", "recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "status": "running", "currentActionIndex": 3, "totalActions": 15, "startedAt": 1695872345678, "operatorType": "browser", "errorMessage": "Failed to execute click action: Element not found"}
-  getParameterTemplate:
-    speakeasy-default-get-parameter-template:
-      parameters:
-        path:
-          recordingId: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6"
-      responses:
-        "200":
-          application/json: {"recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "parameterTemplate": {}}
-  batchExecute:
-    speakeasy-default-batch-execute:
-      requestBody:
-        application/json: {"recordingId": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6", "actionDelay": 1500, "parameterSets": ["{\"name\":\"Run 1\",\"parameterOverrides\":{\"2.action_inputs.content\":\"First search term\"}}", "{\"name\":\"Run 2\",\"parameterOverrides\":{\"2.action_inputs.content\":\"Second search term\"}}"]}
-      responses:
-        "201":
-          application/json: {"success": true, "message": "RPA execution stopped successfully"}
-  uploadVideo:
-    speakeasy-default-upload-video:
-      requestBody:
-        multipart/form-data: {"file": {"": "x-file: example.file"}}
-      responses:
-        "200":
-          application/json: {"analysisId": "1682598432741", "originalVideo": "recording-1682598432741.mp4", "processedVideo": "processed-recording-1682598432741.mp4", "message": "Video uploaded and analyzed successfully"}
-  getAnalysisResults:
-    speakeasy-default-get-analysis-results:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/json: {"analysisId": "1682598432741", "rpaSteps": "1. Move mouse to position (125, 50)\n2. Click left mouse button\n3. Type \"example.com\"\n4. Press ENTER key\n5. Wait 2 seconds\n6. Move mouse to position (250, 150)\n7. Click left mouse button", "processedVideoUrl": "/api/video/processed/processed-recording-1682598432741.mp4", "originalVideoUrl": "/api/video/original/recording-1682598432741.mp4"}
-  executeRpaSteps:
-    speakeasy-default-execute-rpa-steps:
-      parameters:
-        path:
-          id: "<id>"
-  streamProcessedVideo:
-    speakeasy-default-stream-processed-video:
-      parameters:
-        path:
-          filename: "example.file"
-  streamOriginalVideo:
-    speakeasy-default-stream-original-video:
-      parameters:
-        path:
-          filename: "example.file"
-  uploadFile:
-    speakeasy-default-upload-file:
-      requestBody:
-        multipart/form-data: {"file": {"": "x-file: example.file"}}
-      responses:
-        "200":
-          application/json: {"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "message": "File uploaded successfully"}
-  listFiles:
-    speakeasy-default-list-files:
-      responses:
-        "200":
-          application/json: [{"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "uploadDate": "2023-04-27T14:00:32.741Z"}, {"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "uploadDate": "2023-04-27T14:00:32.741Z"}, {"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "uploadDate": "2023-04-27T14:00:32.741Z"}]
-  getFileInfo:
-    speakeasy-default-get-file-info:
-      parameters:
-        path:
-          id: "1682598432741"
-      responses:
-        "200":
-          application/json: {"fileId": "1682598432741", "fileName": "document-1682598432741.pdf", "filePath": "/Users/username/.iris/files/document-1682598432741.pdf", "fileUrl": "/api/files/download/document-1682598432741.pdf", "fileSize": 24560, "mimeType": "application/pdf", "uploadDate": "2023-04-27T14:00:32.741Z"}
-  deleteFile:
-    speakeasy-default-delete-file:
-      parameters:
-        path:
-          id: "1682598432741"
-      responses:
-        "200":
-          application/json: {}
-  downloadFile:
-    speakeasy-default-download-file:
-      parameters:
-        path:
-          filename: "document-1682598432741.pdf"
-  getRequests: {}
-  approveRequest:
-    speakeasy-default-approve-request:
-      parameters:
-        path:
-          requestId: "<id>"
-  listArtifacts:
-    speakeasy-default-list-artifacts:
-      parameters:
-        query:
-          path: "code/my-project"
-      responses:
-        "200":
-          application/json: {"currentPath": "code/my-project", "parentPath": "code", "items": []}
-  downloadArtifactFile:
-    speakeasy-default-download-artifact-file:
-      parameters:
-        path:
-          path: "/usr/include"
-  downloadArtifactFolder:
-    speakeasy-default-download-artifact-folder:
-      parameters:
-        path:
-          path: "/media"
-examplesVersion: 1.0.2
-generatedTests: {}

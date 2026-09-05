@@ -1,3 +1,7 @@
+/examples/node_modules
+.env
+.env.local
+.env.*.local
 /mcp-server
 /bin
 /.eslintcache

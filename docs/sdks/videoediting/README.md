@@ -1,5 +1,4 @@
 # VideoEditing
-(*videoEditing*)
 
 ## Overview
 
@@ -15,6 +14,7 @@ Deletes a specific frame from a recording and updates captions accordingly
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteFrame" method="delete" path="/api/videos/{id}/frames/{frameIndex}" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -26,7 +26,6 @@ async function run() {
     frameIndex: 1580.86,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -50,15 +49,12 @@ async function run() {
     id: "<id>",
     frameIndex: 1580.86,
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("videoEditingDeleteFrame failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -89,6 +85,7 @@ Updates the caption text for a specific frame
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCaption" method="put" path="/api/videos/{id}/captions/{frameIndex}" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -99,11 +96,11 @@ async function run() {
     id: "<id>",
     frameIndex: 2353.28,
     updateCaptionDto: {
+      caption: {},
       text: "New caption text here",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -127,18 +124,16 @@ async function run() {
     id: "<id>",
     frameIndex: 2353.28,
     updateCaptionDto: {
+      caption: {},
       text: "New caption text here",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("videoEditingUpdateCaption failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -169,6 +164,7 @@ Regenerates the video file after frames or captions have been edited
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="regenerateVideo" method="post" path="/api/videos/{id}/regenerate" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -179,7 +175,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -202,15 +197,12 @@ async function run() {
   const res = await videoEditingRegenerate(irisSDK, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("videoEditingRegenerate failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
