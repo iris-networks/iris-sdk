@@ -1,5 +1,4 @@
 # HumanLayer
-(*humanLayer*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Get all pending human layer requests
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getRequests" method="get" path="/api/human-layer/requests" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -42,14 +42,12 @@ const irisSDK = new IrisSDKCore();
 
 async function run() {
   const res = await humanLayerGetRequests(irisSDK);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("humanLayerGetRequests failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -79,6 +77,7 @@ Approve a pending human layer request
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="approveRequest" method="post" path="/api/human-layer/{requestId}/approve" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -111,14 +110,12 @@ async function run() {
   const res = await humanLayerApprove(irisSDK, {
     requestId: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("humanLayerApprove failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
