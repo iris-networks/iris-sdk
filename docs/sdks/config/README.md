@@ -1,5 +1,4 @@
 # Config
-(*config*)
 
 ## Overview
 
@@ -16,6 +15,7 @@ Get current configuration
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getConfig" method="get" path="/api/config" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -24,7 +24,6 @@ const irisSDK = new IrisSDK();
 async function run() {
   const result = await irisSDK.config.get();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -45,15 +44,12 @@ const irisSDK = new IrisSDKCore();
 
 async function run() {
   const res = await configGet(irisSDK);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("configGet failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -83,6 +79,7 @@ Update configuration
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateConfig" method="put" path="/api/config" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -91,7 +88,6 @@ const irisSDK = new IrisSDK();
 async function run() {
   const result = await irisSDK.config.update({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -112,15 +108,12 @@ const irisSDK = new IrisSDKCore();
 
 async function run() {
   const res = await configUpdate(irisSDK, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("configUpdate failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
