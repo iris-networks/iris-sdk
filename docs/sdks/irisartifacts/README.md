@@ -1,5 +1,4 @@
 # IrisArtifacts
-(*irisArtifacts*)
 
 ## Overview
 
@@ -15,6 +14,7 @@ List artifacts in a directory within the .iris folder
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listArtifacts" method="get" path="/api/iris-artifacts/list" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -25,7 +25,6 @@ async function run() {
     path: "code/my-project",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -48,15 +47,12 @@ async function run() {
   const res = await irisArtifactsList(irisSDK, {
     path: "code/my-project",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("irisArtifactsList failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -87,6 +83,7 @@ Download a file artifact from the .iris folder
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="downloadArtifactFile" method="get" path="/api/iris-artifacts/download/file/{path}" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -119,14 +116,12 @@ async function run() {
   const res = await irisArtifactsDownloadFile(irisSDK, {
     path: "/usr/include",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("irisArtifactsDownloadFile failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -157,6 +152,7 @@ Download a directory of artifacts as a zip file
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="downloadArtifactFolder" method="get" path="/api/iris-artifacts/download/folder/{path}" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -189,14 +185,12 @@ async function run() {
   const res = await irisArtifactsDownloadFolder(irisSDK, {
     path: "/media",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("irisArtifactsDownloadFolder failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
