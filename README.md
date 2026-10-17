@@ -83,10 +83,7 @@ bun add https://github.com/iris-networks/iris-sdk
 ### Yarn
 
 ```bash
-yarn add https://github.com/iris-networks/iris-sdk zod
-
-# Note that Yarn does not install peer dependencies automatically. You will need
-# to install zod as shown above.
+yarn add https://github.com/iris-networks/iris-sdk
 ```
 
 
@@ -192,7 +189,6 @@ const irisSDK = new IrisSDK();
 async function run() {
   const result = await irisSDK.config.get();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -207,12 +203,12 @@ run();
 <details open>
 <summary>Available methods</summary>
 
-### [config](docs/sdks/config/README.md)
+### [Config](docs/sdks/config/README.md)
 
 * [get](docs/sdks/config/README.md#get) - Get current configuration
 * [update](docs/sdks/config/README.md#update) - Update configuration
 
-### [files](docs/sdks/files/README.md)
+### [Files](docs/sdks/files/README.md)
 
 * [upload](docs/sdks/files/README.md#upload) - Upload a file
 * [list](docs/sdks/files/README.md#list) - List all uploaded files
@@ -220,23 +216,22 @@ run();
 * [delete](docs/sdks/files/README.md#delete) - Delete a file
 * [download](docs/sdks/files/README.md#download) - Download a file
 
-### [humanLayer](docs/sdks/humanlayer/README.md)
+### [HumanLayer](docs/sdks/humanlayer/README.md)
 
 * [getRequests](docs/sdks/humanlayer/README.md#getrequests) - Get all pending human layer requests
 * [approve](docs/sdks/humanlayer/README.md#approve) - Approve a pending human layer request
 
-### [irisArtifacts](docs/sdks/irisartifacts/README.md)
+### [IrisArtifacts](docs/sdks/irisartifacts/README.md)
 
 * [list](docs/sdks/irisartifacts/README.md#list) - List artifacts in a directory within the .iris folder
 * [downloadFile](docs/sdks/irisartifacts/README.md#downloadfile) - Download a file artifact from the .iris folder
 * [downloadFolder](docs/sdks/irisartifacts/README.md#downloadfolder) - Download a directory of artifacts as a zip file
 
-
-### [operators](docs/sdks/operators/README.md)
+### [Operators](docs/sdks/operators/README.md)
 
 * [getTypes](docs/sdks/operators/README.md#gettypes) - Get available operator types
 
-### [rpa](docs/sdks/rpa/README.md)
+### [Rpa](docs/sdks/rpa/README.md)
 
 * [startExecution](docs/sdks/rpa/README.md#startexecution) - Start RPA execution from a recording
 * [stopExecution](docs/sdks/rpa/README.md#stopexecution) - Stop an ongoing RPA execution
@@ -244,7 +239,7 @@ run();
 * [getParameterTemplate](docs/sdks/rpa/README.md#getparametertemplate) - Get parameter template for a recording
 * [batchExecute](docs/sdks/rpa/README.md#batchexecute) - Execute RPA with multiple parameter sets
 
-### [video](docs/sdks/video/README.md)
+### [Video](docs/sdks/video/README.md)
 
 * [upload](docs/sdks/video/README.md#upload) - Upload a video for RPA analysis
 * [getAnalysisResults](docs/sdks/video/README.md#getanalysisresults) - Get analysis results for a video
@@ -252,13 +247,13 @@ run();
 * [streamProcessed](docs/sdks/video/README.md#streamprocessed)
 * [streamOriginal](docs/sdks/video/README.md#streamoriginal)
 
-### [videoEditing](docs/sdks/videoediting/README.md)
+### [VideoEditing](docs/sdks/videoediting/README.md)
 
 * [deleteFrame](docs/sdks/videoediting/README.md#deleteframe) - Delete a frame
 * [updateCaption](docs/sdks/videoediting/README.md#updatecaption) - Update caption for a frame
 * [regenerate](docs/sdks/videoediting/README.md#regenerate) - Regenerate video after edits
 
-### [videos](docs/sdks/videos/README.md)
+### [Videos](docs/sdks/videos/README.md)
 
 * [list](docs/sdks/videos/README.md#list) - List all recordings
 * [getMetadata](docs/sdks/videos/README.md#getmetadata) - Get recording metadata
@@ -358,7 +353,6 @@ async function run() {
     file: await openAsBlob("example.file"),
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -392,7 +386,6 @@ async function run() {
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -420,7 +413,6 @@ const irisSDK = new IrisSDK({
 async function run() {
   const result = await irisSDK.config.get();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -432,47 +424,34 @@ run();
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-If the request fails due to, for example 4XX or 5XX status codes, it will throw a `APIError`.
+[`IrisSDKError`](./src/models/errors/irissdkerror.ts) is the base class for all HTTP error responses. It has the following properties:
 
-| Error Type      | Status Code | Content Type |
-| --------------- | ----------- | ------------ |
-| errors.APIError | 4XX, 5XX    | \*/\*        |
+| Property            | Type       | Description                                            |
+| ------------------- | ---------- | ------------------------------------------------------ |
+| `error.message`     | `string`   | Error message                                          |
+| `error.statusCode`  | `number`   | HTTP response status code eg `404`                     |
+| `error.headers`     | `Headers`  | HTTP response headers                                  |
+| `error.body`        | `string`   | HTTP body. Can be empty string if no body is returned. |
+| `error.rawResponse` | `Response` | Raw HTTP response                                      |
 
+### Example
 ```typescript
 import { IrisSDK } from "iris-sdk";
-import { SDKValidationError } from "iris-sdk/models/errors";
+import * as errors from "iris-sdk/models/errors";
 
 const irisSDK = new IrisSDK();
 
 async function run() {
-  let result;
   try {
-    result = await irisSDK.config.get();
+    const result = await irisSDK.config.get();
 
-    // Handle the result
     console.log(result);
-  } catch (err) {
-    switch (true) {
-      // The server response does not match the expected SDK schema
-      case (err instanceof SDKValidationError):
-        {
-          // Pretty-print will provide a human-readable multi-line error message
-          console.error(err.pretty());
-          // Raw value may also be inspected
-          console.error(err.rawValue);
-          return;
-        }
-        apierror.js;
-      // Server returned an error status code or an unknown content type
-      case (err instanceof APIError): {
-        console.error(err.statusCode);
-        console.error(err.rawResponse.body);
-        return;
-      }
-      default: {
-        // Other errors such as network errors, see HTTPClientErrors for more details
-        throw err;
-      }
+  } catch (error) {
+    if (error instanceof errors.IrisSDKError) {
+      console.log(error.message);
+      console.log(error.statusCode);
+      console.log(error.body);
+      console.log(error.headers);
     }
   }
 }
@@ -481,17 +460,26 @@ run();
 
 ```
 
-Validation errors can also occur when either method arguments or data returned from the server do not match the expected format. The `SDKValidationError` that is thrown as a result will capture the raw value that failed validation in an attribute called `rawValue`. Additionally, a `pretty()` method is available on this error that can be used to log a nicely formatted multi-line string since validation errors can list many issues and the plain error string may be difficult read when debugging.
+### Error Classes
+**Primary error:**
+* [`IrisSDKError`](./src/models/errors/irissdkerror.ts): The base class for HTTP error responses.
 
-In some rare cases, the SDK can fail to get a response from the server or even make the request due to unexpected circumstances such as network conditions. These types of errors are captured in the `models/errors/httpclienterrors.ts` module:
+<details><summary>Less common errors (6)</summary>
 
-| HTTP Client Error                                    | Description                                          |
-| ---------------------------------------------------- | ---------------------------------------------------- |
-| RequestAbortedError                                  | HTTP request was aborted by the client               |
-| RequestTimeoutError                                  | HTTP request timed out due to an AbortSignal signal  |
-| ConnectionError                                      | HTTP client was unable to make a request to a server |
-| InvalidRequestError                                  | Any input used to create a request is invalid        |
-| UnexpectedClientError                                | Unrecognised or unexpected error                     |
+<br />
+
+**Network errors:**
+* [`ConnectionError`](./src/models/errors/httpclienterrors.ts): HTTP client was unable to make a request to a server.
+* [`RequestTimeoutError`](./src/models/errors/httpclienterrors.ts): HTTP request timed out due to an AbortSignal signal.
+* [`RequestAbortedError`](./src/models/errors/httpclienterrors.ts): HTTP request was aborted by the client.
+* [`InvalidRequestError`](./src/models/errors/httpclienterrors.ts): Any input used to create a request is invalid.
+* [`UnexpectedClientError`](./src/models/errors/httpclienterrors.ts): Unrecognised or unexpected error.
+
+
+**Inherit from [`IrisSDKError`](./src/models/errors/irissdkerror.ts)**:
+* [`ResponseValidationError`](./src/models/errors/responsevalidationerror.ts): Type mismatch between the data returned from the server and the structure expected by the SDK. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
+
+</details>
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
@@ -510,7 +498,6 @@ const irisSDK = new IrisSDK({
 async function run() {
   const result = await irisSDK.config.get();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -532,19 +519,23 @@ The `HTTPClient` constructor takes an optional `fetcher` argument that can be
 used to integrate a third-party HTTP client or when writing tests to mock out
 the HTTP client and feed in fixtures.
 
-The following example shows how to use the `"beforeRequest"` hook to to add a
-custom header and a timeout to requests and how to use the `"requestError"` hook
-to log errors:
+The following example shows how to:
+- route requests through a proxy server using [undici](https://www.npmjs.com/package/undici)'s ProxyAgent
+- use the `"beforeRequest"` hook to add a custom header and a timeout to requests
+- use the `"requestError"` hook to log errors
 
 ```typescript
 import { IrisSDK } from "iris-sdk";
+import { ProxyAgent } from "undici";
 import { HTTPClient } from "iris-sdk/lib/http";
 
+const dispatcher = new ProxyAgent("http://proxy.example.com:8080");
+
 const httpClient = new HTTPClient({
-  // fetcher takes a function that has the same signature as native `fetch`.
-  fetcher: (request) => {
-    return fetch(request);
-  }
+  // 'fetcher' takes a function that has the same signature as native 'fetch'.
+  fetcher: (input, init) =>
+    // 'dispatcher' is specific to undici and not part of the standard Fetch API.
+    fetch(input, { ...init, dispatcher } as RequestInit),
 });
 
 httpClient.addHook("beforeRequest", (request) => {
@@ -564,7 +555,7 @@ httpClient.addHook("requestError", (error, request) => {
   console.groupEnd();
 });
 
-const sdk = new IrisSDK({ httpClient });
+const sdk = new IrisSDK({ httpClient: httpClient });
 ```
 <!-- End Custom HTTP Client [http-client] -->
 
