@@ -20,7 +20,7 @@ Creates a video file from the frames of a recording with customizable options. T
     const [result, apiCall] = await videosGenerate(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

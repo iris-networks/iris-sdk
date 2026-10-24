@@ -20,7 +20,7 @@ Returns the current status and progress of an RPA execution.`,
     const [result, apiCall] = await rpaGetStatus(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

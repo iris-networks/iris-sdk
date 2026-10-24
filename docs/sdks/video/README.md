@@ -1,5 +1,4 @@
 # Video
-(*video*)
 
 ## Overview
 
@@ -19,6 +18,7 @@ Upload a video recording of any task to automatically generate RPA workflows. Th
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="uploadVideo" method="post" path="/api/video/upload" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 import { openAsBlob } from "node:fs";
@@ -30,7 +30,6 @@ async function run() {
     file: await openAsBlob("example.file"),
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -54,15 +53,12 @@ async function run() {
   const res = await videoUpload(irisSDK, {
     file: await openAsBlob("example.file"),
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("videoUpload failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -93,6 +89,7 @@ Get analysis results for a video
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAnalysisResults" method="get" path="/api/video/analysis/{id}" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -103,7 +100,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -126,15 +122,12 @@ async function run() {
   const res = await videoGetAnalysisResults(irisSDK, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("videoGetAnalysisResults failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -165,6 +158,7 @@ Executes automation steps extracted from video analysis. This endpoint enables t
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="executeRpaSteps" method="post" path="/api/video/execute/{id}" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -197,14 +191,12 @@ async function run() {
   const res = await videoExecuteRpa(irisSDK, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("videoExecuteRpa failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -233,6 +225,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="streamProcessedVideo" method="get" path="/api/video/processed/{filename}" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -265,14 +258,12 @@ async function run() {
   const res = await videoStreamProcessed(irisSDK, {
     filename: "example.file",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("videoStreamProcessed failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -301,6 +292,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="streamOriginalVideo" method="get" path="/api/video/original/{filename}" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -333,14 +325,12 @@ async function run() {
   const res = await videoStreamOriginal(irisSDK, {
     filename: "example.file",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("videoStreamOriginal failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
