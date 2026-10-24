@@ -20,7 +20,7 @@ Starts multiple RPA executions with different parameter values. This powerful en
     const [result, apiCall] = await rpaBatchExecute(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

@@ -20,7 +20,7 @@ Returns all frames and their associated captions for a recording to be edited`,
     const [result, apiCall] = await videosGetFramesAndCaptions(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

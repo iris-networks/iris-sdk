@@ -1,5 +1,4 @@
 # Videos
-(*videos*)
 
 ## Overview
 
@@ -26,6 +25,7 @@ Returns a list of all video recordings available in the system
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listRecordings" method="get" path="/api/videos" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -34,7 +34,6 @@ const irisSDK = new IrisSDK();
 async function run() {
   const result = await irisSDK.videos.list();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -55,15 +54,12 @@ const irisSDK = new IrisSDKCore();
 
 async function run() {
   const res = await videosList(irisSDK);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("videosList failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -93,6 +89,7 @@ Returns detailed metadata about a specific recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getRecordingMetadata" method="get" path="/api/videos/{id}" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -103,7 +100,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -126,15 +122,12 @@ async function run() {
   const res = await videosGetMetadata(irisSDK, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("videosGetMetadata failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -165,6 +158,7 @@ Permanently deletes a recording and all associated files. This operation cannot 
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteRecording" method="delete" path="/api/videos/{id}" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -175,7 +169,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -198,15 +191,12 @@ async function run() {
   const res = await videosDeleteRecording(irisSDK, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("videosDeleteRecording failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -237,6 +227,7 @@ Returns the current status of video generation for a recording. This endpoint pr
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getVideoStatus" method="get" path="/api/videos/{id}/video-status" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -247,7 +238,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -270,15 +260,12 @@ async function run() {
   const res = await videosGetStatus(irisSDK, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("videosGetStatus failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -309,6 +296,7 @@ Returns the thumbnail image for a recording as a PNG file. This is typically the
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getRecordingThumbnail" method="get" path="/api/videos/{id}/thumbnail" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -319,7 +307,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -342,15 +329,12 @@ async function run() {
   const res = await videosGetThumbnail(irisSDK, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("videosGetThumbnail failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -381,6 +365,7 @@ Saves the current active session as a video recording. This endpoint captures al
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="saveCurrentSession" method="post" path="/api/videos/save-current-session" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -389,7 +374,6 @@ const irisSDK = new IrisSDK();
 async function run() {
   const result = await irisSDK.videos.saveCurrentSession();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -410,15 +394,12 @@ const irisSDK = new IrisSDKCore();
 
 async function run() {
   const res = await videosSaveCurrentSession(irisSDK);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("videosSaveCurrentSession failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -448,6 +429,7 @@ Returns the raw frames and captions for the current active session. This endpoin
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCurrentSessionVideoData" method="get" path="/api/videos/current-session/video-data" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -456,7 +438,6 @@ const irisSDK = new IrisSDK();
 async function run() {
   const result = await irisSDK.videos.getCurrentSessionData();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -477,15 +458,12 @@ const irisSDK = new IrisSDKCore();
 
 async function run() {
   const res = await videosGetCurrentSessionData(irisSDK);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("videosGetCurrentSessionData failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -515,6 +493,7 @@ Returns the raw frames and captions for a specific recording. This endpoint is p
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getRecordingVideoData" method="get" path="/api/videos/{id}/video-data" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -525,7 +504,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -548,15 +526,12 @@ async function run() {
   const res = await videosGetRecordingData(irisSDK, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("videosGetRecordingData failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -587,6 +562,7 @@ Downloads a recording as a ZIP archive containing all frames, captions, and meta
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="downloadRecording" method="get" path="/api/videos/{id}/download" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -597,7 +573,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -620,15 +595,12 @@ async function run() {
   const res = await videosDownload(irisSDK, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("videosDownload failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -659,6 +631,7 @@ Creates a video file from the frames of a recording with customizable options. T
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="generateVideo" method="post" path="/api/videos/{id}/generate-video" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -670,7 +643,6 @@ async function run() {
     generateVideoDto: {},
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -694,15 +666,12 @@ async function run() {
     id: "<id>",
     generateVideoDto: {},
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("videosGenerate failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -733,6 +702,7 @@ Streams the generated video file for a recording. This endpoint can be used dire
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="streamVideo" method="get" path="/api/videos/{id}/video" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -743,7 +713,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -766,15 +735,12 @@ async function run() {
   const res = await videosStream(irisSDK, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("videosStream failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -805,6 +771,7 @@ Returns all frames and their associated captions for a recording to be edited
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getFramesAndCaptions" method="get" path="/api/videos/{id}/frames" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -815,7 +782,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -838,15 +804,12 @@ async function run() {
   const res = await videosGetFramesAndCaptions(irisSDK, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("videosGetFramesAndCaptions failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
