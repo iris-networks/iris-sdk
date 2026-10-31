@@ -13,7 +13,7 @@ Returns a list of available automation operator types that autonomous agents can
   tool: async (client, ctx) => {
     const [result, apiCall] = await operatorsGetTypes(
       client,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

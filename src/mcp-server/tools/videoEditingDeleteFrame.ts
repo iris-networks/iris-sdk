@@ -20,7 +20,7 @@ Deletes a specific frame from a recording and updates captions accordingly`,
     const [result, apiCall] = await videoEditingDeleteFrame(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

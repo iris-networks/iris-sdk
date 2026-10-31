@@ -20,7 +20,7 @@ Permanently deletes a recording and all associated files. This operation cannot 
     const [result, apiCall] = await videosDeleteRecording(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

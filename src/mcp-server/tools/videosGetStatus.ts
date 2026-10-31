@@ -20,7 +20,7 @@ Returns the current status of video generation for a recording. This endpoint pr
     const [result, apiCall] = await videosGetStatus(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

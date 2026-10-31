@@ -20,7 +20,7 @@ Executes automation steps extracted from video analysis. This endpoint enables t
     const [result, apiCall] = await videoExecuteRpa(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {
