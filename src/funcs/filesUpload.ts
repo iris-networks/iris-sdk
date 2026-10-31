@@ -3,15 +3,19 @@
  */
 
 import { IrisSDKCore } from "../core.js";
-import { appendForm } from "../lib/encodings.js";
-import { readableStreamToArrayBuffer } from "../lib/files.js";
+import { appendForm, normalizeBlob } from "../lib/encodings.js";
+import {
+  bytesToBlob,
+  getContentTypeFromFileName,
+  readableStreamToArrayBuffer,
+} from "../lib/files.js";
+import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { pathToFunc } from "../lib/url.js";
 import * as components from "../models/components/index.js";
-import { APIError } from "../models/errors/apierror.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -19,6 +23,8 @@ import {
   RequestTimeoutError,
   UnexpectedClientError,
 } from "../models/errors/httpclienterrors.js";
+import { IrisSDKError } from "../models/errors/irissdkerror.js";
+import { ResponseValidationError } from "../models/errors/responsevalidationerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { isBlobLike } from "../types/blobs.js";
@@ -38,13 +44,14 @@ export function filesUpload(
 ): APIPromise<
   Result<
     components.FileUploadResponseDto,
-    | APIError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
+    | IrisSDKError
+    | ResponseValidationError
+    | ConnectionError
     | RequestAbortedError
     | RequestTimeoutError
-    | ConnectionError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
   >
 > {
   return new APIPromise($do(
@@ -62,13 +69,14 @@ async function $do(
   [
     Result<
       components.FileUploadResponseDto,
-      | APIError
-      | SDKValidationError
-      | UnexpectedClientError
-      | InvalidRequestError
+      | IrisSDKError
+      | ResponseValidationError
+      | ConnectionError
       | RequestAbortedError
       | RequestTimeoutError
-      | ConnectionError
+      | InvalidRequestError
+      | UnexpectedClientError
+      | SDKValidationError
     >,
     APICall,
   ]
@@ -85,16 +93,27 @@ async function $do(
   const body = new FormData();
 
   if (isBlobLike(payload.file)) {
-    appendForm(body, "file", payload.file);
+    const file = payload.file;
+    const blob = await normalizeBlob(file);
+    const name = "name" in file ? (file.name as string) : undefined;
+    appendForm(body, "file", blob, name);
   } else if (isReadableStream(payload.file.content)) {
     const buffer = await readableStreamToArrayBuffer(payload.file.content);
-    const blob = new Blob([buffer], { type: "application/octet-stream" });
-    appendForm(body, "file", blob);
-  } else {
+    const contentType = getContentTypeFromFileName(payload.file.fileName)
+      || "application/octet-stream";
     appendForm(
       body,
       "file",
-      new Blob([payload.file.content], { type: "application/octet-stream" }),
+      bytesToBlob(buffer, contentType),
+      payload.file.fileName,
+    );
+  } else {
+    const contentType = getContentTypeFromFileName(payload.file.fileName)
+      || "application/octet-stream";
+    appendForm(
+      body,
+      "file",
+      bytesToBlob(payload.file.content, contentType),
       payload.file.fileName,
     );
   }
@@ -106,9 +125,10 @@ async function $do(
   }));
 
   const context = {
+    options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "uploadFile",
-    oAuth2Scopes: [],
+    oAuth2Scopes: null,
 
     resolvedSecurity: null,
 
@@ -125,6 +145,7 @@ async function $do(
     path: path,
     headers: headers,
     body: body,
+    userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
@@ -134,7 +155,8 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["4XX", "5XX"],
+    isErrorStatusCode: (statusCode: number) =>
+      matchStatusCode({ status: statusCode } as Response, ["4XX", "5XX"]),
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -145,18 +167,19 @@ async function $do(
 
   const [result] = await M.match<
     components.FileUploadResponseDto,
-    | APIError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
+    | IrisSDKError
+    | ResponseValidationError
+    | ConnectionError
     | RequestAbortedError
     | RequestTimeoutError
-    | ConnectionError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
   >(
     M.json(200, components.FileUploadResponseDto$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
-  )(response);
+  )(response, req);
   if (!result.ok) {
     return [result, { status: "complete", request: req, response }];
   }

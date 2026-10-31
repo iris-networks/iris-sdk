@@ -18,7 +18,7 @@ export const tool$filesDelete: ToolDefinition<typeof args> = {
     const [result, apiCall] = await filesDelete(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {
