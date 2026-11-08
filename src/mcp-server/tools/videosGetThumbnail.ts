@@ -20,7 +20,7 @@ Returns the thumbnail image for a recording as a PNG file. This is typically the
     const [result, apiCall] = await videosGetThumbnail(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {
