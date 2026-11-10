@@ -20,7 +20,7 @@ Upload a file for later processing. The system stores the file and provides a un
     const [result, apiCall] = await filesUpload(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

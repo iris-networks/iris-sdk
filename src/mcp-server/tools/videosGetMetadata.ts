@@ -20,7 +20,7 @@ Returns detailed metadata about a specific recording`,
     const [result, apiCall] = await videosGetMetadata(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

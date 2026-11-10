@@ -13,7 +13,7 @@ Returns a list of all video recordings available in the system`,
   tool: async (client, ctx) => {
     const [result, apiCall] = await videosList(
       client,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

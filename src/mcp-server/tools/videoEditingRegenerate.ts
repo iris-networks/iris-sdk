@@ -20,7 +20,7 @@ Regenerates the video file after frames or captions have been edited`,
     const [result, apiCall] = await videoEditingRegenerate(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {
