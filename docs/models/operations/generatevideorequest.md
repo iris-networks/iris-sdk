@@ -7,7 +7,6 @@ import { GenerateVideoRequest } from "iris-sdk/models/operations";
 
 let value: GenerateVideoRequest = {
   id: "<id>",
-  generateVideoDto: {},
 };
 ```
 

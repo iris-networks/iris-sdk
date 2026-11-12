@@ -20,7 +20,7 @@ Returns a template with all parameterizable fields in a recording. This endpoint
     const [result, apiCall] = await rpaGetParameterTemplate(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {
