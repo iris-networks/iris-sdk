@@ -1,5 +1,4 @@
 # Files
-(*files*)
 
 ## Overview
 
@@ -17,6 +16,7 @@ Upload a file for later processing. The system stores the file and provides a un
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="uploadFile" method="post" path="/api/files/upload" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 import { openAsBlob } from "node:fs";
@@ -28,7 +28,6 @@ async function run() {
     file: await openAsBlob("example.file"),
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -52,15 +51,12 @@ async function run() {
   const res = await filesUpload(irisSDK, {
     file: await openAsBlob("example.file"),
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("filesUpload failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -91,6 +87,7 @@ List all uploaded files
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listFiles" method="get" path="/api/files" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -99,7 +96,6 @@ const irisSDK = new IrisSDK();
 async function run() {
   const result = await irisSDK.files.list();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -120,15 +116,12 @@ const irisSDK = new IrisSDKCore();
 
 async function run() {
   const res = await filesList(irisSDK);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("filesList failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -158,6 +151,7 @@ Get information about a specific file
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getFileInfo" method="get" path="/api/files/{id}" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -168,7 +162,6 @@ async function run() {
     id: "1682598432741",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -191,15 +184,12 @@ async function run() {
   const res = await filesGetInfo(irisSDK, {
     id: "1682598432741",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("filesGetInfo failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -230,6 +220,7 @@ Delete a file
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteFile" method="delete" path="/api/files/{id}" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -240,7 +231,6 @@ async function run() {
     id: "1682598432741",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -263,15 +253,12 @@ async function run() {
   const res = await filesDelete(irisSDK, {
     id: "1682598432741",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("filesDelete failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -302,6 +289,7 @@ Download a file
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="downloadFile" method="get" path="/api/files/download/{filename}" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -334,14 +322,12 @@ async function run() {
   const res = await filesDownload(irisSDK, {
     filename: "document-1682598432741.pdf",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("filesDownload failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
