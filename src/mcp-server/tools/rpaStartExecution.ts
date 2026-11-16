@@ -20,7 +20,7 @@ Initiates an automated execution of actions captured in a recording. This endpoi
     const [result, apiCall] = await rpaStartExecution(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

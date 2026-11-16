@@ -20,7 +20,7 @@ Updates the caption text for a specific frame`,
     const [result, apiCall] = await videoEditingUpdateCaption(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

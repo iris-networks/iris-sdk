@@ -20,7 +20,7 @@ Upload a video recording of any task to automatically generate RPA workflows. Th
     const [result, apiCall] = await videoUpload(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

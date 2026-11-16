@@ -13,7 +13,7 @@ Returns the raw frames and captions for the current active session. This endpoin
   tool: async (client, ctx) => {
     const [result, apiCall] = await videosGetCurrentSessionData(
       client,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {
