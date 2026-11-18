@@ -1,5 +1,4 @@
 # Rpa
-(*rpa*)
 
 ## Overview
 
@@ -19,6 +18,7 @@ Initiates an automated execution of actions captured in a recording. This endpoi
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="startExecution" method="post" path="/api/rpa/execute" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -27,9 +27,10 @@ const irisSDK = new IrisSDK();
 async function run() {
   const result = await irisSDK.rpa.startExecution({
     recordingId: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
+    actionDelay: 1500,
+    parameterOverrides: {},
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -51,16 +52,15 @@ const irisSDK = new IrisSDKCore();
 async function run() {
   const res = await rpaStartExecution(irisSDK, {
     recordingId: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
+    actionDelay: 1500,
+    parameterOverrides: {},
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("rpaStartExecution failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -91,6 +91,7 @@ Stops a running RPA execution and releases resources.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="stopExecution" method="post" path="/api/rpa/{executionId}/stop" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -101,7 +102,6 @@ async function run() {
     executionId: "rpa_1695872345678",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -124,15 +124,12 @@ async function run() {
   const res = await rpaStopExecution(irisSDK, {
     executionId: "rpa_1695872345678",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("rpaStopExecution failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -163,6 +160,7 @@ Returns the current status and progress of an RPA execution.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getExecutionStatus" method="get" path="/api/rpa/{executionId}/status" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -173,7 +171,6 @@ async function run() {
     executionId: "rpa_1695872345678",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -196,15 +193,12 @@ async function run() {
   const res = await rpaGetStatus(irisSDK, {
     executionId: "rpa_1695872345678",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("rpaGetStatus failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -235,6 +229,7 @@ Returns a template with all parameterizable fields in a recording. This endpoint
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getParameterTemplate" method="get" path="/api/rpa/{recordingId}/parameter-template" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -245,7 +240,6 @@ async function run() {
     recordingId: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -268,15 +262,12 @@ async function run() {
   const res = await rpaGetParameterTemplate(irisSDK, {
     recordingId: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("rpaGetParameterTemplate failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -307,6 +298,7 @@ Starts multiple RPA executions with different parameter values. This powerful en
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="batchExecute" method="post" path="/api/rpa/batch-execute" -->
 ```typescript
 import { IrisSDK } from "iris-sdk";
 
@@ -315,13 +307,13 @@ const irisSDK = new IrisSDK();
 async function run() {
   const result = await irisSDK.rpa.batchExecute({
     recordingId: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
+    actionDelay: 1500,
     parameterSets: [
       "{\"name\":\"Run 1\",\"parameterOverrides\":{\"2.action_inputs.content\":\"First search term\"}}",
       "{\"name\":\"Run 2\",\"parameterOverrides\":{\"2.action_inputs.content\":\"Second search term\"}}",
     ],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -343,20 +335,18 @@ const irisSDK = new IrisSDKCore();
 async function run() {
   const res = await rpaBatchExecute(irisSDK, {
     recordingId: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
+    actionDelay: 1500,
     parameterSets: [
       "{\"name\":\"Run 1\",\"parameterOverrides\":{\"2.action_inputs.content\":\"First search term\"}}",
       "{\"name\":\"Run 2\",\"parameterOverrides\":{\"2.action_inputs.content\":\"Second search term\"}}",
     ],
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("rpaBatchExecute failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

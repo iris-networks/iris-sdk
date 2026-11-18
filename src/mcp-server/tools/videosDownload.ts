@@ -20,7 +20,7 @@ Downloads a recording as a ZIP archive containing all frames, captions, and meta
     const [result, apiCall] = await videosDownload(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {
