@@ -20,7 +20,7 @@ Stops a running RPA execution and releases resources.`,
     const [result, apiCall] = await rpaStopExecution(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {
