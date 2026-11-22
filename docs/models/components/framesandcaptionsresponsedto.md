@@ -8,15 +8,10 @@ import { FramesAndCaptionsResponseDto } from "iris-sdk/models/components";
 let value: FramesAndCaptionsResponseDto = {
   success: true,
   frames: [
-    "<value>",
+    "<value 1>",
+    "<value 2>",
   ],
-  captions: [
-    {
-      timestamp: 1651234567890,
-      conversation: {},
-      frameIndex: 0,
-    },
-  ],
+  captions: [],
 };
 ```
 
