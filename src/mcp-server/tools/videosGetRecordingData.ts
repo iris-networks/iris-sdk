@@ -20,7 +20,7 @@ Returns the raw frames and captions for a specific recording. This endpoint is p
     const [result, apiCall] = await videosGetRecordingData(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

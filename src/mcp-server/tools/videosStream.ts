@@ -20,7 +20,7 @@ Streams the generated video file for a recording. This endpoint can be used dire
     const [result, apiCall] = await videosStream(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

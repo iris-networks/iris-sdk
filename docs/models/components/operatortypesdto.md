@@ -7,7 +7,7 @@ import { OperatorTypesDto } from "iris-sdk/models/components";
 
 let value: OperatorTypesDto = {
   types: [
-    "computer",
+    "browser",
   ],
 };
 ```
