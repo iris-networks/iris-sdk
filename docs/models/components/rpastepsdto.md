@@ -7,13 +7,8 @@ import { RpaStepsDto } from "iris-sdk/models/components";
 
 let value: RpaStepsDto = {
   analysisId: "1682598432741",
-  rpaSteps: "1. Move mouse to position (125, 50)\n"
-    + "2. Click left mouse button\n"
-    + "3. Type \"example.com\"\n"
-    + "4. Press ENTER key\n"
-    + "5. Wait 2 seconds\n"
-    + "6. Move mouse to position (250, 150)\n"
-    + "7. Click left mouse button",
+  rpaSteps:
+    "1. Move mouse to position (125, 50)\n2. Click left mouse button\n3. Type \"example.com\"\n4. Press ENTER key\n5. Wait 2 seconds\n6. Move mouse to position (250, 150)\n7. Click left mouse button",
   processedVideoUrl:
     "/api/video/processed/processed-recording-1682598432741.mp4",
   originalVideoUrl: "/api/video/original/recording-1682598432741.mp4",
